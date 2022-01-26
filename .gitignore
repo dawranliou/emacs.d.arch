@@ -1,0 +1,10 @@
+*.elc
+*~
+
+/auto-save-list/
+/backup/
+/bookmarks
+/eln-cache/
+/history
+/projects
+/transient/
