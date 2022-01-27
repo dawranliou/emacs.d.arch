@@ -19,10 +19,7 @@
  '(cider-repl-pop-to-buffer-on-connect 'display-only)
  '(completion-styles '(orderless))
  '(corfu-global-mode t)
- '(custom-enabled-themes '(reverse))
- '(custom-safe-themes
-   '("5ef596398fb0ceee52c269e2f0ab81c74b4322ab4eb2b014f4f4435c75f06534" default))
- '(default-frame-alist '((font . "Iosevka-12") (width . 80) (height . 35)))
+ '(default-frame-alist '((font . "Iosevka-11") (width . 80) (height . 35)))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)
@@ -33,6 +30,7 @@
  '(electric-pair-mode t)
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
+ '(frame-inhibit-implied-resize nil)
  '(history-length 200000)
  '(ido-enable-flex-matching nil)
  '(ido-everywhere nil)
@@ -48,6 +46,7 @@
  '(magit-diff-refine-hunk 'all)
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(make-backup-files t)
+ '(native-comp-async-report-warnings-errors nil)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
  '(package-archives
    '(("melpa" . "https://melpa.org/packages/")
@@ -57,6 +56,7 @@
    '(reverse-theme vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode corfu))
  '(pixel-scroll-precision-mode t)
  '(recentf-max-saved-items 200)
+ '(repeat-mode t)
  '(ring-bell-function #'ignore)
  '(savehist-save-minibuffer-history t)
  '(selectrum-mode nil)
@@ -68,7 +68,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 112 :width normal :foundry "UKWN" :family "Iosevka")))))
 
 (put 'narrow-to-region 'disabled nil)
 
@@ -95,6 +95,7 @@
 (keymap-global-set "C-M-r" 'raise-sexp)
 (keymap-global-set "M-/" 'hippie-expand)
 (keymap-global-set "C-." 'embark-act)
+(keymap-global-set "C-c r" 'rg)
 
 
 (provide 'init)
