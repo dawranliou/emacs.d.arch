@@ -17,6 +17,7 @@
  '(before-save-hook '(whitespace-cleanup))
  '(cider-repl-display-help-banner nil)
  '(cider-repl-pop-to-buffer-on-connect 'display-only)
+ '(column-number-mode t)
  '(completion-styles '(orderless))
  '(corfu-global-mode t)
  '(default-frame-alist '((font . "Iosevka-11") (width . 80) (height . 35)))
@@ -46,6 +47,7 @@
  '(magit-diff-refine-hunk 'all)
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(make-backup-files t)
+ '(mode-line-compact 'long)
  '(native-comp-async-report-warnings-errors nil)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
  '(package-archives
@@ -58,6 +60,7 @@
  '(recentf-max-saved-items 200)
  '(repeat-mode t)
  '(ring-bell-function #'ignore)
+ '(savehist-mode t)
  '(savehist-save-minibuffer-history t)
  '(selectrum-mode nil)
  '(tool-bar-mode t)
