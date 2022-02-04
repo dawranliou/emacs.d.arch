@@ -60,6 +60,7 @@
  '(recentf-max-saved-items 200)
  '(repeat-mode t)
  '(ring-bell-function #'ignore)
+ '(save-place-mode t)
  '(savehist-mode t)
  '(savehist-save-minibuffer-history t)
  '(selectrum-mode nil)

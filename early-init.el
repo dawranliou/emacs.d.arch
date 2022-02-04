@@ -1,6 +1,9 @@
 (setq gc-cons-threshold most-positive-fixnum
       gc-cons-percentage 0.7
-      frame-inhibit-implied-resize nil)
+      frame-inhibit-implied-resize nil
+      default-frame-alist '((font . "Iosevka-11")
+                            (width . 80)
+                            (height . 35)))
 
 (add-hook 'emacs-startup-hook
           (lambda ()
