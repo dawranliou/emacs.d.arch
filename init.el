@@ -57,7 +57,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(reverse-theme vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode corfu))
+   '(cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode corfu))
  '(pixel-scroll-precision-mode t)
  '(recentf-max-saved-items 200)
  '(repeat-mode t)
