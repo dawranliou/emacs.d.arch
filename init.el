@@ -20,6 +20,7 @@
  '(column-number-mode t)
  '(completion-styles '(orderless))
  '(corfu-global-mode t)
+ '(custom-enabled-themes '(modus-vivendi))
  '(default-frame-alist '((font . "Iosevka-11") (width . 80) (height . 35)))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
@@ -47,6 +48,7 @@
  '(magit-diff-refine-hunk 'all)
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(make-backup-files t)
+ '(menu-bar-mode nil)
  '(mode-line-compact 'long)
  '(native-comp-async-report-warnings-errors nil)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
@@ -64,7 +66,7 @@
  '(savehist-mode t)
  '(savehist-save-minibuffer-history t)
  '(selectrum-mode nil)
- '(tool-bar-mode t)
+ '(tool-bar-mode nil)
  '(vertico-mode t))
 
 (custom-set-faces
@@ -72,7 +74,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 112 :width normal :foundry "UKWN" :family "Iosevka")))))
+ )
 
 (put 'narrow-to-region 'disabled nil)
 
