@@ -29,7 +29,6 @@
  '(dired-recursive-copies 'always)
  '(dired-recursive-deletes 'always)
  '(dired-use-ls-dired t)
- '(electric-pair-mode t)
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
  '(frame-inhibit-implied-resize nil)
@@ -59,6 +58,7 @@
  '(package-selected-packages
    '(cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode corfu))
  '(pixel-scroll-precision-mode t)
+ '(prog-mode-hook '(electric-pair-mode))
  '(recentf-max-saved-items 200)
  '(repeat-mode t)
  '(ring-bell-function #'ignore)
