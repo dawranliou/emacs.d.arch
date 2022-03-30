@@ -20,7 +20,7 @@
  '(column-number-mode t)
  '(completion-styles '(orderless))
  '(corfu-global-mode t)
- '(custom-enabled-themes '(modus-vivendi))
+ '(custom-enabled-themes '(modus-operandi))
  '(default-frame-alist '((font . "Iosevka-11") (width . 80) (height . 35)))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
@@ -29,6 +29,7 @@
  '(dired-recursive-copies 'always)
  '(dired-recursive-deletes 'always)
  '(dired-use-ls-dired t)
+ '(eglot-connect-timeout 300)
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
  '(frame-inhibit-implied-resize nil)
@@ -56,7 +57,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode corfu))
+   '(emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode corfu))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(electric-pair-mode))
  '(recentf-max-saved-items 200)
@@ -77,6 +78,7 @@
  )
 
 (put 'narrow-to-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
 
 (defun move-beginning-of-line+ (arg)
   "Move point to beginning of current line or the first non whitespace char."
@@ -91,6 +93,8 @@
       (back-to-indentation)
     (move-beginning-of-line 1)))
 
+(add-hook 'clojure-mode-hook 'eglot-ensure)
+
 (global-set-key [remap move-beginning-of-line] 'move-beginning-of-line+)
 (keymap-global-set "M-l" 'downcase-dwim)
 (keymap-global-set "M-c" 'capitalize-dwim)
@@ -103,6 +107,8 @@
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-c r" 'rg)
 
+(with-eval-after-load 'project
+  (require 'magit-extras))
 
 (provide 'init)
 
