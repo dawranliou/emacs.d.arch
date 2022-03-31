@@ -68,7 +68,8 @@
  '(savehist-save-minibuffer-history t)
  '(selectrum-mode nil)
  '(tool-bar-mode nil)
- '(vertico-mode t))
+ '(vertico-mode t)
+ '(which-key-mode t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
