@@ -94,6 +94,14 @@
       (back-to-indentation)
     (move-beginning-of-line 1)))
 
+(defun backward-kill-word-or-region (&optional arg)
+  "When region is active, kill the region. Otherwise, kill word
+backwards."
+  (interactive)
+  (if (region-active-p)
+      (kill-region (region-beginning) (region-end))
+    (backward-kill-word (or arg 1))))
+
 (add-hook 'clojure-mode-hook 'eglot-ensure)
 
 (global-set-key [remap move-beginning-of-line] 'move-beginning-of-line+)
@@ -106,6 +114,7 @@
 (keymap-global-set "C-M-r" 'raise-sexp)
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-c r" 'rg)
+(keymap-global-set "C-w" 'backward-kill-word-or-region)
 
 (with-eval-after-load 'project
   (require 'magit-extras))
