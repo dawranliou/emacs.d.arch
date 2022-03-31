@@ -104,7 +104,6 @@
 (keymap-global-set "M-i" 'delete-other-windows)
 (keymap-global-set "C-x k" 'kill-this-buffer)
 (keymap-global-set "C-M-r" 'raise-sexp)
-(keymap-global-set "M-/" 'hippie-expand)
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-c r" 'rg)
 
