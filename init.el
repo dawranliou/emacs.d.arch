@@ -90,7 +90,6 @@
   (if (/= arg 1)
       (let ((line-move-visual nil))
         (line-move (1- arg) t)))
-
   (if (bolp)
       (back-to-indentation)
     (move-beginning-of-line 1)))
@@ -115,7 +114,7 @@ backwards."
 (keymap-global-set "C-M-r" 'raise-sexp)
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-c r" 'rg)
-(keymap-global-set "C-w" 'backward-kill-word-or-region)
+(global-set-key [remap kill-region] 'backward-kill-word-or-region)
 
 (with-eval-after-load 'project
   (require 'magit-extras))
