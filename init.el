@@ -19,6 +19,7 @@
  '(cider-repl-pop-to-buffer-on-connect 'display-only)
  '(column-number-mode t)
  '(completion-styles '(orderless))
+ '(context-menu-mode t)
  '(corfu-global-mode t)
  '(custom-enabled-themes '(modus-operandi))
  '(default-frame-alist '((font . "Iosevka-11") (width . 80) (height . 35)))
