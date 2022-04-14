@@ -22,7 +22,7 @@
  '(context-menu-mode t)
  '(corfu-global-mode t)
  '(custom-enabled-themes '(modus-operandi))
- '(default-frame-alist '((font . "Iosevka-11") (width . 80) (height . 35)))
+ '(default-frame-alist '((font . "Iosevka-11")))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)
