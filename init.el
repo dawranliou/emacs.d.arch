@@ -59,8 +59,6 @@
  '(package-selected-packages
    '(emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode))
  '(pixel-scroll-precision-mode t)
- '(prog-mode-hook '(electric-pair-mode))
- '(recentf-max-saved-items 200)
  '(repeat-mode t)
  '(ring-bell-function #'ignore)
  '(save-place-mode t)
