@@ -20,7 +20,6 @@
  '(column-number-mode t)
  '(completion-styles '(orderless))
  '(context-menu-mode t)
- '(corfu-global-mode t)
  '(custom-enabled-themes '(modus-operandi))
  '(default-frame-alist '((font . "Iosevka-11")))
  '(delete-by-moving-to-trash t)
@@ -58,7 +57,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode corfu))
+   '(emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg smartscan yaml-mode))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(electric-pair-mode))
  '(recentf-max-saved-items 200)
@@ -102,9 +101,33 @@ backwards."
       (kill-region (region-beginning) (region-end))
     (backward-kill-word (or arg 1))))
 
+(defun completing-read-at-point (start end col &optional pred)
+  "`completing-at-point' using `completing-read' (inside minibuffer).
+Inspired by https://github.com/katspaugh/ido-at-point"
+  (if (minibufferp) (completion--in-region start end col pred)
+    (let* ((init (buffer-substring-no-properties start end))
+           (all (completion-all-completions init col pred (length init)))
+           (completion (cond
+                        ((atom all) nil)
+                        ((and (consp all) (atom (cdr all))) (car all))
+                        (t (completing-read "Completions: " col pred t init)))))
+      (if completion
+          (progn
+            (delete-region start end)
+            (insert completion)
+            t)
+        (message "No completions") nil))))
+
+(setq completion-in-region-function #'completing-read-at-point)
+
 (add-hook 'clojure-mode-hook 'eglot-ensure)
 
+(autoload #'embark-next-symbol "embark" nil t)
+(autoload #'embark-previous-symbol "embark" nil t)
+
 (global-set-key [remap move-beginning-of-line] 'move-beginning-of-line+)
+(keymap-global-set "M-n" 'embark-next-symbol)
+(keymap-global-set "M-p" 'embark-previous-symbol)
 (keymap-global-set "M-l" 'downcase-dwim)
 (keymap-global-set "M-c" 'capitalize-dwim)
 (keymap-global-set "M-u" 'upcase-dwim)
