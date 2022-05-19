@@ -137,6 +137,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-c r" 'rg)
 (global-set-key [remap kill-region] 'backward-kill-word-or-region)
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 (with-eval-after-load 'project
   (require 'magit-extras))
