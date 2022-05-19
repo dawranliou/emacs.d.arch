@@ -51,6 +51,7 @@
  '(menu-bar-mode nil)
  '(mode-line-compact 'long)
  '(native-comp-async-report-warnings-errors nil)
+ '(org-special-ctrl-a/e 'reversed)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
  '(package-archives
    '(("melpa" . "https://melpa.org/packages/")
