@@ -50,6 +50,12 @@
  '(make-backup-files t)
  '(menu-bar-mode nil)
  '(mode-line-compact 'long)
+ '(mode-line-format
+   '("" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote
+     (:propertize " %b" face mode-line-buffer-id)
+     " %l:%c (%p)" " ["
+     ("" mode-name)
+     "]" mode-line-misc-info))
  '(native-comp-async-report-warnings-errors nil)
  '(org-special-ctrl-a/e 'reversed)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
