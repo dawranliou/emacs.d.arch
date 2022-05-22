@@ -136,6 +136,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (keymap-global-set "C-M-r" 'raise-sexp)
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-c r" 'rg)
+(keymap-global-set "C-;" 'iedit-mode)
 (global-set-key [remap kill-region] 'backward-kill-word-or-region)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
