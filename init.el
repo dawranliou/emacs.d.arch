@@ -71,6 +71,7 @@
  '(save-place-mode t)
  '(savehist-mode t)
  '(savehist-save-minibuffer-history t)
+ '(search-whitespace-regexp ".*?")
  '(selectrum-mode nil)
  '(tool-bar-mode nil)
  '(vertico-mode t)
