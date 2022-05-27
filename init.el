@@ -33,6 +33,7 @@
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
  '(frame-inhibit-implied-resize nil)
+ '(grep-find-command '("rg -n -H --no-heading --glob='' -e ''" . 37))
  '(history-length 200000)
  '(ido-enable-flex-matching nil)
  '(ido-everywhere nil)
@@ -75,7 +76,8 @@
  '(selectrum-mode nil)
  '(tool-bar-mode nil)
  '(vertico-mode t)
- '(which-key-mode t))
+ '(which-key-mode t)
+ '(xref-search-program 'ripgrep))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -144,6 +146,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-c r" 'rg)
 (keymap-global-set "C-;" 'iedit-mode)
+(keymap-global-set "C-c g" 'grep-find)
 (global-set-key [remap kill-region] 'backward-kill-word-or-region)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
