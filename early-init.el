@@ -2,6 +2,7 @@
       gc-cons-percentage 0.7
       frame-inhibit-implied-resize nil
       default-frame-alist '((font . "Iosevka-12")
+                            (vertical-scroll-bars . nil)
                             (width . 80)
                             (height . 35)))
 
