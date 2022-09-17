@@ -56,7 +56,7 @@
      (:propertize " %b" face mode-line-buffer-id)
      " %l:%c (%p)" " ["
      ("" mode-name)
-     "]" mode-line-misc-info))
+     "]" mode-line-misc-info mode-line-end-spaces))
  '(native-comp-async-report-warnings-errors nil)
  '(org-special-ctrl-a/e 'reversed)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
@@ -65,7 +65,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
+   '(mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
  '(pixel-scroll-precision-mode t)
  '(repeat-mode t)
  '(ring-bell-function #'ignore)
