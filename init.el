@@ -50,7 +50,6 @@
  '(magit-diff-refine-hunk 'all)
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(make-backup-files t)
- '(menu-bar-mode nil)
  '(mode-line-compact 'long)
  '(mode-line-format
    '("" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote
