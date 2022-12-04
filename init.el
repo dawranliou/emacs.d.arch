@@ -26,6 +26,7 @@
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)
  '(dired-dwim-target t)
+ '(dired-listing-switches "-lAXhv --group-directories-first")
  '(dired-recursive-copies 'always)
  '(dired-recursive-deletes 'always)
  '(dired-use-ls-dired t)
