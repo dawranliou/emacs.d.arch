@@ -20,7 +20,6 @@
  '(column-number-mode t)
  '(completion-styles '(orderless))
  '(context-menu-mode t)
- '(custom-enabled-themes '(modus-operandi))
  '(default-frame-alist '((font . "Iosevka-12")))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
