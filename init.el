@@ -78,6 +78,7 @@
  '(tool-bar-mode nil)
  '(vertico-mode t)
  '(which-key-mode t)
+ '(x-underline-at-descent-line t)
  '(xref-search-program 'ripgrep))
 
 (custom-set-faces
