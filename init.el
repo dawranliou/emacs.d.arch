@@ -56,6 +56,8 @@
      " %l:%c (%p)" " ["
      ("" mode-name)
      "]" mode-line-misc-info mode-line-end-spaces))
+ '(mouse-wheel-flip-direction t)
+ '(mouse-wheel-tilt-scroll t)
  '(native-comp-async-report-warnings-errors nil)
  '(org-special-ctrl-a/e 'reversed)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
