@@ -74,6 +74,7 @@
  '(save-place-mode t)
  '(savehist-mode t)
  '(savehist-save-minibuffer-history t)
+ '(scroll-preserve-screen-position t)
  '(search-whitespace-regexp ".*?")
  '(selectrum-mode nil)
  '(tool-bar-mode nil)
