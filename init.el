@@ -43,6 +43,7 @@
  '(inhibit-startup-screen t)
  '(isearch-allow-motion t)
  '(isearch-allow-scroll 'unlimited)
+ '(isearch-lazy-count t)
  '(isearch-wrap-pause 'no)
  '(kept-new-versions 6)
  '(kept-old-versions 2)
