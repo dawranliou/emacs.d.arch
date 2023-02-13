@@ -51,12 +51,6 @@
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(make-backup-files t)
  '(mode-line-compact 'long)
- '(mode-line-format
-   '("" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote
-     (:propertize " %b" face mode-line-buffer-id)
-     " %l:%c (%p)" " ["
-     ("" mode-name)
-     "]" mode-line-misc-info mode-line-end-spaces))
  '(mouse-wheel-flip-direction t)
  '(mouse-wheel-tilt-scroll t)
  '(native-comp-async-report-warnings-errors nil)
