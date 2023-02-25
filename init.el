@@ -75,6 +75,7 @@
  '(search-whitespace-regexp ".*?")
  '(selectrum-mode nil)
  '(tool-bar-mode nil)
+ '(version-control t)
  '(vertico-mode t)
  '(which-key-mode t)
  '(x-underline-at-descent-line t)
