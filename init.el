@@ -64,7 +64,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(olivetti zig-mode fennel-mode lua-mode mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
+   '(dumb-jump olivetti zig-mode fennel-mode lua-mode mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
  '(pixel-scroll-precision-mode t)
  '(repeat-mode t)
  '(ring-bell-function #'ignore)
@@ -79,7 +79,8 @@
  '(vertico-mode t)
  '(which-key-mode t)
  '(x-underline-at-descent-line t)
- '(xref-search-program 'ripgrep))
+ '(xref-search-program 'ripgrep)
+ '(xref-show-definitions-function 'xref-show-definitions-completing-read))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -159,6 +160,13 @@ Inspired by https://github.com/katspaugh/ido-at-point"
   (require 'magit-extras))
 
 (keychain-refresh-environment)
+
+(with-eval-after-load 'xref
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
+(with-eval-after-load 'fennel-mode
+  (keymap-unset fennel-mode-map "M-.")
+  (keymap-unset fennel-mode-map "M-,"))
 
 (provide 'init)
 
