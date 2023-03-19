@@ -161,6 +161,21 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 
 (keychain-refresh-environment)
 
+;; https://gist.github.com/jdtsmith/bfa2d692c4fbbffe06b558e4bcf9abec
+(with-eval-after-load 'rect
+  (cl-loop for (key def) in
+           '(("k" kill-rectangle)       ("t" string-rectangle)
+             ("o" open-rectangle)       ("w" copy-rectangle-as-kill)
+             ("y" yank-rectangle)       ("c" clear-rectangle)
+             ("d" delete-rectangle)     ("N" rectangle-number-lines)
+             (" " delete-whitespace-rectangle)
+             ("=" calc-grab-sum-across) ("+" calc-grab-sum-down)
+             ("#" calc-grab-rectangle)  ("n" set-mark-command)
+             ("q" (lambda () (interactive) (deactivate-mark)))
+             ("?" (lambda () (interactive)
+                    (embark-bindings-in-keymap rectangle-mark-mode-map))))
+           do (define-key rectangle-mark-mode-map key def)))
+
 (with-eval-after-load 'xref
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
