@@ -75,6 +75,7 @@
  '(search-whitespace-regexp ".*?")
  '(selectrum-mode nil)
  '(tool-bar-mode nil)
+ '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(version-control t)
  '(vertico-mode t)
  '(which-key-mode t)
