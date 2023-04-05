@@ -64,7 +64,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(dumb-jump olivetti zig-mode fennel-mode lua-mode mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
+   '(racket-mode dumb-jump olivetti zig-mode fennel-mode lua-mode mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(toggle-truncate-lines))
  '(repeat-mode t)
