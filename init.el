@@ -173,6 +173,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (keymap-global-set "C-;" 'iedit-mode)
 (keymap-global-set "C-c g" 'grep-find)
 (keymap-global-unset "C-z")
+(keymap-global-set "C-h L" #'find-library)
 (with-eval-after-load 'isearch
   (keymap-set isearch-mode-map "C-o" 'isearch-occur))
 (global-set-key [remap kill-region] 'backward-kill-word-or-region)
