@@ -152,6 +152,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (setq completion-in-region-function #'completing-read-at-point)
 
 (add-hook 'clojure-mode-hook 'eglot-ensure)
+(add-hook 'clojure-ts-mode-hook 'eglot-ensure)
 (add-hook 'zig-mode-hook 'eglot-ensure)
 
 (autoload #'embark-next-symbol "embark" nil t)
@@ -241,6 +242,47 @@ Inspired by https://github.com/katspaugh/ido-at-point"
   (dolist (grammar treesit-language-source-alist)
     (message "Downloading %s treesitter grammar from %s" (car grammar) (cadr grammar))
     (treesit-install-language-grammar (car grammar))))
+
+(with-eval-after-load 'clojure-ts-mode
+  (require 'clojure-mode)
+  (setq clojure-ts-mode-syntax-table clojure-mode-syntax-table)
+  (add-hook 'clojure-ts-mode-hook #'clojure-mode-variables)
+
+  ;; Copied from cider.el
+  (keymap-set clojure-ts-mode-map "C-c M-x" #'cider)
+  (keymap-set clojure-ts-mode-map "C-c M-j" #'cider-jack-in-clj)
+  (keymap-set clojure-ts-mode-map "C-c M-J" #'cider-jack-in-cljs)
+  (keymap-set clojure-ts-mode-map "C-c M-c" #'cider-connect-clj)
+  (keymap-set clojure-ts-mode-map "C-c M-C" #'cider-connect-cljs)
+  (keymap-set clojure-ts-mode-map "C-c C-x" 'cider-start-map)
+  (keymap-set clojure-ts-mode-map "C-c C-s" 'sesman-map)
+  (require 'sesman)
+  (sesman-install-menu clojure-ts-mode-map)
+  (add-hook 'clojure-ts-mode-hook (lambda () (setq-local sesman-system 'CIDER)))
+
+  ;; Support for C-c C-z repl switching
+  (defun cider-repl-type-for-buffer-in-clojure-ts-mode (&optional buffer)
+    "Determine repl type for clojure-ts-mode buffers."
+    (with-current-buffer (or buffer (current-buffer))
+      (when (and buffer-file-name (derived-mode-p 'clojure-ts-mode))
+        (pcase (file-name-extension buffer-file-name)
+          ("cljs" 'cljs)
+          ("cljc" 'multi)
+          ("clj" 'clj)))))
+
+  (advice-add #'cider-repl-type-for-buffer
+              ;; Fallback to the advice when cider fails to find it
+              :after-until
+              #'cider-repl-type-for-buffer-in-clojure-ts-mode)
+  (add-hook 'clojure-ts-mode-hook #'clojure-mode-variables)
+
+  ;; Share same lsp instance for all clojure major modes
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs '((clojure-mode
+                                           clojurescript-mode
+                                           clojurec-mode
+                                           clojure-ts-mode)
+                                          . ("clojure-lsp")))))
 
 (provide 'init)
 
