@@ -134,6 +134,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (setq completion-in-region-function #'completing-read-at-point)
 
 (add-hook 'clojure-mode-hook 'eglot-ensure)
+(add-hook 'zig-mode-hook 'eglot-ensure)
 
 (autoload #'embark-next-symbol "embark" nil t)
 (autoload #'embark-previous-symbol "embark" nil t)
