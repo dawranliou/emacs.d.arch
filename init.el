@@ -22,7 +22,7 @@
  '(context-menu-mode t)
  '(custom-enabled-themes '(alabaster))
  '(custom-safe-themes
-   '("c44a8590444ae732e9bce7e072799c0bf62c8d37f5bab5cf05083daa2ba6d243" default))
+   '("3846f91527bdc9505142b195726d59aeeabb9ecb236267d3cbf94a5235b34bd3"))
  '(default-frame-alist '((font . "Iosevka-12")))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
