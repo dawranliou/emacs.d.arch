@@ -86,7 +86,7 @@
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(toggle-truncate-lines))
  '(repeat-mode t)
- '(ring-bell-function #'ignore)
+ '(ring-bell-function 'flash-mode-line)
  '(save-place-mode t)
  '(savehist-mode t)
  '(savehist-save-minibuffer-history t)
@@ -111,6 +111,12 @@
 
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
+
+(defun flash-mode-line ()
+  "Flash the modeline on error or warning.
+https://macowners.club/posts/custom-functions-4-ui/"
+  (invert-face 'mode-line)
+  (run-with-timer 0.1 nil #'invert-face 'mode-line))
 
 (defun move-beginning-of-line+ (arg)
   "Move point to beginning of current line or the first non whitespace char."
