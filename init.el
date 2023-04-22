@@ -271,7 +271,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
               ;; Fix C-M-t transpose-sexps b/c today treesit-transpose-sexps
               ;; doesn't do the job.
               (setq-local transpose-sexps-function
-                          transpose-sexps-default-function)))
+                          #'transpose-sexps-default-function)))
 
   ;; Support for C-c C-z repl switching
   (defun cider-repl-type-for-buffer-in-clojure-ts-mode (&optional buffer)
