@@ -4,6 +4,7 @@
 ;;
 
 ;;; Code:
+(package-activate-all)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
