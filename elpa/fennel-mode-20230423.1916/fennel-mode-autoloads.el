@@ -12,7 +12,7 @@
 ;;; Generated autoloads from antifennel.el
 
 (autoload 'antifennel-mode "antifennel" "\
-Quickly turn Lua code into Fennel
+Quickly turn Lua code into Fennel.
 
 This is a minor mode.  If called interactively, toggle the
 `Antifennel mode' mode.  If the prefix argument is positive,
@@ -89,6 +89,57 @@ Major mode for Fennel REPL.
 ;;; Generated autoloads from fennel-proto-repl.el
 
 (defvaralias 'fennel-eldoc-fontify-markdown 'fennel-proto-repl-eldoc-fontify-markdown)
+(autoload 'fennel-proto-repl-send-message "fennel-proto-repl" "\
+Send OP and DATA as a message to the REPL process.
+Attaches CALLBACK to the message ID.  OP must be a keyword or
+nil.  If the OP is nil sends the DATA as is without formatting it
+as a message.
+
+Passes a list of values to the CALLBACK, representing values from
+the executed code.  Each value is a serialized string.
+
+If the optional argument ERROR-CALLBACK is passed, REPL will use
+it to handle errors.  The ERROR-CALLBACK must accept three
+arguments: the error type, error message, and stack trace.
+
+If the optional argument PRINT-CALLBACK is passed, REPL will use
+it to handle print operations.  The PRINT-CALLBACK must accept at
+least one argument, which is a text to be printed.
+
+(fn OP DATA CALLBACK &optional ERROR-CALLBACK PRINT-CALLBACK)")
+(autoload 'fennel-proto-repl-send-message-sync "fennel-proto-repl" "\
+Send the message to the REPL process synchronously.
+OP must be a keyword or nil.  OP and DATA are formatted as a
+message unless OP is nil.
+
+Return a list of strings, representing values from the executed
+code.  If an error occurs during execution returns nil.  Accepts
+optional ERROR-CALLBACK and PRINT-CALLBACK.  See
+`fennel-proto-repl-send-message' for information on additional
+callbacks.
+
+(fn OP DATA &optional ERROR-CALLBACK PRINT-CALLBACK)")
+(autoload 'fennel-proto-repl-minor-mode "fennel-proto-repl" "\
+Fennel Proto REPL interaction mode.
+
+\\{fennel-proto-repl-minor-mode-map}
+
+This is a minor mode.  If called interactively, toggle the
+`Fennel-Proto-Repl minor mode' mode.  If the prefix argument is
+positive, enable the mode, and if it is zero or negative, disable
+the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `fennel-proto-repl-minor-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
 (autoload 'fennel-proto-repl "fennel-proto-repl" "\
 Start a new Fennel Proto REPL.
 
@@ -117,27 +168,6 @@ Major mode for Fennel Proto REPL.
 \\{fennel-proto-repl-mode-map}
 
 (fn)" t)
-(autoload 'fennel-proto-repl-minor-mode "fennel-proto-repl" "\
-Fennel Proto REPL interaction mode.
-
-\\{fennel-proto-repl-minor-mode-map}
-
-This is a minor mode.  If called interactively, toggle the
-`Fennel-Proto-Repl minor mode' mode.  If the prefix argument is
-positive, enable the mode, and if it is zero or negative, disable
-the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `fennel-proto-repl-minor-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
 (register-definition-prefixes "fennel-proto-repl" '("fennel-proto-repl-"))
 
 
@@ -145,9 +175,16 @@ it is disabled.
 
 (autoload 'fennel-scratch "fennel-scratch" "\
 Create or open an existing scratch buffer for Fennel evaluation.
+With prefix argument ASK-FOR-COMMAND? asks for the command to
+start the REPL process.
 
 (fn &optional ASK-FOR-COMMAND?)" t)
 (register-definition-prefixes "fennel-scratch" '("fennel-scratch-"))
+
+
+;;; Generated autoloads from ob-fennel.el
+
+(register-definition-prefixes "ob-fennel" '("ob-fennel-" "org-babel-"))
 
 ;;; End of scraped data
 

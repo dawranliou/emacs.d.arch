@@ -1947,7 +1947,7 @@ These sections can be expanded to show the respective commits.")
 Insert sections for modules that haven't been pushed to the push-remote.
 These sections can be expanded to show the respective commits.")
 (autoload 'magit-list-submodules "magit-submodule" "\
-Display a list of the current repository's submodules." t)
+Display a list of the current repository's populated submodules." t)
 (register-definition-prefixes "magit-submodule" '("magit-"))
 
 
