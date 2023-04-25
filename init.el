@@ -19,7 +19,8 @@
  '(cider-repl-display-help-banner nil)
  '(cider-repl-pop-to-buffer-on-connect 'display-only)
  '(column-number-mode t)
- '(completion-styles '(orderless))
+ '(completion-category-overrides '((file (styles partial-completion))))
+ '(completion-styles '(orderless basic))
  '(context-menu-mode t)
  '(custom-enabled-themes '(alabaster))
  '(custom-safe-themes
@@ -155,6 +156,15 @@ Inspired by https://github.com/katspaugh/ido-at-point"
             (insert completion)
             t)
         (message "No completions") nil))))
+
+(defun crm-indicator (args)
+  (cons (format "[CRM%s] %s"
+                (replace-regexp-in-string
+                 "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
+                 crm-separator)
+                (car args))
+        (cdr args)))
+(advice-add #'completing-read-multiple :filter-args #'crm-indicator)
 
 (setq completion-in-region-function #'completing-read-at-point)
 
