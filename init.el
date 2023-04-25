@@ -38,6 +38,7 @@
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
  '(frame-inhibit-implied-resize nil)
+ '(global-jinx-mode t)
  '(grep-find-command '("rg -n -H --no-heading --glob='' -e ''" . 37))
  '(history-length 200000)
  '(ido-enable-flex-matching nil)
@@ -82,7 +83,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(clojure-ts-mode racket-mode dumb-jump olivetti zig-mode fennel-mode lua-mode mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
+   '(jinx clojure-ts-mode racket-mode dumb-jump olivetti zig-mode fennel-mode lua-mode mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
  '(package-vc-selected-packages
    '((clojure-ts-mode :vc-backend Git :url "https://github.com/clojure-emacs/clojure-ts-mode")))
  '(pixel-scroll-precision-mode t)
@@ -183,6 +184,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (keymap-global-set "M-u" 'upcase-dwim)
 (keymap-global-set "M-o" 'other-window)
 (keymap-global-set "M-i" 'delete-other-windows)
+(keymap-global-set "<remap> <ispell-word>" #'jinx-correct) ; M-$
 (keymap-global-set "C-x k" 'kill-this-buffer)
 (keymap-global-set "C-M-r" 'raise-sexp)
 (keymap-global-set "C-." 'embark-act)
