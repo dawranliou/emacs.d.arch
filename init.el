@@ -184,6 +184,8 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (keymap-global-set "M-u" 'upcase-dwim)
 (keymap-global-set "M-o" 'other-window)
 (keymap-global-set "M-i" 'delete-other-windows)
+(keymap-global-set "M-z" 'zap-up-to-char)
+(keymap-global-set "M-Z" 'zap-to-char)
 (keymap-global-set "<remap> <ispell-word>" #'jinx-correct) ; M-$
 (keymap-global-set "C-x k" 'kill-this-buffer)
 (keymap-global-set "C-M-r" 'raise-sexp)
