@@ -38,7 +38,6 @@
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
  '(frame-inhibit-implied-resize nil)
- '(global-jinx-mode t)
  '(grep-find-command '("rg -n -H --no-heading --glob='' -e ''" . 37))
  '(history-length 200000)
  '(ido-enable-flex-matching nil)
