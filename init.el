@@ -95,6 +95,7 @@
  '(scroll-preserve-screen-position t)
  '(search-whitespace-regexp ".*?")
  '(selectrum-mode nil)
+ '(show-paren-context-when-offscreen 'overlay)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(version-control t)
