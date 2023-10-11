@@ -11,10 +11,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save/" t)))
  '(backup-by-copying t)
- '(backup-directory-alist
-   `(("." \,
-      (expand-file-name "backup/" user-emacs-directory))))
+ '(backup-directory-alist '(("." . "~/.emacs.d/backup/")))
  '(before-save-hook '(whitespace-cleanup))
  '(cider-repl-display-help-banner nil)
  '(cider-repl-pop-to-buffer-on-connect 'display-only)
