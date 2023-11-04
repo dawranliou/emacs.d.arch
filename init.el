@@ -53,22 +53,6 @@
  '(kept-old-versions 2)
  '(magit-diff-refine-hunk 'all)
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
- '(major-mode-remap-alist
-   '((sh-mode . bash-ts-mode)
-     (clojurec-mode . clojure-ts-mode)
-     (clojurescript-mode . clojure-ts-mode)
-     (clojure-mode . clojure-ts-mode)
-     (css-mode . css-ts-mode)
-     (go-mode . go-ts-mode)
-     (go-dot-mod-mode . go-mod-ts-mode)
-     (mhtml-mode . html-ts-mode)
-     (sgml-mode . html-ts-mode)
-     (java-mode . java-ts-mode)
-     (js-mode . js-ts-mode)
-     (javascript-mode . js-ts-mode)
-     (js-json-mode . json-ts-mode)
-     (python-mode . python-ts-mode)
-     (yaml-mode . yaml-ts-mode)))
  '(make-backup-files t)
  '(mode-line-compact 'long)
  '(mouse-wheel-flip-direction t)
@@ -169,7 +153,6 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (setq completion-in-region-function #'completing-read-at-point)
 
 (add-hook 'clojure-mode-hook 'eglot-ensure)
-(add-hook 'clojure-ts-mode-hook 'eglot-ensure)
 (add-hook 'zig-mode-hook 'eglot-ensure)
 
 (autoload #'embark-next-symbol "embark" nil t)
@@ -225,89 +208,18 @@ Inspired by https://github.com/katspaugh/ido-at-point"
   (keymap-unset fennel-mode-map "M-.")
   (keymap-unset fennel-mode-map "M-,"))
 
-;; https://robbmann.io/posts/emacs-treesit-auto/
-(setq treesit-language-source-alist
-      '((bash "https://github.com/tree-sitter/tree-sitter-bash")
-        (c "https://github.com/tree-sitter/tree-sitter-c")
-        (clojure "https://github.com/sogaiu/tree-sitter-clojure.git")
-        (cmake "https://github.com/uyha/tree-sitter-cmake")
-        (commonlisp "https://github.com/thehamsta/tree-sitter-commonlisp")
-        (cpp "https://github.com/tree-sitter/tree-sitter-cpp")
-        (css "https://github.com/tree-sitter/tree-sitter-css")
-        (c-sharp "https://github.com/tree-sitter/tree-sitter-c-sharp")
-        (dockerfile "https://github.com/camdencheek/tree-sitter-dockerfile")
-        (elisp "https://github.com/Wilfred/tree-sitter-elisp")
-        (go "https://github.com/tree-sitter/tree-sitter-go")
-        (gomod "https://github.com/camdencheek/tree-sitter-go-mod")
-        (html "https://github.com/tree-sitter/tree-sitter-html")
-        (java "https://github.com/tree-sitter/tree-sitter-java")
-        (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
-        (json "https://github.com/tree-sitter/tree-sitter-json")
-        (latex "https://github.com/latex-lsp/tree-sitter-latex")
-        (lua "https://github.com/Azganoth/tree-sitter-lua")
-        (make "https://github.com/alemuller/tree-sitter-make")
-        (markdown "https://github.com/ikatyang/tree-sitter-markdown")
-        (python "https://github.com/tree-sitter/tree-sitter-python")
-        (r "https://github.com/r-lib/tree-sitter-r")
-        (rust "https://github.com/tree-sitter/tree-sitter-rust")
-        (toml "https://github.com/tree-sitter/tree-sitter-toml")
-        (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src"))
-        (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src"))
-        (yaml "https://github.com/ikatyang/tree-sitter-yaml")
-        (zig "https://github.com/GrayJack/tree-sitter-zig")))
+(with-eval-after-load 'eglot
+  )
 
-(defun install-latest-known-treesitter-grammars ()
-  "Install/upgrade all latest Tree-sitter grammars."
-  (interactive)
-  (dolist (grammar treesit-language-source-alist)
-    (message "Downloading %s treesitter grammar from %s" (car grammar) (cadr grammar))
-    (treesit-install-language-grammar (car grammar))))
+(with-eval-after-load 'cider
+  (cider-register-cljs-repl-type 'sci-js)
 
-(with-eval-after-load 'clojure-ts-mode
-  (require 'clojure-mode)
-  (setq clojure-ts-mode-syntax-table clojure-mode-syntax-table)
-  (add-hook 'clojure-ts-mode-hook #'clojure-mode-variables)
+  (defun cider-setup-sci-js-cljs-repl ()
+    (when (eq 'sci-js cider-cljs-repl-type)
+      (setq-local cider-show-error-buffer nil)
+      (cider-set-repl-type 'cljs)))
 
-  ;; Copied from cider.el
-  (keymap-set clojure-ts-mode-map "C-c M-x" #'cider)
-  (keymap-set clojure-ts-mode-map "C-c M-j" #'cider-jack-in-clj)
-  (keymap-set clojure-ts-mode-map "C-c M-J" #'cider-jack-in-cljs)
-  (keymap-set clojure-ts-mode-map "C-c M-c" #'cider-connect-clj)
-  (keymap-set clojure-ts-mode-map "C-c M-C" #'cider-connect-cljs)
-  (keymap-set clojure-ts-mode-map "C-c C-x" 'cider-start-map)
-  (keymap-set clojure-ts-mode-map "C-c C-s" 'sesman-map)
-  (require 'sesman)
-  (sesman-install-menu clojure-ts-mode-map)
-  (add-hook 'clojure-ts-mode-hook
-            (lambda ()
-              (setq-local sesman-system 'CIDER)))
-  (add-hook 'clojure-ts-mode-hook #'remove-treesit-sexp-changes)
-  (add-hook 'clojure-ts-mode-hook #'clojure-mode-variables)
-  (add-hook 'clojure-ts-mode-hook #'cider-mode)
-
-  ;; Support for C-c C-z repl switching
-  (defun cider-repl-type-for-buffer-in-clojure-ts-mode (&optional buffer)
-    "Determine repl type for clojure-ts-mode buffers."
-    (with-current-buffer (or buffer (current-buffer))
-      (when (and buffer-file-name (derived-mode-p 'clojure-ts-mode))
-        (pcase (file-name-extension buffer-file-name)
-          ("cljs" 'cljs)
-          ("cljc" 'multi)
-          ("clj" 'clj)))))
-
-  (advice-add #'cider-repl-type-for-buffer
-              ;; Fallback to the advice when cider fails to find it
-              :after-until
-              #'cider-repl-type-for-buffer-in-clojure-ts-mode)
-  (add-hook 'clojure-ts-mode-hook #'clojure-mode-variables)
-
-  ;; Share same lsp instance for all clojure major modes
-  (with-eval-after-load 'eglot
-    (add-to-list 'eglot-server-programs '((clojure-mode
-                                           clojurescript-mode
-                                           clojurec-mode
-                                           clojure-ts-mode)
-                                          . ("clojure-lsp")))))
+  (add-hook 'cider-connected-hook #'cider-setup-sci-js-cljs-repl))
 
 (provide 'init)
 

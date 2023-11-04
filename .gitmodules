@@ -1,3 +1,0 @@
-[submodule "elpa/clojure-ts-mode"]
-	path = elpa/clojure-ts-mode
-	url = https://github.com/clojure-emacs/clojure-ts-mode
