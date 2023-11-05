@@ -5,8 +5,7 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory #$) (car load-path))))
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
 
 
 
@@ -17,7 +16,7 @@ Set ssh-agent and gpg-agent environment variables.
 
 Set the environment variables `SSH_AUTH_SOCK', `SSH_AGENT_PID'
 and `GPG_AGENT' in Emacs' `process-environment' according to
-information retrieved from files created by the keychain script." t nil)
+information retrieved from files created by the keychain script." t)
 
 ;;; End of scraped data
 
@@ -27,6 +26,7 @@ information retrieved from files created by the keychain script." t nil)
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
+;; no-native-compile: t
 ;; coding: utf-8-emacs-unix
 ;; End:
 

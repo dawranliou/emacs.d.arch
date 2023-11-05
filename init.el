@@ -65,9 +65,9 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(janet-mode jinx clojure-ts-mode racket-mode dumb-jump olivetti zig-mode fennel-mode lua-mode mlscroll keychain-environment emmet-mode which-key eglot cider clojure-mode vertico sly embark iedit magit markdown-mode orderless rainbow-mode rg yaml-mode))
- '(package-vc-selected-packages
-   '((clojure-ts-mode :vc-backend Git :url "https://github.com/clojure-emacs/clojure-ts-mode")))
+   '(auctex cider clojure-mode dumb-jump eglot elixir-mode exec-path-from-shell
+            fennel-mode iedit janet-mode jarchive lua-mode magit mlscroll
+            orderless rg sly vertico which-key yaml-mode zig-mode))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(toggle-truncate-lines))
  '(repeat-mode t)

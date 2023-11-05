@@ -150,7 +150,7 @@ A major mode for the Zig programming language.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/yaml-mode-20230714.440/yaml-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/yaml-mode-20230714.440/yaml-mode-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/yaml-mode-20231003.1142/yaml-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/yaml-mode-20231003.1142/yaml-mode-autoloads.el"))
 
 
 
@@ -175,7 +175,7 @@ Simple mode to edit YAML.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/compat-29.1.4.2/compat-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/compat-29.1.4.2/compat-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/compat-29.1.4.3/compat-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/compat-29.1.4.3/compat-autoloads.el"))
 
 
 
@@ -195,7 +195,7 @@ Simple mode to edit YAML.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20230829.1917/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20230829.1917/with-editor-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20230917.958/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20230917.958/with-editor-autoloads.el"))
 
 
 
@@ -474,7 +474,7 @@ KEYMAP is selected interactively by mode in
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/vertico-20230904.1833/vertico-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/vertico-20230904.1833/vertico-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/vertico-20230930.1918/vertico-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/vertico-20230930.1918/vertico-autoloads.el"))
 
 
 
@@ -770,6 +770,16 @@ it is disabled.
 
 
 
+(autoload 'vertico-suspend "vertico-suspend" "\
+Suspend the current completion session.
+If the command is invoked from within the Vertico minibuffer, the
+current session is suspended.  If the command is invoked from
+outside the minibuffer, the active minibuffer is either selected
+or the latest completion session is restored." t)
+(register-definition-prefixes "vertico-suspend" '("vertico-suspend--"))
+
+
+
 (defvar vertico-unobtrusive-mode nil "\
 Non-nil if Vertico-Unobtrusive mode is enabled.
 See the `vertico-unobtrusive-mode' command
@@ -804,7 +814,7 @@ it is disabled.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20230907.1440/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20230907.1440/transient-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20231103.2312/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20231103.2312/transient-autoloads.el"))
 
 
 
@@ -934,7 +944,7 @@ this time, in which case it won't display at all.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/sly-20230624.1930/sly-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/sly-20230624.1930/sly-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/sly-20231009.2150/sly-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/sly-20231009.2150/sly-autoloads.el"))
 
 
 
@@ -1163,621 +1173,6 @@ See `sesman-browser-mode' for more details." t nil)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/rainbow-mode-1.0.6/rainbow-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/rainbow-mode-1.0.6/rainbow-mode-autoloads.el"))
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/dawran/.emacs.d/elpa/rainbow-mode-1.0.6/rainbow-mode-autoloads.el") (car load-path))))
-
-
-
-(autoload 'rainbow-mode "rainbow-mode" "\
-Colorize strings that represent colors.
-
-This will fontify with colors the string like \"#aabbcc\" or \"blue\".
-
-This is a minor mode.  If called interactively, toggle the
-`Rainbow mode' mode.  If the prefix argument is positive, enable
-the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `rainbow-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-\(fn &optional ARG)" t nil)
-
-(register-definition-prefixes "rainbow-mode" '("rainbow-"))
-
-
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/racket-mode-20230905.1421/racket-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/racket-mode-20230905.1421/racket-mode-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(register-definition-prefixes "racket-back-end" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-browse-url" '("racket-browse-"))
-
-
-
-(autoload 'racket-bug-report "racket-bug-report" "\
-Fill a buffer with data to make a Racket Mode bug report." t)
-
-
-
-(defvar racket-start-back-end-hook nil "\
-Hook run after `racket-start-back-end' finishes successfully.")
-(defvar racket-stop-back-end-hook nil "\
-Hook run before `racket-stop-back-end'.")
-(autoload 'racket-start-back-end "racket-cmd" "\
-Start a back end process used by Racket Mode.
-
-If a process is already started, this command will stop and restart it.
-
-When successful runs the hook `racket-start-back-end-hook'." t)
-(autoload 'racket-stop-back-end "racket-cmd" "\
-Stop a back end process used by Racket Mode.
-
-Before doing anything runs the hook `racket-stop-back-end-hook'." t)
-(register-definition-prefixes "racket-cmd" '("racket--"))
-
-
-
-(register-definition-prefixes "racket-collection" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-common" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-company-doc" '("racket--"))
-
-
-
-(register-definition-prefixes "racket-complete" '("racket--"))
-
-
-
-(register-definition-prefixes "racket-custom" '("defface-racket" "racket-"))
-
-
-
-(autoload 'racket--debug-on-break "racket-debug" "\
-
-
-(fn RESPONSE)")
-(register-definition-prefixes "racket-debug" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-describe" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-doc" '("racket--"))
-
-
-
-(add-to-list 'hs-special-modes-alist '(racket-mode "(" ")" ";" nil nil))
-(register-definition-prefixes "racket-edit" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-eldoc" '("racket--do-eldoc"))
-
-
-
-(register-definition-prefixes "racket-font-lock" '("load-theme" "racket-"))
-
-
-
-(register-definition-prefixes "racket-imenu" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-indent" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-keywords-and-builtins" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-logger" '("racket-"))
-
-
-
-(autoload 'racket-mode "racket-mode" "\
-Major mode for editing Racket source files.
-
-\\{racket-mode-map}
-
-(fn)" t)
-(add-to-list 'auto-mode-alist '("\\.rkt\\'" . racket-mode))
-(add-to-list 'auto-mode-alist '("\\.rktd\\'" . racket-mode))
-(add-to-list 'auto-mode-alist '("\\.rktl\\'" . racket-mode))
-(modify-coding-system-alist 'file "\\.rkt[dl]?\\'" 'utf-8)
-(add-to-list 'interpreter-mode-alist '("racket" . racket-mode))
-(autoload 'racket-mode-start-faster "racket-mode" "\
-Compile Racket Mode's .rkt files for faster startup.
-
-Racket Mode is implemented as an Emacs Lisp \"front end\" that
-talks to a Racket process \"back end\". Because Racket Mode is
-delivered as an Emacs package instead of a Racket package,
-installing it does not do the `raco setup` that is normally done
-for Racket packages.
-
-This command will do a `raco make` of Racket Mode's .rkt files,
-creating bytecode files in `compiled/` subdirectories. As a
-result, when a command must start the Racket process, it will
-start somewhat faster.
-
-On many computers, the resulting speed up is negligible, and
-might not be worth the complication.
-
-If you run this command, ever, you will need to run it again
-after:
-
-- Installing an updated version of Racket Mode. Otherwise, you
-  might lose some of the speed-up.
-
-- Installing a new version of Racket and/or changing the value of
-  the variable `racket-program'. Otherwise, you might get an
-  error message due to the bytecode being different versions.
-
-To revert to compiling on startup, use
-`racket-mode-start-slower'. " t)
-(register-definition-prefixes "racket-mode" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-parens" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-ppss" '("racket--ppss-"))
-
-
-
-(register-definition-prefixes "racket-profile" '("racket-"))
-
-
-
-(autoload 'racket-repl "racket-repl" "\
-Show a Racket REPL buffer in some window.
-
-*IMPORTANT*
-
-The main, intended use of Racket Mode's REPL is that you
-`find-file' some specific .rkt file, then run it using
-`racket-run' or `racket-run-module-at-point'. The resulting REPL
-will correspond to those definitions and match your expectations.
-
-If you really want to start a REPL for no file in particular,
-then you could use this `racket-repl' command. But the resulting
-REPL will have a minimal \"#lang racket/base\" namespace. You
-could enter \"(require racket)\" if you want the equivalent of
-\"#lang racket\". You could also \"(require racket/enter)\" if
-you want things like \"enter!\". But in some sense you'd be
-\"using it wrong\". If you actually don't want to use Racket
-Mode's REPL as intended, then consider using a plain Emacs
-`shell' buffer to run command-line Racket.
-
-(fn &optional NOSELECT)" t)
-(autoload 'racket-run "racket-repl" "\
-Save the buffer in REPL and run your program.
-
-As well as evaluating the outermost, file module, automatically
-runs the submodules specified by the customization variable
-`racket-submodules-to-run'.
-
-See also `racket-run-module-at-point', which runs just the
-specific module at point.
-
-The command varies based on how many \\[universal-argument]
-prefix arguments you supply.
-\\<racket-mode-map>
-
-- \\[racket-run-and-switch-to-repl]
-
-  Follows the `racket-error-context' setting.
-
-- \\[universal-argument] \\[racket-run-and-switch-to-repl]
-
-  Uses errortrace for improved stack traces, as if
-  `racket-error-context' were set to \"high\".
-
-  This lets you keep `racket-error-context' set to a faster
-  value like \"low\" or \"medium\", then conveniently re-run
-  when you need a better strack trace.
-
-- \\[universal-argument] \\[universal-argument] \\[racket-run-and-switch-to-repl]
-
-  Instruments code for step debugging. See `racket-debug-mode'
-  and the variable `racket-debuggable-files'.
-
-Each run occurs within a Racket custodian. Any prior run's
-custodian is shut down, releasing resources like threads and
-ports. Each run's evaluation environment is reset to the contents
-of the source file. In other words, like Dr Racket, this provides
-the benefit that your source file is the \"single source of
-truth\". At the same time, the run gives you a REPL inside the
-namespace of the module, giving you the ability to explore it
-interactively. Any explorations are temporary, unless you also
-make them to your source file, they will be lost on the next run.
-
-See also `racket-run-and-switch-to-repl', which is even more like
-Dr Racket's Run command because it selects the REPL window after
-running.
-
-In the `racket-repl-mode' buffer, output that describes a file
-and position is automatically \"linkified\". Examples of such
-text include:
-
-- Racket error messages.
-- rackunit test failure location messages.
-- print representation of path objects.
-
-To visit these locations, move point there and press RET or mouse
-click. Or, use the standard `next-error' and `previous-error'
-commands.
-
-(fn &optional PREFIX)" t)
-(autoload 'racket-run-module-at-point "racket-repl" "\
-Save the buffer and run the module at point.
-
-Like `racket-run' but runs the innermost module around point,
-which is determined textually by looking for \"module\",
-\"module*\", or \"module+\" forms nested to any depth, else
-simply the outermost, file module.
-
-(fn &optional PREFIX)" t)
-(register-definition-prefixes "racket-repl" '("racket-" "with-racket-repl-buffer"))
-
-
-
-(autoload 'racket-call-racket-repl-buffer-name-function "racket-repl-buffer-name")
-(autoload 'racket-repl-buffer-name-shared "racket-repl-buffer-name" "\
-All `racket-mode' edit buffers share one `racket-repl-mode' buffer per back end.
-
-A value for the variable `racket-repl-buffer-name-function'." t)
-(autoload 'racket-repl-buffer-name-unique "racket-repl-buffer-name" "\
-Each `racket-mode' edit buffer gets its own `racket-repl-mode' buffer.
-
-A value for the variable `racket-repl-buffer-name-function'." t)
-(autoload 'racket-repl-buffer-name-project "racket-repl-buffer-name" "\
-All `racket-mode' buffers in a project share a `racket-repl-mode' buffer.
-
-A value for the variable `racket-repl-buffer-name-function'.
-
-The \"project\" is determined by `racket-project-root'." t)
-(register-definition-prefixes "racket-repl-buffer-name" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-scribble" '("racket--"))
-
-
-
-(register-definition-prefixes "racket-shell" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-show" '("racket-"))
-
-
-
-(autoload 'racket-smart-open-bracket-mode "racket-smart-open" "\
-Minor mode to let you always type `[`' to insert `(` or `[` automatically.
-
-Behaves like the \"Automatically adjust opening square brackets\"
-feature in Dr. Racket.
-
-By default, inserts a `(`. Inserts a `[` in the following cases:
-
-  - `let`-like bindings -- forms with `let` in the name as well
-    as things like `parameterize`, `with-handlers`, and
-    `with-syntax`.
-
-  - `case`, `cond`, `match`, `syntax-case`, `syntax-parse`, and
-    `syntax-rules` clauses.
-
-  - `for`-like bindings and `for/fold` accumulators.
-
-  - `class` declaration syntax, such as `init` and `inherit`.
-
-When the previous s-expression in a sequence is a compound
-expression, uses the same kind of delimiter.
-
-To force insert `[`, use `quoted-insert'.
-
-Combined with `racket-insert-closing' this means that you can
-press the unshifted `[` and `]` keys to get whatever delimiters
-follow the Racket conventions for these forms. When something
-like `electric-pair-mode' or `paredit-mode' is active, you need
-not even press `]`.
-
-Tip: When also using `paredit-mode', enable that first so that
-the binding for the `[`' key in the map for
-`racket-smart-open-bracket-mode' has higher priority. See also
-the variable `minor-mode-map-alist'.
-
-This is a minor mode.  If called interactively, toggle the
-`Racket-Smart-Open-Bracket mode' mode.  If the prefix argument is
-positive, enable the mode, and if it is zero or negative, disable
-the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `racket-smart-open-bracket-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "racket-smart-open" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-stepper" '("racket-"))
-
-
-
-(autoload 'racket-unicode-input-method-enable "racket-unicode-input-method" "\
-Set input method to racket-unicode.
-
-The racket-unicode input method lets you easily type various
-Unicode symbols that might be useful when writing Racket code.
-
-To automatically enable the racket-unicode input method in
-racket-mode and racket-repl-mode buffers, put the following code
-in your Emacs init file:
-
-#+BEGIN_SRC elisp
-    (add-hook \\='racket-mode-hook #\\='racket-unicode-input-method-enable)
-    (add-hook \\='racket-repl-mode-hook #\\='racket-unicode-input-method-enable)
-#+END_SRC
-
-To temporarily enable this input method for a single buffer you
-can use \"M-x racket-unicode-input-method-enable\".
-
-Use the standard Emacs key C-\\ to toggle the input method.
-
-When the racket-unicode input method is active, you can for
-example type \"All\" and it is immediately replaced with \"∀\". A
-few other examples:
-
-| omega     | ω                        |
-| x_1       | x₁                       |
-| x^1       | x¹                       |
-| A         | 𝔸                        |
-| test-->>E | test-->>∃ (racket/redex) |
-| vdash     | ⊢                        |
-
-To see a table of all key sequences use \"M-x
-describe-input-method <RET> racket-unicode\".
-
-If you want to add your own mappings to the \"racket-unicode\"
-input method, you may add code like the following example in your
-Emacs init file:
-
-#+BEGIN_SRC elisp
-    ;; Either (require \\='racket-mode) here, or, if you use
-    ;; use-package, put the code below in the :config section.
-    (with-temp-buffer
-      (racket-unicode-input-method-enable)
-      (set-input-method \"racket-unicode\")
-      (let ((quail-current-package (assoc \"racket-unicode\"
-                                          quail-package-alist)))
-        (quail-define-rules ((append . t))
-                            (\"^o\" [\"ᵒ\"]))))
-#+END_SRC
-
-If you don’t like the highlighting of partially matching tokens you
-can turn it off by setting `input-method-highlight-flag' to nil." t)
-
-
-
-(register-definition-prefixes "racket-util" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-visit" '("racket--"))
-
-
-
-(register-definition-prefixes "racket-wsl" '("racket-"))
-
-
-
-(autoload 'racket-xp-mode "racket-xp" "\
-A minor mode that analyzes expanded code to explain and explore.
-
-This minor mode is an optional enhancement to `racket-mode' edit
-buffers. Like any minor mode, you can turn it on or off for a
-specific buffer. If you always want to use it, put the following
-code in your Emacs init file:
-
-#+BEGIN_SRC elisp
-    (require \\='racket-xp)
-    (add-hook \\='racket-mode-hook #\\='racket-xp-mode)
-#+END_SRC
-
-Note: This mode won't do anything unless/until the Racket Mode
-back end is running. It will try to start the back end
-automatically. You do /not/ need to `racket-run' the buffer you
-are editing.
-
-This mode uses the drracket/check-syntax package to analyze
-fully-expanded programs, without needing to evaluate a.k.a.
-\"run\" them. The resulting analysis provides information for:
-
-- Visually annotating bindings -- local or imported definitions
-  and references to them.
-
-- Visually annotating expressions in a tail position, as well as
-  the enclosing expression with respect to which they are in a
-  tail position.
-
-- Completion candidates.
-
-- Defintions' source and documentation.
-
-When point is on a definition or use, related items are
-highlighted using `racket-xp-def-face' and `racket-xp-use-face'
--- instead of drawing arrows as in Dr Racket. Information is
-displayed using the function(s) in the hook variable
-`racket-show-functions'; it is also available when hovering the
-mouse cursor.
-
-Note: If you find these point-motion features too distracting
-and/or slow, in your `racket-xp-mode-hook' you may disable them:
-
-#+BEGIN_SRC elisp
-  (require \\='racket-xp)
-  (add-hook \\='racket-xp-mode-hook
-            (lambda ()
-              (remove-hook \\='pre-redisplay-functions
-                           #\\='racket-xp-pre-redisplay
-                           t)))
-#+END_SRC
-
-The remaining features discussed below will still work.
-
-You may also use commands to navigate among a definition and its
-uses, or to rename a local definitions and all its uses:
-
-  - `racket-xp-next-definition'
-  - `racket-xp-previous-definition'
-  - `racket-xp-next-use'
-  - `racket-xp-previous-use'
-
-In the following little example, not only does
-drracket/check-syntax distinguish the various \"x\" bindings, it
-understands the two different imports of \"define\":
-
-#+BEGIN_SRC racket
-  #lang racket/base
-  (define x 1)
-  x
-  (let ([x x])
-    (+ x 1))
-  (module m typed/racket/base
-    (define x 2)
-    x)
-#+END_SRC
-
-When point is on the opening parenthesis of an expression in tail
-position, it is highlighted using the face
-`racket-xp-tail-position-face'.
-
-When point is on the opening parenthesis of an enclosing
-expression with respect to which one or more expressions are in
-tail position, it is highlighted using the face
-`racket-xp-tail-target-face'.
-
-Furthermore, when point is on the opening parenthesis of either
-kind of expression, all of the immediately related expressions
-are also highlighted. Various commands move among them:
-
-  - `racket-xp-tail-up'
-  - `racket-xp-tail-down'
-  - `racket-xp-tail-next-sibling'
-  - `racket-xp-tail-previous-sibling'
-
-The function `racket-xp-complete-at-point' is added to the
-variable `completion-at-point-functions'. Note that in this case,
-it is not smart about submodules; identifiers are assumed to be
-definitions from the file's module or its imports. In addition to
-supplying completion candidates, it supports the
-\":company-location\" property to inspect the definition of a
-candidate and the \":company-doc-buffer\" property to view its
-documentation.
-
-When you edit the buffer, existing annotations are retained;
-their positions are updated to reflect the edit. Annotations for
-new or deleted text are not requested until after
-`racket-xp-after-change-refresh-delay' seconds. The request is
-made asynchronously so that Emacs will not block -- for
-moderately complex source files, it can take some seconds simply
-to fully expand them, as well as a little more time for the
-drracket/check-syntax analysis. When the results are ready, all
-annotations for the buffer are completely refreshed.
-
-You may also set `racket-xp-after-change-refresh-delay' to nil
-and use the `racket-xp-annotate' command manually.
-
-The mode line changes to reflect the current status of
-annotations, and whether or not you had a syntax error.
-
-If you have one or more syntax errors, `racket-xp-next-error' and
-`racket-xp-previous-error' navigate among them. Although most
-languages will stop after the first syntax error, some like Typed
-Racket will try to collect and report multiple errors.
-
-You may use `xref-find-definitions' \\[xref-find-definitions],
-`xref-pop-marker-stack' \\[xref-pop-marker-stack], and
-`xref-find-references': `racket-xp-mode' adds a backend to the
-variable `xref-backend-functions'. This backend uses information
-from the drracket/check-syntax static analysis. Its ability to
-find references is limited to the current file; when it finds
-none it will try the default xref backend implementation which is
-grep-based.
-
-Tip: This mode follows the convention that a minor mode may only
-use a prefix key consisting of \"C-c\" followed by a punctuation
-key. As a result, `racket-xp-control-c-hash-keymap' is bound to
-\"C-c #\" by default. Although you might find this awkward to
-type, remember that as an Emacs user, you are free to bind this
-map to a more convenient prefix, and/or bind any individual
-commands directly to whatever keys you prefer.
-
-\\{racket-xp-mode-map}
-
-This is a minor mode.  If called interactively, toggle the
-`Racket-Xp mode' mode.  If the prefix argument is positive,
-enable the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `racket-xp-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "racket-xp" '("racket-"))
-
-
-
-(register-definition-prefixes "racket-xp-complete" '("racket-"))
-
-
-(provide 'racket-mode-autoloads)
-
-
-)
 (let ((load-true-file-name "/home/dawran/.emacs.d/elpa/queue-0.2/queue-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/queue-0.2/queue-autoloads.el"))
 
 (add-to-list 'load-path (directory-file-name
@@ -1808,10 +1203,12 @@ Create an empty queue data structure.")
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/parseclj-20220422.936/parseclj-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/parseclj-20220422.936/parseclj-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/parseclj-20230911.1621/parseclj-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/parseclj-20230911.1621/parseclj-autoloads.el"))
 
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/dawran/.emacs.d/elpa/parseclj-20220422.936/parseclj-autoloads.el") (car load-path))))
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
 
 
 
@@ -1832,23 +1229,29 @@ Create an empty queue data structure.")
 
 
 (register-definition-prefixes "parseclj-parser" '("parseclj-"))
-
 
 
-
+(provide 'parseclj-autoloads)
+
+
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/parseedn-20220520.835/parseedn-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/parseedn-20220520.835/parseedn-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/parseedn-20230929.1500/parseedn-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/parseedn-20230929.1500/parseedn-autoloads.el"))
 
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/dawran/.emacs.d/elpa/parseedn-20220520.835/parseedn-autoloads.el") (car load-path))))
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
 
 
 
 (register-definition-prefixes "parseedn" '("parseedn-"))
-
 
+
+(provide 'parseedn-autoloads)
+
+
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/orderless-20230802.218/orderless-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/orderless-20230802.218/orderless-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/orderless-20231025.2044/orderless-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/orderless-20231025.2044/orderless-autoloads.el"))
 
 
 
@@ -1890,95 +1293,6 @@ a value in `ivy-re-builders-alist'.
 
 
 (provide 'orderless-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/olivetti-20230729.403/olivetti-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/olivetti-20230729.403/olivetti-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(autoload 'olivetti-mode "olivetti" "\
-Olivetti provides a nice writing environment.
-
-Window margins are set to relative widths to accomodate a text
-body width set with `olivetti-body-width'.
-
-This is a minor mode.  If called interactively, toggle the
-`Olivetti mode' mode.  If the prefix argument is positive, enable
-the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `olivetti-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "olivetti" '("olivetti-"))
-
-
-(provide 'olivetti-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/markdown-mode-20230830.1338/markdown-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/markdown-mode-20230830.1338/markdown-mode-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(autoload 'markdown-mode "markdown-mode" "\
-Major mode for editing Markdown files.
-
-(fn)" t)
-(add-to-list 'auto-mode-alist '("\\.\\(?:md\\|markdown\\|mkd\\|mdown\\|mkdn\\|mdwn\\)\\'" . markdown-mode))
-(autoload 'gfm-mode "markdown-mode" "\
-Major mode for editing GitHub Flavored Markdown files.
-
-(fn)" t)
-(autoload 'markdown-view-mode "markdown-mode" "\
-Major mode for viewing Markdown content.
-
-(fn)" t)
-(autoload 'gfm-view-mode "markdown-mode" "\
-Major mode for viewing GitHub Flavored Markdown content.
-
-(fn)" t)
-(autoload 'markdown-live-preview-mode "markdown-mode" "\
-Toggle native previewing on save for a specific markdown file.
-
-This is a minor mode.  If called interactively, toggle the
-`Markdown-Live-Preview mode' mode.  If the prefix argument is
-positive, enable the mode, and if it is zero or negative, disable
-the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `markdown-live-preview-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "markdown-mode" '("defun-markdown-" "gfm-" "markdown"))
-
-
-(provide 'markdown-mode-autoloads)
 
 
 )
@@ -2053,7 +1367,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20230907.2217/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20230907.2217/magit-section-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20231014.1405/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20231014.1405/magit-section-autoloads.el"))
 
 
 
@@ -2069,7 +1383,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/git-commit-20230903.1454/git-commit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/git-commit-20230903.1454/git-commit-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/git-commit-20231030.2243/git-commit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/git-commit-20231030.2243/git-commit-autoloads.el"))
 
 
 
@@ -2092,7 +1406,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20230907.2217/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20230907.2217/magit-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20231103.1516/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20231103.1516/magit-autoloads.el"))
 
 
 
@@ -4292,7 +3606,7 @@ Move WORKTREE to PATH.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/lua-mode-20230810.931/lua-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/lua-mode-20230810.931/lua-mode-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/lua-mode-20231023.947/lua-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/lua-mode-20231023.947/lua-mode-autoloads.el"))
 
 
 
@@ -4325,8 +3639,7 @@ When called interactively, switch to the process buffer.
 
 
 
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory "/home/dawran/.emacs.d/elpa/keychain-environment-20180318.2223/keychain-environment-autoloads.el") (car load-path))))
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
 
 
 
@@ -4336,14 +3649,14 @@ Set ssh-agent and gpg-agent environment variables.
 
 Set the environment variables `SSH_AUTH_SOCK', `SSH_AGENT_PID'
 and `GPG_AGENT' in Emacs' `process-environment' according to
-information retrieved from files created by the keychain script." t nil)
+information retrieved from files created by the keychain script." t)
 
 
 (provide 'keychain-environment-autoloads)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jinx-20230816.2045/jinx-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jinx-20230816.2045/jinx-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jarchive-0.11.0/jarchive-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jarchive-0.11.0/jarchive-autoloads.el"))
 
 
 
@@ -4352,63 +3665,44 @@ information retrieved from files created by the keychain script." t nil)
 
 
 
-(put 'jinx-languages 'safe-local-variable #'stringp)
-(put 'jinx-local-words 'safe-local-variable #'stringp)
-(autoload 'jinx-languages "jinx" "\
-Set languages locally or globally to LANGS.
-With prefix argument GLOBAL change the languages globally.
+(autoload 'jarchive-patch-eglot "jarchive" "\
+This should no longer be used.
+Recent versions of Eglot take care of this." t)
+(defvar jarchive-mode nil "\
+Non-nil if Jarchive mode is enabled.
+See the `jarchive-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `jarchive-mode'.")
+(custom-autoload 'jarchive-mode "jarchive" nil)
+(autoload 'jarchive-mode "jarchive" "\
+Teach Emacs to work with jar URIs.
 
-(fn LANGS &optional GLOBAL)" t)
-(autoload 'jinx-correct "jinx" "\
-Correct nearest misspelled word.
-If prefix argument ALL non-nil correct all misspellings.
+Opening a jar URI via Emacs functions like `find-file' will
+automatically extract the contents of a file contained in the jar
+and open them in a buffer.
 
-(fn &optional ALL)" t)
-(autoload 'jinx-mode "jinx" "\
-Enchanted Spell Checker.
-
-This is a minor mode.  If called interactively, toggle the `Jinx
-mode' mode.  If the prefix argument is positive, enable the mode,
-and if it is zero or negative, disable the mode.
+This is a global minor mode.  If called interactively, toggle the
+`Jarchive mode' mode.  If the prefix argument is positive, enable
+the mode, and if it is zero or negative, disable the mode.
 
 If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
 the mode if ARG is nil, omitted, or is a positive number.
 Disable the mode if ARG is a negative number.
 
 To check whether the minor mode is enabled in the current buffer,
-evaluate `jinx-mode'.
+evaluate `(default-value \\='jarchive-mode)'.
 
 The mode's hook is called both when the mode is enabled and when
 it is disabled.
 
 (fn &optional ARG)" t)
-(put 'global-jinx-mode 'globalized-minor-mode t)
-(defvar global-jinx-mode nil "\
-Non-nil if Global Jinx mode is enabled.
-See the `global-jinx-mode' command
-for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `global-jinx-mode'.")
-(custom-autoload 'global-jinx-mode "jinx" nil)
-(autoload 'global-jinx-mode "jinx" "\
-Toggle Jinx mode in all buffers.
-With prefix ARG, enable Global Jinx mode if ARG is positive; otherwise, disable
-it.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.
-Enable the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-Jinx mode is enabled in all buffers where `jinx--on' would do it.
-
-See `jinx-mode' for more information on Jinx mode.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "jinx" '("global-jinx-modes" "jinx-"))
+(define-obsolete-function-alias 'jarchive-setup 'jarchive-mode "0.11.0" "Obsolete. Set up Jarchive to open jar URIs.")
+(register-definition-prefixes "jarchive" '("jarchive--"))
 
 
-(provide 'jinx-autoloads)
+(provide 'jarchive-autoloads)
 
 
 )
@@ -4538,7 +3832,7 @@ Commands:
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20230904.1952/fennel-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20230904.1952/fennel-mode-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20231022.1926/fennel-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20231022.1926/fennel-mode-autoloads.el"))
 
 
 
@@ -4723,89 +4017,7 @@ start the REPL process.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/emmet-mode-20221111.329/emmet-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/emmet-mode-20221111.329/emmet-mode-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (file-name-directory load-file-name)) (car load-path)))
-
-
-
-
-(autoload 'emmet-expand-line "emmet-mode" "\
-Replace the current line's emmet expression with the corresponding expansion.
-If prefix ARG is given or region is visible call `emmet-preview' to start an
-interactive preview.
-
-Otherwise expand line directly.
-
-For more information see `emmet-mode'.
-
-(fn ARG)" t)
-(autoload 'emmet-mode "emmet-mode" "\
-Minor mode for writing HTML and CSS markup.
-
-With emmet for HTML and CSS you can write a line like
-
-  ul#name>li.item*2
-
-and have it expanded to
-
-  <ul id=\"name\">
-    <li class=\"item\"></li>
-    <li class=\"item\"></li>
-  </ul>
-
-This minor mode defines keys for quick access:
-
-\\{emmet-mode-keymap}
-
-Home page URL `http://www.emacswiki.org/emacs/Emmet'.
-
-See also `emmet-expand-line'.
-
-This is a minor mode.  If called interactively, toggle the `Emmet
-mode' mode.  If the prefix argument is positive, enable the mode,
-and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `emmet-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(autoload 'emmet-expand-yas "emmet-mode" nil t)
-(autoload 'emmet-preview "emmet-mode" "\
-Expand emmet between BEG and END interactively.
-This will show a preview of the expanded emmet code and you can
-accept it or skip it.
-
-(fn BEG END)" t)
-(autoload 'emmet-wrap-with-markup "emmet-mode" "\
-Wrap region with markup.
-
-(fn WRAP-WITH)" t)
-(autoload 'emmet-next-edit-point "emmet-mode" "\
-
-
-(fn COUNT)" t)
-(autoload 'emmet-prev-edit-point "emmet-mode" "\
-
-
-(fn COUNT)" t)
-(register-definition-prefixes "emmet-mode" '("emmet-"))
-
-
-(provide 'emmet-mode-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-20230908.2049/embark-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-20230908.2049/embark-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/exec-path-from-shell-20230804.645/exec-path-from-shell-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/exec-path-from-shell-20230804.645/exec-path-from-shell-autoloads.el"))
 
 
 
@@ -4814,191 +4026,93 @@ Wrap region with markup.
 
 
 
-(defun embark--record-this-command nil "\
-Record command which opened the minibuffer.
-We record this because it will be the default action.
-This function is meant to be added to `minibuffer-setup-hook'." (setq-local embark--command this-command))
-(add-hook 'minibuffer-setup-hook #'embark--record-this-command)
-(autoload 'embark-eldoc-first-target "embark" "\
-Eldoc function reporting the first Embark target at point.
-This function uses the eldoc REPORT callback and is meant to be
-added to `eldoc-documentation-functions'.
+(autoload 'exec-path-from-shell-copy-envs "exec-path-from-shell" "\
+Set the environment variables with NAMES from the user's shell.
 
-(fn REPORT &rest _)")
-(autoload 'embark-eldoc-target-types "embark" "\
-Eldoc function reporting the types of all Embark targets at point.
-This function uses the eldoc REPORT callback and is meant to be
-added to `eldoc-documentation-functions'.
+As a special case, if the variable is $PATH, then the variables
+`exec-path' and `eshell-path-env' are also set appropriately.
+The result is an alist, as described by
+`exec-path-from-shell-getenvs'.
 
-(fn REPORT &rest _)")
-(autoload 'embark-bindings-in-keymap "embark" "\
-Explore command key bindings in KEYMAP with `completing-read'.
-The selected command will be executed.  Interactively, prompt the
-user for a KEYMAP variable.
+(fn NAMES)")
+(autoload 'exec-path-from-shell-copy-env "exec-path-from-shell" "\
+Set the environment variable $NAME from the user's shell.
 
-(fn KEYMAP)" t)
-(autoload 'embark-bindings "embark" "\
-Explore current command key bindings with `completing-read'.
-The selected command will be executed.
+As a special case, if the variable is $PATH, then the variables
+`exec-path' and `eshell-path-env' are also set appropriately.
+Return the value of the environment variable.
 
-This shows key bindings from minor mode maps and the local
-map (usually set by the major mode), but also less common keymaps
-such as those from a text property or overlay, or the overriding
-maps: `overriding-terminal-local-map' and `overriding-local-map'.
+(fn NAME)" t)
+(autoload 'exec-path-from-shell-initialize "exec-path-from-shell" "\
+Initialize environment from the user's shell.
 
-Additionally, if GLOBAL is non-nil (interactively, if called with
-a prefix argument), this command includes global key bindings.
+The values of all the environment variables named in
+`exec-path-from-shell-variables' are set from the corresponding
+values used in the user's shell." t)
+(register-definition-prefixes "exec-path-from-shell" '("exec-path-from-shell-"))
+
 
-(fn GLOBAL)" t)
-(autoload 'embark-bindings-at-point "embark" "\
-Explore all key bindings at point with `completing-read'.
-The selected command will be executed.
+(provide 'exec-path-from-shell-autoloads)
 
-This command lists key bindings found in keymaps specified by the
-text properties `keymap' or `local-map', from either buffer text
-or an overlay.  These are not widely used in Emacs, and when they
-are used can be somewhat hard to discover.  Examples of locations
-that have such a keymap are links and images in `eww' buffers,
-attachment links in `gnus' article buffers, and the stash line
-in a `vc-dir' buffer." t)
-(autoload 'embark-prefix-help-command "embark" "\
-Prompt for and run a command bound in the prefix used for this command.
-The prefix described consists of all but the last event of the
-key sequence that ran this command.  This function is intended to
-be used as a value for `prefix-help-command'.
 
-In addition to using completion to select a command, you can also
-type @ and the key binding (without the prefix)." t)
-(autoload 'embark-act "embark" "\
-Prompt the user for an action and perform it.
-The targets of the action are chosen by `embark-target-finders'.
-By default, if called from a minibuffer the target is the top
-completion candidate.  When called from a non-minibuffer buffer
-there can multiple targets and you can cycle among them by using
-`embark-cycle' (which is bound by default to the same key
-binding `embark-act' is, but see `embark-cycle-key').
+)
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/elixir-mode-20230626.1738/elixir-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/elixir-mode-20230626.1738/elixir-mode-autoloads.el"))
 
-This command uses `embark-prompter' to ask the user to specify an
-action, and calls it injecting the target at the first minibuffer
-prompt.
 
-If you call this from the minibuffer, it can optionally quit the
-minibuffer.  The variable `embark-quit-after-action' controls
-whether calling `embark-act' with nil ARG quits the minibuffer,
-and if ARG is non-nil it will do the opposite.  Interactively,
-ARG is the prefix argument.
 
-If instead you call this from outside the minibuffer, the first
-ARG targets are skipped over (if ARG is negative the skipping is
-done by cycling backwards) and cycling starts from the following
-target.
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
 
-(fn &optional ARG)" t)
-(autoload 'embark-act-all "embark" "\
-Prompt the user for an action and perform it on each candidate.
-The candidates are chosen by `embark-candidate-collectors'.  By
-default, if `embark-select' has been used to select some
-candidates, then `embark-act-all' will act on those candidates;
-otherwise, if the selection is empty and `embark-act-all' is
-called from a minibuffer, then the candidates are the completion
-candidates.
-
-This command uses `embark-prompter' to ask the user to specify an
-action, and calls it injecting the target at the first minibuffer
-prompt.
-
-If you call this from the minibuffer, it can optionally quit the
-minibuffer.  The variable `embark-quit-after-action' controls
-whether calling `embark-act' with nil ARG quits the minibuffer,
-and if ARG is non-nil it will do the opposite.  Interactively,
-ARG is the prefix argument.
-
-(fn &optional ARG)" t)
-(autoload 'embark-dwim "embark" "\
-Run the default action on the current target.
-The target of the action is chosen by `embark-target-finders'.
-
-If the target comes from minibuffer completion, then the default
-action is the command that opened the minibuffer in the first
-place, unless overridden by `embark-default-action-overrides'.
-
-For targets that do not come from minibuffer completion
-(typically some thing at point in a regular buffer) and whose
-type is not listed in `embark-default-action-overrides', the
-default action is given by whatever binding RET has in the action
-keymap for the target's type.
-
-See `embark-act' for the meaning of the prefix ARG.
-
-(fn &optional ARG)" t)
-(autoload 'embark-become "embark" "\
-Make current command become a different command.
-Take the current minibuffer input as initial input for new
-command.  The new command can be run normally using key bindings or
-\\[execute-extended-command], but if the current command is found in a keymap in
-`embark-become-keymaps', that keymap is activated to provide
-convenient access to the other commands in it.
-
-If FULL is non-nil (interactively, if called with a prefix
-argument), the entire minibuffer contents are used as the initial
-input of the new command.  By default only the part of the
-minibuffer contents between the current completion boundaries is
-taken.  What this means is fairly technical, but (1) usually
-there is no difference: the completion boundaries include the
-entire minibuffer contents, and (2) the most common case where
-these notions differ is file completion, in which case the
-completion boundaries single out the path component containing
-point.
-
-(fn &optional FULL)" t)
-(autoload 'embark-collect "embark" "\
-Create an Embark Collect buffer.
-
-To control the display, add an entry to `display-buffer-alist'
-with key \"Embark Collect\".
-
-In Embark Collect buffers `revert-buffer' is remapped to
-`embark-rerun-collect-or-export', which has slightly unusual
-behavior if the buffer was obtained by running `embark-collect'
-from within a minibuffer completion session.  In that case
-rerunning just restarts the completion session, that is, the
-command that opened the minibuffer is run again and the
-minibuffer contents restored.  You can then interact normally with
-the command, perhaps editing the minibuffer contents, and, if you
-wish, you can rerun `embark-collect' to get an updated buffer." t)
-(autoload 'embark-live "embark" "\
-Create a live-updating Embark Collect buffer.
-
-To control the display, add an entry to `display-buffer-alist'
-with key \"Embark Live\"." t)
-(autoload 'embark-export "embark" "\
-Create a type-specific buffer to manage current candidates.
-The variable `embark-exporters-alist' controls how to make the
-buffer for each type of completion.
-
-In Embark Export buffers `revert-buffer' is remapped to
-`embark-rerun-collect-or-export', which has slightly unusual
-behavior if the buffer was obtained by running `embark-export'
-from within a minibuffer completion session.  In that case
-reverting just restarts the completion session, that is, the
-command that opened the minibuffer is run again and the
-minibuffer contents restored.  You can then interact normally
-with the command, perhaps editing the minibuffer contents, and,
-if you wish, you can rerun `embark-export' to get an updated
-buffer." t)
-(autoload 'embark-select "embark" "\
-Add or remove the target from the current buffer's selection.
-You can act on all selected targets at once with `embark-act-all'.
-When called from outside `embark-act' this command will select
-the first target at point." t)
-(register-definition-prefixes "embark" '("embark-"))
 
 
 
-(register-definition-prefixes "embark-org" '("embark-org-"))
+(autoload 'elixir-format "elixir-format" "\
+
+
+(fn &optional CALLED-INTERACTIVELY-P)" t)
+(register-definition-prefixes "elixir-format" '("elixir-format-"))
+
 
 
-(provide 'embark-autoloads)
+(autoload 'elixir-mode-open-github "elixir-mode" "\
+Elixir mode open GitHub page." t)
+(autoload 'elixir-mode-open-elixir-home "elixir-mode" "\
+Elixir mode go to language home." t)
+(autoload 'elixir-mode-open-docs-master "elixir-mode" "\
+Elixir mode go to master documentation." t)
+(autoload 'elixir-mode-open-docs-stable "elixir-mode" "\
+Elixir mode go to stable documentation." t)
+(autoload 'elixir-mode-version "elixir-mode" "\
+Get the Elixir-Mode version as string.
+
+If called interactively or if SHOW-VERSION is non-nil, show the
+version in the echo area and the messages buffer.
+
+The returned string includes both, the version from package.el
+and the library version, if both a present and different.
+
+If the version number could not be determined, signal an error,
+if called interactively, or if SHOW-VERSION is non-nil, otherwise
+just return nil.
+
+(fn &optional SHOW-VERSION)" t)
+(autoload 'elixir-mode "elixir-mode" "\
+Major mode for editing Elixir code.
+
+\\{elixir-mode-map}
+
+(fn)" t)
+(add-to-list 'auto-mode-alist '("\\.elixir\\'" . elixir-mode))
+(add-to-list 'auto-mode-alist '("\\.ex\\'" . elixir-mode))
+(add-to-list 'auto-mode-alist '("\\.exs\\'" . elixir-mode))
+(add-to-list 'auto-mode-alist '("mix\\.lock" . elixir-mode))
+(register-definition-prefixes "elixir-mode" '("elixir-"))
+
+
+
+(register-definition-prefixes "elixir-smie" '("elixir-" "verbose-elixir-smie-rules"))
+
+
+(provide 'elixir-mode-autoloads)
 
 
 )
@@ -5127,31 +4241,7 @@ option is found.")
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/clojure-ts-mode/clojure-ts-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/clojure-ts-mode/clojure-ts-mode-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (file-name-directory load-file-name)) (car load-path)))
-
-
-
-
-(autoload 'clojure-ts-mode "clojure-ts-mode" "\
-Major mode for editing Clojure code.
-Requires Emacs 29 and libtree-sitter-clojure.so available somewhere in
-`treesit-extra-load-path'.
-
-\\{clojure-ts-mode-map}
-
-(fn)" t)
-(register-definition-prefixes "clojure-ts-mode" '("clojure-ts-"))
-
-
-(provide 'clojure-ts-mode-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20230907.757/clojure-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20230907.757/clojure-mode-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20231018.922/clojure-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20231018.922/clojure-mode-autoloads.el"))
 
 
 
@@ -5257,7 +4347,7 @@ Major mode for editing ClojureC code.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20230901.1752/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20230901.1752/cider-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20231104.2203/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20231104.2203/cider-autoloads.el"))
 
 
 
@@ -5470,6 +4560,10 @@ opposite of what that option dictates.
 
 
 
+(register-definition-prefixes "cider-completion-context" '("cider-completion-"))
+
+
+
 (register-definition-prefixes "cider-connection" '("cider-"))
 
 
@@ -5487,6 +4581,10 @@ a number of keys will be prompted to the user." t)
 
 
 (register-definition-prefixes "cider-doc" '("cider-"))
+
+
+
+(register-definition-prefixes "cider-docstring" '("cider-"))
 
 
 
@@ -5538,11 +4636,11 @@ the results to be displayed in a different window.
 
 (fn &optional ARG NS)" t)
 (autoload 'cider-find-keyword "cider-find" "\
-Find the namespace of the keyword at point and its first occurrence there.
+Find the namespace of the keyword at point and its primary occurrence there.
 
 For instance - if the keyword at point is \":cider.demo/keyword\", this command
-would find the namespace \"cider.demo\" and afterwards find the first mention
-of \"::keyword\" there.
+would find the namespace \"cider.demo\" and afterwards find the primary (most relevant or first)
+mention of \"::keyword\" there.
 
 Prompt according to prefix ARG and `cider-prompt-for-symbol'.
 A single or double prefix argument inverts the meaning of
@@ -5596,6 +4694,12 @@ Interactively, EXPR is read from the minibuffer, and NS the
 current buffer's namespace.
 
 (fn EXPR NS)" t)
+(autoload 'cider-sync-request:inspect-last-exception "cider-inspector" "\
+Inspects the exception in the cause stack identified by INDEX,
+V2 indicates if the entire response should be returned
+instead of just its \"value\" entry.
+
+(fn INDEX &optional V2)")
 (register-definition-prefixes "cider-inspector" '("cider-"))
 
 
@@ -5604,6 +4708,7 @@ current buffer's namespace.
 
 
 
+ (autoload 'cider-log-info "cider-log-info" "Show the Cider log current log buffer, framework, appender and consumer." t)
  (autoload 'cider-log-framework "cider-log" "Show the Cider log framework menu." t)
  (autoload 'cider-log-appender "cider-log" "Show the Cider log appender menu." t)
  (autoload 'cider-log-consumer "cider-log" "Show the Cider log consumer menu." t)
@@ -5877,18 +4982,330 @@ Displays the function dependencies for  NS and SYMBOL using completing read.
 
 
 )
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/auctex-13.2.2/auctex-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/auctex-13.2.2/auctex-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(autoload 'bib-cite-minor-mode "bib-cite" "\
+Toggle bib-cite mode.
+When bib-cite mode is enabled, citations, labels and refs are highlighted
+when the mouse is over them.  Clicking on these highlights with [mouse-2]
+runs `bib-find', and [mouse-3] runs `bib-display'.
+
+(fn ARG)" t)
+(autoload 'turn-on-bib-cite "bib-cite" "\
+Unconditionally turn on Bib Cite mode.")
+(register-definition-prefixes "bib-cite" '("LaTeX-find-label-hist-alist" "bib-" "create-alist-from-list" "member-cis" "psg-" "search-directory-tree"))
+
+
+
+(defalias 'ConTeXt-mode #'context-mode)
+(autoload 'context-mode "context" "\
+Major mode in AUCTeX for editing ConTeXt files.
+
+Special commands:
+\\{ConTeXt-mode-map}
+
+Entering `context-mode' calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `ConTeXt-mode-hook'." t)
+(register-definition-prefixes "context" '("ConTeXt-" "TeX-ConTeXt-sentinel" "context-guess-current-interface"))
+
+
+
+(autoload 'context-en-mode "context-en" "\
+Major mode for editing files for ConTeXt using its english interface.
+
+Special commands:
+\\{ConTeXt-mode-map}
+
+Entering `context-mode' calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `ConTeXt-mode-hook'." t)
+(register-definition-prefixes "context-en" '("ConTeXt-"))
+
+
+
+(autoload 'context-nl-mode "context-nl" "\
+Major mode for editing files for ConTeXt using its dutch interface.
+
+Special commands:
+\\{ConTeXt-mode-map}
+
+Entering `context-mode' calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `ConTeXt-mode-hook'." t)
+(register-definition-prefixes "context-nl" '("ConTeXt-"))
+
+
+
+(autoload 'font-latex-setup "font-latex" "\
+Setup this buffer for LaTeX font-lock.  Usually called from a hook.")
+(register-definition-prefixes "font-latex" '("font-latex-"))
+
+
+
+(autoload 'BibTeX-auto-store "latex" "\
+This function should be called from `bibtex-mode-hook'.
+It will setup BibTeX to store keys in an auto file.")
+(add-to-list 'auto-mode-alist '("\\.drv\\'" . latex-mode) t)
+(add-to-list 'auto-mode-alist '("\\.hva\\'" . latex-mode))
+(autoload 'TeX-latex-mode "latex" "\
+Major mode in AUCTeX for editing LaTeX files.
+See info under AUCTeX for full documentation.
+
+Special commands:
+\\{LaTeX-mode-map}
+
+Entering LaTeX mode calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `LaTeX-mode-hook'." t)
+(add-to-list 'auto-mode-alist '("\\.dtx\\'" . doctex-mode))
+(autoload 'docTeX-mode "latex" "\
+Major mode in AUCTeX for editing .dtx files derived from `LaTeX-mode'.
+Runs `LaTeX-mode', sets a few variables and
+runs the hooks in `docTeX-mode-hook'.
+
+(fn)" t)
+(defalias 'TeX-doctex-mode #'docTeX-mode)
+(register-definition-prefixes "latex" '("Bib" "LaTeX-" "TeX-" "docTeX-" "latex-math-mode"))
+
+
+
+(register-definition-prefixes "latex-flymake" '("LaTeX-"))
+
+
+
+(autoload 'multi-prompt "multi-prompt" "\
+Completing prompt for a list of strings.
+The first argument SEPARATOR should be the string (of length 1) to
+separate the elements in the list.  The second argument UNIQUE should
+be non-nil, if each element must be unique.  The remaining elements
+are the arguments to `completing-read'.  See that.
+
+(fn SEPARATOR UNIQUE PROMPT TABLE &optional MP-PREDICATE REQUIRE-MATCH INITIAL HISTORY)")
+(autoload 'multi-prompt-key-value "multi-prompt" "\
+Read multiple strings, with completion and key=value support.
+PROMPT is a string to prompt with, usually ending with a colon
+and a space.
+
+TABLE is an alist where each entry is a list.  The first element
+of each list is a string representing a key and the optional
+second element is a list with strings to be used as values for
+the key.  The second element can also be a variable returning a
+list of strings.
+
+See the documentation for `completing-read' for details on the
+other arguments: PREDICATE, REQUIRE-MATCH, INITIAL-INPUT, HIST,
+DEF, and INHERIT-INPUT-METHOD.
+
+The return value is the string as entered in the minibuffer.
+
+(fn PROMPT TABLE &optional PREDICATE REQUIRE-MATCH INITIAL-INPUT HIST DEF INHERIT-INPUT-METHOD)")
+(register-definition-prefixes "multi-prompt" '("multi-prompt-"))
+
+
+
+(autoload 'TeX-plain-tex-mode "plain-tex" "\
+Major mode in AUCTeX for editing plain TeX files.
+See info under AUCTeX for documentation.
+
+Special commands:
+\\{plain-TeX-mode-map}
+
+Entering `plain-tex-mode' calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `plain-TeX-mode-hook'." t)
+(autoload 'ams-tex-mode "plain-tex" "\
+Major mode in AUCTeX for editing AmS-TeX files.
+See info under AUCTeX for documentation.
+
+Special commands:
+\\{AmSTeX-mode-map}
+
+Entering `ams-tex-mode' calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `AmS-TeX-mode-hook'." t)
+(register-definition-prefixes "plain-tex" '("AmS" "plain-TeX-"))
+
+
+
+(autoload 'desktop-buffer-preview "preview" "\
+Hook function for restoring persistent previews into a buffer.
+
+(fn FILE-NAME BUFFER-NAME MISC)")
+(add-to-list 'desktop-buffer-mode-handlers '(latex-mode . desktop-buffer-preview))
+(autoload 'preview-install-styles "preview" "\
+Installs the TeX style files into a permanent location.
+This must be in the TeX search path.  If FORCE-OVERWRITE is greater
+than 1, files will get overwritten without query, if it is less
+than 1 or nil, the operation will fail.  The default of 1 for interactive
+use will query.
+
+Similarly FORCE-SAVE can be used for saving
+`preview-TeX-style-dir' to record the fact that the uninstalled
+files are no longer needed in the search path.
+
+(fn DIR &optional FORCE-OVERWRITE FORCE-SAVE)" t)
+(autoload 'LaTeX-preview-setup "preview" "\
+Hook function for embedding the preview package into AUCTeX.
+This is called by `LaTeX-mode-hook' and changes AUCTeX variables
+to add the preview functionality.")
+(autoload 'preview-report-bug "preview" "\
+Report a bug in the preview-latex package." t)
+(register-definition-prefixes "preview" '("TeX-" "desktop-buffer-preview-misc-data" "preview-"))
+
+
+
+(autoload 'TeX-tex-mode "tex" "\
+Major mode in AUCTeX for editing TeX or LaTeX files.
+Tries to guess whether this file is for plain TeX or LaTeX.
+
+The algorithm is as follows:
+
+   1) if the file is empty or `TeX-force-default-mode' is not set to nil,
+      `TeX-default-mode' is chosen
+   2) If \\documentstyle or \\begin{, \\section{, \\part{ or \\chapter{ is
+      found, `latex-mode' is selected.
+   3) Otherwise, use `plain-tex-mode'" t)
+(autoload 'TeX-auto-generate "tex" "\
+Generate style file for TEX and store it in AUTO.
+If TEX is a directory, generate style files for all files in the directory.
+
+(fn TEX AUTO)" t)
+(autoload 'TeX-auto-generate-global "tex" "\
+Create global auto directory for global TeX macro definitions." t)
+(autoload 'TeX-submit-bug-report "tex" "\
+Submit a bug report on AUCTeX via mail.
+
+Don't hesitate to report any problems or inaccurate documentation.
+
+If you don't have setup sending mail from Emacs, please copy the
+output buffer into your mail program, as it gives us important
+information about your AUCTeX version and AUCTeX configuration." t)
+(register-definition-prefixes "tex" '("Bib" "ConTeXt-" "LaTeX-" "TeX-" "VirTeX-common-initialization" "docTeX-default-extension" "plain-TeX-auto-regexp-list" "tex-"))
+
+
+
+(autoload 'TeX-install-toolbar "tex-bar" "\
+Install toolbar buttons for TeX mode." t)
+(autoload 'LaTeX-install-toolbar "tex-bar" "\
+Install toolbar buttons for LaTeX mode." t)
+(register-definition-prefixes "tex-bar" '("TeX-bar-"))
+
+
+
+(autoload 'TeX-fold-mode "tex-fold" "\
+Minor mode for hiding and revealing macros and environments.
+
+Called interactively, with no prefix argument, toggle the mode.
+With universal prefix ARG (or if ARG is nil) turn mode on.
+With zero or negative ARG turn mode off.
+
+(fn &optional ARG)" t)
+(defalias 'tex-fold-mode #'TeX-fold-mode)
+(register-definition-prefixes "tex-fold" '("TeX-fold-"))
+
+
+
+(autoload 'tex-font-setup "tex-font" "\
+Setup font lock support for TeX.")
+(register-definition-prefixes "tex-font" '("tex-"))
+
+
+
+(defalias 'Texinfo-mode #'texinfo-mode)
+(autoload 'TeX-texinfo-mode "tex-info" "\
+Major mode in AUCTeX for editing Texinfo files.
+
+Special commands:
+\\{Texinfo-mode-map}
+
+Entering Texinfo mode calls the value of `text-mode-hook' and then the
+value of `Texinfo-mode-hook'." t)
+(register-definition-prefixes "tex-info" '("Texinfo-" "texinfo-environment-regexp"))
+
+
+
+(register-definition-prefixes "tex-ispell" '("TeX-ispell-"))
+
+
+
+(autoload 'japanese-plain-tex-mode "tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'." t)
+(autoload 'japanese-latex-mode "tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'." t)
+(register-definition-prefixes "tex-jp" '("TeX-japanese-process-" "japanese-"))
+
+
+
+ (require 'tex-site)
+(register-definition-prefixes "tex-site" '("AUCTeX-" "TeX-" "preview-TeX-style-dir" "tex-site-unload-function"))
+
+
+
+(register-definition-prefixes "tex-style" '("LaTeX-" "TeX-TikZ-point-name-regexp"))
+
+
+
+(register-definition-prefixes "tex-wizard" '("TeX-wizard"))
+
+
+
+(autoload 'texmathp "texmathp" "\
+Determine if point is inside (La)TeX math mode.
+Returns t or nil.  Additional info is placed into `texmathp-why'.
+The functions assumes that you have (almost) syntactically correct (La)TeX in
+the buffer.
+See the variable `texmathp-tex-commands' about which commands are checked." t)
+(autoload 'texmathp-match-switch "texmathp" "\
+Search backward for any of the math switches.
+Limit searched to BOUND.
+
+(fn BOUND)")
+(register-definition-prefixes "texmathp" '("texmathp-"))
+
+
+
+ (autoload 'toolbarx-install-toolbar "toolbar-x")
+(register-definition-prefixes "toolbar-x" '("toolbarx-"))
+
+
+(provide 'auctex-autoloads)
+
+
+)
 (defvar package-activated-list)
 (setq package-activated-list
       (delete-dups
        (append
-        '(reformatter zig-mode yaml-mode compat with-editor which-key vertico transient spinner sly sesman s rainbow-mode racket-mode queue popup parseclj parseedn orderless olivetti markdown-mode dash magit-section git-commit magit lua-mode keychain-environment jinx janet-mode iedit fennel-mode emmet-mode embark eglot dumb-jump clojure-ts-mode clojure-mode cider)
+        '(reformatter zig-mode yaml-mode compat with-editor which-key vertico
+                      transient spinner sly sesman s queue popup parseclj
+                      parseedn orderless dash magit-section git-commit magit
+                      lua-mode keychain-environment jarchive janet-mode iedit
+                      fennel-mode exec-path-from-shell elixir-mode eglot
+                      dumb-jump clojure-mode cider auctex)
         package-activated-list)))
 (progn
-  (require 'info)
-  (info-initialize)
+  (require 'info) (info-initialize)
   (setq Info-directory-list
         (append
-         '("/home/dawran/.emacs.d/elpa/embark-20230908.2049" "/home/dawran/.emacs.d/elpa/magit-20230907.2217" "/home/dawran/.emacs.d/elpa/magit-section-20230907.2217" "/home/dawran/.emacs.d/elpa/dash-20230714.723" "/home/dawran/.emacs.d/elpa/orderless-20230802.218" "/home/dawran/.emacs.d/elpa/racket-mode-20230905.1421" "/home/dawran/.emacs.d/elpa/sly-20230624.1930" "/home/dawran/.emacs.d/elpa/transient-20230907.1440" "/home/dawran/.emacs.d/elpa/with-editor-20230829.1917" "/home/dawran/.emacs.d/elpa/compat-29.1.4.2")
+         '("/home/dawran/.emacs.d/elpa/auctex-13.2.2"
+           "/home/dawran/.emacs.d/elpa/magit-20231103.1516"
+           "/home/dawran/.emacs.d/elpa/magit-section-20231014.1405"
+           "/home/dawran/.emacs.d/elpa/dash-20230714.723"
+           "/home/dawran/.emacs.d/elpa/orderless-20231025.2044"
+           "/home/dawran/.emacs.d/elpa/sly-20231009.2150"
+           "/home/dawran/.emacs.d/elpa/transient-20231103.2312"
+           "/home/dawran/.emacs.d/elpa/with-editor-20230917.958"
+           "/home/dawran/.emacs.d/elpa/compat-29.1.4.3")
          Info-directory-list)))
 
 ;; Local Variables:
