@@ -118,10 +118,9 @@ When scrolling beyond this limit, candidates may be truncated."
 
 (cl-defmethod vertico--arrange-candidates (&context (vertico-grid-mode (eql t)))
   (when (<= vertico--index 0)
-    (let ((cand vertico--candidates) (n 0) (w 1))
-      (while (and cand (< n vertico-grid-lookahead))
-        (setq w (max w (+ vertico-grid-annotate (length (car cand)))) n (1+ n))
-        (pop cand))
+    (let ((w 1))
+      (cl-loop repeat vertico-grid-lookahead for cand in vertico--candidates do
+               (setq w (max w (+ vertico-grid-annotate (length cand)))))
       (setq vertico-grid--columns
             (max vertico-grid-min-columns
                  (min vertico-grid-max-columns
@@ -130,26 +129,23 @@ When scrolling beyond this limit, candidates may be truncated."
          (count (* vertico-count vertico-grid--columns))
          (start (* count (floor (max 0 vertico--index) count)))
          (width (- (/ (vertico--window-width) vertico-grid--columns) sep))
-         (cands
-          (thread-last
-            (seq-subseq vertico--candidates start
-                        (min (+ start count) vertico--total))
-            (funcall vertico--highlight)
-            (funcall (if (> vertico-grid-annotate 0) #'vertico--affixate #'identity))
-            (seq-map-indexed
-             (lambda (cand index)
-               (let (prefix suffix)
-                 (when (consp cand)
-                   (setq prefix (cadr cand) suffix (caddr cand) cand (car cand)))
-                 (when (string-search "\n" cand)
-                   (setq cand (vertico--truncate-multiline cand width)))
-                 (truncate-string-to-width
-                  (string-trim
-                   (replace-regexp-in-string
-                    "[ \t]+"
-                    (lambda (x) (apply #'propertize " " (text-properties-at 0 x)))
-                    (vertico--format-candidate cand prefix suffix (+ index start) start)))
-                  width))))))
+         (cands (funcall (if (> vertico-grid-annotate 0) #'vertico--affixate #'identity)
+                         (cl-loop repeat count for c in (nthcdr start vertico--candidates)
+                                  collect (funcall vertico--hilit (substring c)))))
+         (cands (cl-loop
+                 for cand in cands for index from 0 collect
+                 (let (prefix suffix)
+                   (when (consp cand)
+                     (setq prefix (cadr cand) suffix (caddr cand) cand (car cand)))
+                   (when (string-search "\n" cand)
+                     (setq cand (vertico--truncate-multiline cand width)))
+                   (truncate-string-to-width
+                    (string-trim
+                     (replace-regexp-in-string
+                      "[ \t]+"
+                      (lambda (x) (apply #'propertize " " (text-properties-at 0 x)))
+                      (vertico--format-candidate cand prefix suffix (+ index start) start)))
+                    width))))
          (width (make-vector vertico-grid--columns 0)))
     (dotimes (col vertico-grid--columns)
       (dotimes (row vertico-count)

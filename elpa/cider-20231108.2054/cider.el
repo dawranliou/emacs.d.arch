@@ -10,8 +10,8 @@
 ;;         Hugo Duncan <hugo@hugoduncan.org>
 ;;         Steve Purcell <steve@sanityinc.com>
 ;; Maintainer: Bozhidar Batsov <bozhidar@batsov.dev>
-;; URL: http://www.github.com/clojure-emacs/cider
-;; Version: 1.11.0-snapshot
+;; URL: https://www.github.com/clojure-emacs/cider
+;; Version: 1.12.0-snapshot
 ;; Package-Requires: ((emacs "26") (clojure-mode "5.18.0") (parseedn "1.2.0") (queue "0.2") (spinner "1.7") (seq "2.22") (sesman "0.3.2") (transient "0.4.1"))
 ;; Keywords: languages, clojure, cider
 
@@ -93,10 +93,10 @@
 (require 'sesman)
 (require 'package)
 
-(defconst cider-version "1.11.0-snapshot"
+(defconst cider-version "1.12.0-snapshot"
   "The current version of CIDER.")
 
-(defconst cider-codename "Sant Cugat"
+(defconst cider-codename "Hvar"
   "Codename used to denote stable releases.")
 
 (defcustom cider-lein-command
@@ -527,7 +527,7 @@ the artifact.")
 (defconst cider-latest-clojure-version "1.10.1"
   "Latest supported version of Clojure.")
 
-(defconst cider-required-middleware-version "0.43.0"
+(defconst cider-required-middleware-version "0.43.1"
   "The CIDER nREPL version that's known to work properly with CIDER.")
 
 (defcustom cider-injected-middleware-version cider-required-middleware-version
@@ -598,7 +598,7 @@ returned by this function does not include keyword arguments."
   (let ((plugins (if cider-enrich-classpath
                      (append cider-jack-in-lein-plugins
                              `(("cider/cider-nrepl" ,cider-injected-middleware-version)
-                               ("mx.cider/lein-enrich-classpath" "1.18.2")))
+                               ("mx.cider/lein-enrich-classpath" "1.18.4")))
                    (append cider-jack-in-lein-plugins
                            `(("cider/cider-nrepl" ,cider-injected-middleware-version))))))
     (thread-last
