@@ -65,9 +65,13 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(auctex cider clojure-mode dumb-jump eglot elixir-mode exec-path-from-shell
-            fennel-mode iedit janet-mode jarchive lua-mode magit mlscroll
-            orderless rg sly vertico which-key yaml-mode zig-mode))
+   '(standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-clojure inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless rg sly vertico which-key yaml-mode zig-mode))
+ '(package-vc-selected-packages
+   '((lua-ts-mode :vc-backend Git :url "https://git.sr.ht/~johnmuhl/lua-ts-mode")
+     (janet-ts-mode :vc-backend Git :url "https://github.com/sogaiu/janet-ts-mode.git")
+     (ajrepl :vc-backend Git :url "https://github.com/sogaiu/ajrepl.git")
+     (a-janet-spork-client :vc-backend Git :url "https://github.com/sogaiu/a-janet-spork-client.git")
+     (inf-janet :vc-backend Git :url "https://github.com/velkyel/inf-janet.git")))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(toggle-truncate-lines))
  '(repeat-mode t)
