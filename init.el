@@ -24,7 +24,6 @@
  '(custom-enabled-themes '(alabaster))
  '(custom-safe-themes
    '("3846f91527bdc9505142b195726d59aeeabb9ecb236267d3cbf94a5235b34bd3"))
- '(default-frame-alist '((font . "Iosevka-12")))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)

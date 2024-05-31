@@ -1,10 +1,19 @@
 (setq gc-cons-threshold most-positive-fixnum
       gc-cons-percentage 0.7
       frame-inhibit-implied-resize nil
-      default-frame-alist '((font . "Iosevka-12")
-                            (vertical-scroll-bars . nil)
-                            (width . 80)
-                            (height . 35)))
+      default-frame-alist '((font . "Iosevka-14")
+                            ;; (width . 80)
+                            (height . 30)
+                            ;; (menu-bar-lines . 1)
+                            )
+      )
+
+;; (set-face-attribute 'default nil
+;;                     :family "Iosevka" :height 140 :weight 'regular)
+;; (set-face-attribute 'fixed-pitch nil
+;;                     :family "Iosevka" :height 140 :weight 'regular)
+;; (set-face-attribute 'variable-pitch nil
+;;                     :family "Iosevka Etoile" :height 140 :weight 'regular)
 
 (when (file-exists-p (locate-user-emacs-file "package-quickstart.el"))
   (setf package-enable-at-startup nil)
