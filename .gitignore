@@ -17,3 +17,5 @@
 /elpa/archives/
 *.signed
 /elpa/gnupg/
+/url/
+/auto-save/
