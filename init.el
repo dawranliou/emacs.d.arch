@@ -76,7 +76,7 @@
      (a-janet-spork-client :vc-backend Git :url "https://github.com/sogaiu/a-janet-spork-client.git")
      (inf-janet :vc-backend Git :url "https://github.com/velkyel/inf-janet.git")))
  '(pixel-scroll-precision-mode t)
- '(prog-mode-hook '(toggle-truncate-lines))
+ '(prog-mode-hook '(toggle-truncate-lines electric-pair-mode))
  '(repeat-mode t)
  '(ring-bell-function 'flash-mode-line)
  '(save-place-mode t)
@@ -216,6 +216,8 @@ Inspired by https://github.com/katspaugh/ido-at-point"
   (keymap-unset fennel-mode-map "M-,"))
 
 (with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
+  (add-to-list 'eglot-server-programs '(lua-ts-mode "lua-language-server"))
   )
 
 (with-eval-after-load 'cider
@@ -227,6 +229,12 @@ Inspired by https://github.com/katspaugh/ido-at-point"
       (cider-set-repl-type 'cljs)))
 
   (add-hook 'cider-connected-hook #'cider-setup-sci-js-cljs-repl))
+
+(with-eval-after-load 'lua-mode
+  (add-hook 'lua-mode-hook #'eglot-ensure))
+
+(with-eval-after-load 'lua-ts-mode
+  (add-hook 'lua-ts-mode-hook #'eglot-ensure))
 
 (provide 'init)
 
