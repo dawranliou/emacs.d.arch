@@ -11,6 +11,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-revert-avoid-polling t)
+ '(auto-revert-check-vc-info t)
  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save/" t)))
  '(backup-by-copying t)
  '(backup-directory-alist '(("." . "~/.emacs.d/backup/")))
