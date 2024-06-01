@@ -195,6 +195,8 @@ backwards."
 (with-eval-after-load 'project
   (require 'magit-extras))
 
+(add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
+
 (keychain-refresh-environment)
 
 ;; https://gist.github.com/jdtsmith/bfa2d692c4fbbffe06b558e4bcf9abec
