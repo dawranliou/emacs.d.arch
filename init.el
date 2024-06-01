@@ -116,7 +116,7 @@
  '(wgrep-auto-save-buffer t)
  '(which-key-mode t)
  '(x-stretch-cursor t)
- '(x-underline-at-descent-line t)
+ '(x-underline-at-descent-line nil)
  '(xref-search-program 'ripgrep)
  '(xref-show-definitions-function 'xref-show-definitions-completing-read))
 
