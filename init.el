@@ -102,6 +102,7 @@
  '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(version-control t)
  '(vertico-mode t)
+ '(wgrep-auto-save-buffer t)
  '(which-key-mode t)
  '(x-stretch-cursor t)
  '(x-underline-at-descent-line t)
