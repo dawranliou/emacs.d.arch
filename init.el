@@ -164,6 +164,16 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
 
 (setq completion-in-region-function #'completing-read-at-point)
+(defun remove-treesit-sexp-changes ()
+  (keymap-unset (current-local-map) "<remap> <beginning-of-defun>")
+  (keymap-unset (current-local-map) "<remap> <end-of-defun>")
+  (when (eq forward-sexp-function #'treesit-forward-sexp)
+    (setq forward-sexp-function nil))
+  (when (eq transpose-sexps-function #'treesit-transpose-sexps)
+    (setq transpose-sexps-function #'transpose-sexps-default-function))
+  (when (eq forward-sentence-function #'treesit-forward-sentence)
+    (setq forward-sentence-function #'forward-sentence-default-function)))
+
 (defun fill-or-unfill ()
   "Like `fill-paragraph', but unfill if used twice."
   (interactive)
