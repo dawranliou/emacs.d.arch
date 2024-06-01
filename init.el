@@ -30,7 +30,6 @@
  '(completions-max-height 20)
  '(consult-narrow-key "<")
  '(context-menu-mode t)
- '(corfu-popupinfo-delay '(0.25 . 0.1))
  '(custom-enabled-themes '(standard-light))
  '(custom-safe-themes
    '("8122fb61548fe36171d9cf24cdb9b5f24d053b626d4cda739c3815e080623209" default))
