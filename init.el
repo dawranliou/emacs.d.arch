@@ -39,6 +39,8 @@
       (dedicated . t))))
  '(ediff-split-window-function 'split-window-sensibly)
  '(eglot-connect-timeout 300)
+ '(eglot-events-buffer-size 0)
+ '(eglot-extend-to-xref t)
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
  '(frame-inhibit-implied-resize nil)
@@ -218,6 +220,8 @@ backwards."
   (keymap-unset fennel-mode-map "M-,"))
 
 (with-eval-after-load 'eglot
+  (fset #'jsonrpc--log-event #'ignored) ; massive perf boost---don't log every event
+
   (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
   (add-to-list 'eglot-server-programs '(lua-ts-mode "lua-language-server"))
 
