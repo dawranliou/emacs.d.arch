@@ -108,6 +108,7 @@
  '(show-paren-context-when-offscreen 'overlay)
  '(show-trailing-whitespace t)
  '(switch-to-buffer-in-dedicated-window 'pop)
+ '(switch-to-buffer-obey-display-actions t)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(version-control t)
