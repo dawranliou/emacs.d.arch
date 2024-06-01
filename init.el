@@ -260,6 +260,8 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (with-eval-after-load 'lua-ts-mode
   (add-hook 'lua-ts-mode-hook #'eglot-ensure))
 
+(add-hook 'focus-out-hook #'garbage-collect)
+
 (provide 'init)
 
 ;;; init.el ends here
