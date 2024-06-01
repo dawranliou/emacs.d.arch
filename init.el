@@ -32,6 +32,11 @@
  '(dired-recursive-copies 'always)
  '(dired-recursive-deletes 'always)
  '(dired-use-ls-dired t)
+ '(display-buffer-alist
+   '(("\\*Occur\\*"
+      (display-buffer-reuse-mode-window display-buffer-below-selected)
+      (window-height . fit-window-to-buffer)
+      (dedicated . t))))
  '(ediff-split-window-function 'split-window-sensibly)
  '(eglot-connect-timeout 300)
  '(enable-recursive-minibuffers t)
@@ -86,6 +91,7 @@
  '(search-whitespace-regexp ".*?")
  '(selectrum-mode nil)
  '(show-paren-context-when-offscreen 'overlay)
+ '(switch-to-buffer-in-dedicated-window 'pop)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(version-control t)
