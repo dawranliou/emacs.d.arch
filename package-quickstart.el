@@ -5338,6 +5338,140 @@ Major mode for editing Elixir code.
 
 
 )
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/eat-0.9.4/eat-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/eat-0.9.4/eat-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(autoload 'eat-term-make "eat" "\
+Make a Eat terminal at POSITION in BUFFER.
+
+(fn BUFFER POSITION)")
+(autoload 'eat "eat" "\
+Start a new Eat terminal emulator in a buffer.
+
+Start a new Eat session, or switch to an already active session.
+Return the buffer selected (or created).
+
+With a non-numeric prefix ARG, create a new session.
+
+With a numeric prefix ARG (like \\[universal-argument] 42 \\[eat]),
+switch to the session with that number, or create it if it doesn't
+already exist.
+
+With double prefix argument ARG, ask for the program to run and run it
+in a newly created session.
+
+PROGRAM can be a shell command.
+
+(fn &optional PROGRAM ARG)" t)
+(autoload 'eat-other-window "eat" "\
+Start a new Eat terminal emulator in a buffer in another window.
+
+Start a new Eat session, or switch to an already active session.
+Return the buffer selected (or created).
+
+With a non-numeric prefix ARG, create a new session.
+
+With a numeric prefix ARG switch to the session with that number, or
+create it if it doesn't already exist.
+
+With double prefix argument ARG, ask for the program to run and run it
+in a newly created session.
+
+PROGRAM can be a shell command.
+
+(fn &optional PROGRAM ARG)" t)
+(defvar eat-eshell-mode nil "\
+Non-nil if Eat-Eshell mode is enabled.
+See the `eat-eshell-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `eat-eshell-mode'.")
+(custom-autoload 'eat-eshell-mode "eat" nil)
+(autoload 'eat-eshell-mode "eat" "\
+Toggle Eat terminal emulation in Eshell.
+
+This is a global minor mode.  If called interactively, toggle the
+`Eat-Eshell mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='eat-eshell-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(defvar eat-eshell-visual-command-mode nil "\
+Non-nil if Eat-Eshell-Visual-Command mode is enabled.
+See the `eat-eshell-visual-command-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `eat-eshell-visual-command-mode'.")
+(custom-autoload 'eat-eshell-visual-command-mode "eat" nil)
+(autoload 'eat-eshell-visual-command-mode "eat" "\
+Toggle running Eshell visual commands with Eat.
+
+This is a global minor mode.  If called interactively, toggle the
+`Eat-Eshell-Visual-Command mode' mode.  If the prefix argument is
+positive, enable the mode, and if it is zero or negative, disable
+the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='eat-eshell-visual-command-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(autoload 'eat-project "eat" "\
+Start Eat in the current project's root directory.
+
+Start a new Eat session, or switch to an already active session.
+Return the buffer selected (or created).
+
+With a non-numeric prefix ARG, create a new session.
+
+With a numeric prefix ARG (like
+\\[universal-argument] 42 \\[eat-project]), switch to the session with
+that number, or create it if it doesn't already exist.
+
+(fn &optional ARG)" t)
+(autoload 'eat-project-other-window "eat" "\
+Start Eat in the current project root directory in another window.
+
+Start a new Eat session, or switch to an already active session.
+Return the buffer selected (or created).
+
+With a non-numeric prefix ARG, create a new session.
+
+With a numeric prefix ARG (like
+\\[universal-argument] 42 \\[eat-project]), switch to the session with
+that number, or create it if it doesn't already exist.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "eat" '("eat-"))
+
+
+(provide 'eat-autoloads)
+
+
+)
 (let ((load-true-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el"))
 
 
@@ -6724,14 +6858,14 @@ Transpose lines in the active region." t)
 (setq package-activated-list
       (delete-dups
        (append
-        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rg rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jarchive janet-mode clojure-mode inf-clojure iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode dumb-jump corfu cider cape avy)
+        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rg rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jarchive janet-mode clojure-mode inf-clojure iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode eat dumb-jump corfu cider cape avy)
         package-activated-list)))
 (progn
   (require 'info)
   (info-initialize)
   (setq Info-directory-list
         (append
-         '("/home/dawran/.emacs.d/elpa/embark-20240419.452" "/home/dawran/.emacs.d/elpa/magit-20240522.204" "/home/dawran/.emacs.d/elpa/magit-section-20240508.2349" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240505.331" "/home/dawran/.emacs.d/elpa/orderless-20240401.959" "/home/dawran/.emacs.d/elpa/rg-20231202.1023" "/home/dawran/.emacs.d/elpa/sly-20240501.1118" "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1" "/home/dawran/.emacs.d/elpa/transient-20240525.1118" "/home/dawran/.emacs.d/elpa/with-editor-20240415.1558" "/home/dawran/.emacs.d/elpa/compat-29.1.4.5")
+         '("/home/dawran/.emacs.d/elpa/eat-0.9.4" "/home/dawran/.emacs.d/elpa/embark-20240419.452" "/home/dawran/.emacs.d/elpa/magit-20240522.204" "/home/dawran/.emacs.d/elpa/magit-section-20240508.2349" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240505.331" "/home/dawran/.emacs.d/elpa/orderless-20240401.959" "/home/dawran/.emacs.d/elpa/rg-20231202.1023" "/home/dawran/.emacs.d/elpa/sly-20240501.1118" "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1" "/home/dawran/.emacs.d/elpa/transient-20240525.1118" "/home/dawran/.emacs.d/elpa/with-editor-20240415.1558" "/home/dawran/.emacs.d/elpa/compat-29.1.4.5")
          Info-directory-list)))
 
 ;; Local Variables:
