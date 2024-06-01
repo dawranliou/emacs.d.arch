@@ -80,7 +80,7 @@
  '(marginalia-mode t)
  '(mode-line-compact 'long)
  '(modus-themes-mixed-fonts t)
- '(mouse-wheel-flip-direction t)
+ '(mouse-wheel-flip-direction nil)
  '(mouse-wheel-tilt-scroll t)
  '(native-comp-async-report-warnings-errors nil)
  '(org-special-ctrl-a/e 'reversed)
