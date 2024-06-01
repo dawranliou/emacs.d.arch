@@ -178,6 +178,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (keymap-global-set "M-$" #'jinx-correct)
 (keymap-global-set "C-x k" 'kill-this-buffer)
 (keymap-global-set "C-M-r" 'raise-sexp)
+(keymap-global-set "C-S-t" #'scratch-buffer)
 (keymap-global-set "C-." 'embark-act)
 (keymap-global-set "C-;" 'iedit-mode)
 (keymap-global-set "C-c g" 'grep-find)
