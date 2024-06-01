@@ -22,6 +22,7 @@
  '(completion-styles '(orderless basic))
  '(consult-narrow-key "<")
  '(context-menu-mode t)
+ '(corfu-popupinfo-delay '(0.25 . 0.1))
  '(custom-enabled-themes '(standard-light))
  '(custom-safe-themes
    '("8122fb61548fe36171d9cf24cdb9b5f24d053b626d4cda739c3815e080623209" "6284298df6dffde77429da94947439fbb6c910ed9ec9ae29ecfa490335081a76" "7b8f5bbdc7c316ee62f271acf6bcd0e0b8a272fdffe908f8c920b0ba34871d98" "98ef36d4487bf5e816f89b1b1240d45755ec382c7029302f36ca6626faf44bbd" "a5270d86fac30303c5910be7403467662d7601b821af2ff0c4eb181153ebfc0a" "871b064b53235facde040f6bdfa28d03d9f4b966d8ce28fb1725313731a2bcc8" "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" "046a2b81d13afddae309930ef85d458c4f5d278a69448e5a5261a5c78598e012" "3d94d6d1a1c23113a60c8496c9aed094dbc2695f219e8127bb168d17b1e6dab3" "c7c8e1670866772a055b0577027095b933057ed11ebdcccf44bae7e3756eacc0" "f5661fd54b1e60a4ae373850447efc4158c23b1c7c9d65aa1295a606278da0f8" "21e3d55141186651571241c2ba3c665979d1e886f53b2e52411e9e96659132d4" "3846f91527bdc9505142b195726d59aeeabb9ecb236267d3cbf94a5235b34bd3"))
@@ -45,6 +46,7 @@
  '(enable-recursive-minibuffers t)
  '(fill-column 80)
  '(frame-inhibit-implied-resize nil)
+ '(global-corfu-mode t)
  '(grep-find-command '("rg -n -H --no-heading --glob='' -e ''" . 37))
  '(history-length 200000)
  '(ido-enable-flex-matching nil)
@@ -203,6 +205,8 @@ backwards."
 (keymap-global-set "M-s L" #'consult-line-multi)
 (keymap-global-set "M-s o" #'consult-outline) ; was #'occur
 ;; (keymap-set isearch-mode-map "M-E" #'consult-isearch-history)
+
+(add-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
 
 (with-eval-after-load 'project
   (require 'magit-extras))
