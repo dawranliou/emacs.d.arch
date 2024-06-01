@@ -158,6 +158,15 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
 
 (setq completion-in-region-function #'completing-read-at-point)
+(defun fill-or-unfill ()
+  "Like `fill-paragraph', but unfill if used twice."
+  (interactive)
+  (let ((fill-column
+         (if (eq last-command 'fill-or-unfill)
+             (progn (setq this-command nil)
+                    (point-max))
+           fill-column)))
+    (call-interactively #'fill-paragraph)))
 
 (add-hook 'clojure-mode-hook 'eglot-ensure)
 (add-hook 'zig-mode-hook 'eglot-ensure)
@@ -168,6 +177,7 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (global-set-key [remap move-beginning-of-line] 'move-beginning-of-line+)
 (keymap-global-set "M-n" 'embark-next-symbol)
 (keymap-global-set "M-p" 'embark-previous-symbol)
+(keymap-global-set "M-q" #'fill-or-unfill)
 (keymap-global-set "M-l" 'downcase-dwim)
 (keymap-global-set "M-c" 'capitalize-dwim)
 (keymap-global-set "M-u" 'upcase-dwim)
