@@ -235,6 +235,17 @@ Inspired by https://github.com/katspaugh/ido-at-point"
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
   (add-to-list 'eglot-server-programs '(lua-ts-mode "lua-language-server"))
+
+  (defun eglot-disable-in-cider ()
+    (when (eglot-managed-p)
+      (if (bound-and-true-p cider-mode)
+          (progn
+            (remove-hook 'completion-at-point-functions 'eglot-completion-at-point)
+            (remove-hook 'xref-backend-functions 'eglot-xref-backend))
+        (add-hook 'completion-at-point-functions 'eglot-completion-at-point nil t)
+        (add-hook 'xref-backend-functions 'eglot-xref-backend))))
+  (add-hook 'cider-mode-hook #'eglot-disable-in-cider)
+  (add-hook 'eglot-managed-mode-hook #'eglot-disable-in-cider)
   )
 
 (with-eval-after-load 'cider
