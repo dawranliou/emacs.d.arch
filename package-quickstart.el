@@ -4793,325 +4793,6 @@ the first target at point." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/elixir-mode-20230626.1738/elixir-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/elixir-mode-20230626.1738/elixir-mode-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(autoload 'elixir-format "elixir-format" "\
-
-
-(fn &optional CALLED-INTERACTIVELY-P)" t)
-(register-definition-prefixes "elixir-format" '("elixir-format-"))
-
-
-
-(autoload 'elixir-mode-open-github "elixir-mode" "\
-Elixir mode open GitHub page." t)
-(autoload 'elixir-mode-open-elixir-home "elixir-mode" "\
-Elixir mode go to language home." t)
-(autoload 'elixir-mode-open-docs-master "elixir-mode" "\
-Elixir mode go to master documentation." t)
-(autoload 'elixir-mode-open-docs-stable "elixir-mode" "\
-Elixir mode go to stable documentation." t)
-(autoload 'elixir-mode-version "elixir-mode" "\
-Get the Elixir-Mode version as string.
-
-If called interactively or if SHOW-VERSION is non-nil, show the
-version in the echo area and the messages buffer.
-
-The returned string includes both, the version from package.el
-and the library version, if both a present and different.
-
-If the version number could not be determined, signal an error,
-if called interactively, or if SHOW-VERSION is non-nil, otherwise
-just return nil.
-
-(fn &optional SHOW-VERSION)" t)
-(autoload 'elixir-mode "elixir-mode" "\
-Major mode for editing Elixir code.
-
-\\{elixir-mode-map}
-
-(fn)" t)
-(add-to-list 'auto-mode-alist '("\\.elixir\\'" . elixir-mode))
-(add-to-list 'auto-mode-alist '("\\.ex\\'" . elixir-mode))
-(add-to-list 'auto-mode-alist '("\\.exs\\'" . elixir-mode))
-(add-to-list 'auto-mode-alist '("mix\\.lock" . elixir-mode))
-(register-definition-prefixes "elixir-mode" '("elixir-"))
-
-
-
-(register-definition-prefixes "elixir-smie" '("elixir-" "verbose-elixir-smie-rules"))
-
-
-(provide 'elixir-mode-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(defvar dumb-jump-mode-map (let ((map (make-sparse-keymap))) (define-key map (kbd "C-M-g") 'dumb-jump-go) (define-key map (kbd "C-M-p") 'dumb-jump-back) (define-key map (kbd "C-M-q") 'dumb-jump-quick-look) map))
-(autoload 'dumb-jump-back "dumb-jump" "\
-Jump back to where the last jump was done." t)
-(autoload 'dumb-jump-quick-look "dumb-jump" "\
-Run dumb-jump-go in quick look mode.  That is, show a tooltip of where it would jump instead." t)
-(autoload 'dumb-jump-go-other-window "dumb-jump" "\
-Like 'dumb-jump-go' but use 'find-file-other-window' instead of 'find-file'." t)
-(autoload 'dumb-jump-go-current-window "dumb-jump" "\
-Like dumb-jump-go but always use 'find-file'." t)
-(autoload 'dumb-jump-go-prefer-external "dumb-jump" "\
-Like dumb-jump-go but prefer external matches from the current file." t)
-(autoload 'dumb-jump-go-prompt "dumb-jump" "\
-Like dumb-jump-go but prompts for function instead of using under point" t)
-(autoload 'dumb-jump-go-prefer-external-other-window "dumb-jump" "\
-Like dumb-jump-go-prefer-external but use 'find-file-other-window' instead of 'find-file'." t)
-(autoload 'dumb-jump-go "dumb-jump" "\
-Go to the function/variable declaration for thing at point.
-When USE-TOOLTIP is t a tooltip jump preview will show instead.
-When PREFER-EXTERNAL is t it will sort external matches before
-current file.
-
-(fn &optional USE-TOOLTIP PREFER-EXTERNAL PROMPT)" t)
-(defvar dumb-jump-mode nil "\
-Non-nil if Dumb-Jump mode is enabled.
-See the `dumb-jump-mode' command
-for a description of this minor mode.")
-(custom-autoload 'dumb-jump-mode "dumb-jump" nil)
-(autoload 'dumb-jump-mode "dumb-jump" "\
-Minor mode for jumping to variable and function definitions
-
-This is a global minor mode.  If called interactively, toggle the
-`Dumb-Jump mode' mode.  If the prefix argument is positive,
-enable the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `(default-value \\='dumb-jump-mode)'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(autoload 'dumb-jump-xref-activate "dumb-jump" "\
-Function to activate xref backend.
-Add this function to `xref-backend-functions' to dumb jump to be
-activiated, whenever it finds a project. It is recommended to add
-it to the end, so that it only gets activated when no better
-option is found.")
-(register-definition-prefixes "dumb-jump" '("dumb-jump-"))
-
-
-(provide 'dumb-jump-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/corfu-20240523.752/corfu-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/corfu-20240523.752/corfu-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(autoload 'corfu-mode "corfu" "\
-COmpletion in Region FUnction.
-
-This is a minor mode.  If called interactively, toggle the `Corfu
-mode' mode.  If the prefix argument is positive, enable the mode,
-and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `corfu-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(put 'global-corfu-mode 'globalized-minor-mode t)
-(defvar global-corfu-mode nil "\
-Non-nil if Global Corfu mode is enabled.
-See the `global-corfu-mode' command
-for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `global-corfu-mode'.")
-(custom-autoload 'global-corfu-mode "corfu" nil)
-(autoload 'global-corfu-mode "corfu" "\
-Toggle Corfu mode in all buffers.
-With prefix ARG, enable Global Corfu mode if ARG is positive; otherwise, disable
-it.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.
-Enable the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-Corfu mode is enabled in all buffers where `corfu--on' would do it.
-
-See `corfu-mode' for more information on Corfu mode.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "corfu" '("corfu-" "global-corfu-modes"))
-
-
-
-(defvar corfu-echo-mode nil "\
-Non-nil if Corfu-Echo mode is enabled.
-See the `corfu-echo-mode' command
-for a description of this minor mode.")
-(custom-autoload 'corfu-echo-mode "corfu-echo" nil)
-(autoload 'corfu-echo-mode "corfu-echo" "\
-Show candidate documentation in echo area.
-
-This is a global minor mode.  If called interactively, toggle the
-`Corfu-Echo mode' mode.  If the prefix argument is positive,
-enable the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `(default-value \\='corfu-echo-mode)'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "corfu-echo" '("corfu-echo-"))
-
-
-
-(defvar corfu-history-mode nil "\
-Non-nil if Corfu-History mode is enabled.
-See the `corfu-history-mode' command
-for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `corfu-history-mode'.")
-(custom-autoload 'corfu-history-mode "corfu-history" nil)
-(autoload 'corfu-history-mode "corfu-history" "\
-Update Corfu history and sort completions by history.
-
-This is a global minor mode.  If called interactively, toggle the
-`Corfu-History mode' mode.  If the prefix argument is positive,
-enable the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `(default-value \\='corfu-history-mode)'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "corfu-history" '("corfu-history"))
-
-
-
-(defvar corfu-indexed-mode nil "\
-Non-nil if Corfu-Indexed mode is enabled.
-See the `corfu-indexed-mode' command
-for a description of this minor mode.")
-(custom-autoload 'corfu-indexed-mode "corfu-indexed" nil)
-(autoload 'corfu-indexed-mode "corfu-indexed" "\
-Prefix candidates with indices.
-
-This is a global minor mode.  If called interactively, toggle the
-`Corfu-Indexed mode' mode.  If the prefix argument is positive,
-enable the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `(default-value \\='corfu-indexed-mode)'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "corfu-indexed" '("corfu-indexed-"))
-
-
-
-(autoload 'corfu-info-documentation "corfu-info" "\
-Show documentation of current candidate.
-If called with a prefix ARG, the buffer is persistent.
-
-(fn &optional ARG)" t)
-(autoload 'corfu-info-location "corfu-info" "\
-Show location of current candidate.
-If called with a prefix ARG, the buffer is persistent.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "corfu-info" '("corfu-info--"))
-
-
-
-(defvar corfu-popupinfo-mode nil "\
-Non-nil if Corfu-Popupinfo mode is enabled.
-See the `corfu-popupinfo-mode' command
-for a description of this minor mode.")
-(custom-autoload 'corfu-popupinfo-mode "corfu-popupinfo" nil)
-(autoload 'corfu-popupinfo-mode "corfu-popupinfo" "\
-Corfu info popup minor mode.
-
-This is a global minor mode.  If called interactively, toggle the
-`Corfu-Popupinfo mode' mode.  If the prefix argument is positive,
-enable the mode, and if it is zero or negative, disable the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `(default-value \\='corfu-popupinfo-mode)'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(register-definition-prefixes "corfu-popupinfo" '("corfu-popupinfo-"))
-
-
-
-(autoload 'corfu-quick-jump "corfu-quick" "\
-Jump to candidate using quick keys." t)
-(autoload 'corfu-quick-insert "corfu-quick" "\
-Insert candidate using quick keys." t)
-(autoload 'corfu-quick-complete "corfu-quick" "\
-Complete candidate using quick keys." t)
-(register-definition-prefixes "corfu-quick" '("corfu-quick"))
-
-
-(provide 'corfu-autoloads)
-
-
-)
 (let ((load-true-file-name "/home/dawran/.emacs.d/elpa/consult-20240523.754/consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/consult-20240523.754/consult-autoloads.el"))
 
 
@@ -5534,6 +5215,341 @@ FETCHER and ALIST arguments.
 
 
 (provide 'consult-autoloads)
+
+
+)
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-consult-20240419.452/embark-consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-consult-20240419.452/embark-consult-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(register-definition-prefixes "embark-consult" '("embark-consult-"))
+
+
+(provide 'embark-consult-autoloads)
+
+
+)
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/elixir-mode-20230626.1738/elixir-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/elixir-mode-20230626.1738/elixir-mode-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(autoload 'elixir-format "elixir-format" "\
+
+
+(fn &optional CALLED-INTERACTIVELY-P)" t)
+(register-definition-prefixes "elixir-format" '("elixir-format-"))
+
+
+
+(autoload 'elixir-mode-open-github "elixir-mode" "\
+Elixir mode open GitHub page." t)
+(autoload 'elixir-mode-open-elixir-home "elixir-mode" "\
+Elixir mode go to language home." t)
+(autoload 'elixir-mode-open-docs-master "elixir-mode" "\
+Elixir mode go to master documentation." t)
+(autoload 'elixir-mode-open-docs-stable "elixir-mode" "\
+Elixir mode go to stable documentation." t)
+(autoload 'elixir-mode-version "elixir-mode" "\
+Get the Elixir-Mode version as string.
+
+If called interactively or if SHOW-VERSION is non-nil, show the
+version in the echo area and the messages buffer.
+
+The returned string includes both, the version from package.el
+and the library version, if both a present and different.
+
+If the version number could not be determined, signal an error,
+if called interactively, or if SHOW-VERSION is non-nil, otherwise
+just return nil.
+
+(fn &optional SHOW-VERSION)" t)
+(autoload 'elixir-mode "elixir-mode" "\
+Major mode for editing Elixir code.
+
+\\{elixir-mode-map}
+
+(fn)" t)
+(add-to-list 'auto-mode-alist '("\\.elixir\\'" . elixir-mode))
+(add-to-list 'auto-mode-alist '("\\.ex\\'" . elixir-mode))
+(add-to-list 'auto-mode-alist '("\\.exs\\'" . elixir-mode))
+(add-to-list 'auto-mode-alist '("mix\\.lock" . elixir-mode))
+(register-definition-prefixes "elixir-mode" '("elixir-"))
+
+
+
+(register-definition-prefixes "elixir-smie" '("elixir-" "verbose-elixir-smie-rules"))
+
+
+(provide 'elixir-mode-autoloads)
+
+
+)
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(defvar dumb-jump-mode-map (let ((map (make-sparse-keymap))) (define-key map (kbd "C-M-g") 'dumb-jump-go) (define-key map (kbd "C-M-p") 'dumb-jump-back) (define-key map (kbd "C-M-q") 'dumb-jump-quick-look) map))
+(autoload 'dumb-jump-back "dumb-jump" "\
+Jump back to where the last jump was done." t)
+(autoload 'dumb-jump-quick-look "dumb-jump" "\
+Run dumb-jump-go in quick look mode.  That is, show a tooltip of where it would jump instead." t)
+(autoload 'dumb-jump-go-other-window "dumb-jump" "\
+Like 'dumb-jump-go' but use 'find-file-other-window' instead of 'find-file'." t)
+(autoload 'dumb-jump-go-current-window "dumb-jump" "\
+Like dumb-jump-go but always use 'find-file'." t)
+(autoload 'dumb-jump-go-prefer-external "dumb-jump" "\
+Like dumb-jump-go but prefer external matches from the current file." t)
+(autoload 'dumb-jump-go-prompt "dumb-jump" "\
+Like dumb-jump-go but prompts for function instead of using under point" t)
+(autoload 'dumb-jump-go-prefer-external-other-window "dumb-jump" "\
+Like dumb-jump-go-prefer-external but use 'find-file-other-window' instead of 'find-file'." t)
+(autoload 'dumb-jump-go "dumb-jump" "\
+Go to the function/variable declaration for thing at point.
+When USE-TOOLTIP is t a tooltip jump preview will show instead.
+When PREFER-EXTERNAL is t it will sort external matches before
+current file.
+
+(fn &optional USE-TOOLTIP PREFER-EXTERNAL PROMPT)" t)
+(defvar dumb-jump-mode nil "\
+Non-nil if Dumb-Jump mode is enabled.
+See the `dumb-jump-mode' command
+for a description of this minor mode.")
+(custom-autoload 'dumb-jump-mode "dumb-jump" nil)
+(autoload 'dumb-jump-mode "dumb-jump" "\
+Minor mode for jumping to variable and function definitions
+
+This is a global minor mode.  If called interactively, toggle the
+`Dumb-Jump mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='dumb-jump-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(autoload 'dumb-jump-xref-activate "dumb-jump" "\
+Function to activate xref backend.
+Add this function to `xref-backend-functions' to dumb jump to be
+activiated, whenever it finds a project. It is recommended to add
+it to the end, so that it only gets activated when no better
+option is found.")
+(register-definition-prefixes "dumb-jump" '("dumb-jump-"))
+
+
+(provide 'dumb-jump-autoloads)
+
+
+)
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/corfu-20240523.752/corfu-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/corfu-20240523.752/corfu-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(autoload 'corfu-mode "corfu" "\
+COmpletion in Region FUnction.
+
+This is a minor mode.  If called interactively, toggle the `Corfu
+mode' mode.  If the prefix argument is positive, enable the mode,
+and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `corfu-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(put 'global-corfu-mode 'globalized-minor-mode t)
+(defvar global-corfu-mode nil "\
+Non-nil if Global Corfu mode is enabled.
+See the `global-corfu-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-corfu-mode'.")
+(custom-autoload 'global-corfu-mode "corfu" nil)
+(autoload 'global-corfu-mode "corfu" "\
+Toggle Corfu mode in all buffers.
+With prefix ARG, enable Global Corfu mode if ARG is positive; otherwise, disable
+it.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Corfu mode is enabled in all buffers where `corfu--on' would do it.
+
+See `corfu-mode' for more information on Corfu mode.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "corfu" '("corfu-" "global-corfu-modes"))
+
+
+
+(defvar corfu-echo-mode nil "\
+Non-nil if Corfu-Echo mode is enabled.
+See the `corfu-echo-mode' command
+for a description of this minor mode.")
+(custom-autoload 'corfu-echo-mode "corfu-echo" nil)
+(autoload 'corfu-echo-mode "corfu-echo" "\
+Show candidate documentation in echo area.
+
+This is a global minor mode.  If called interactively, toggle the
+`Corfu-Echo mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='corfu-echo-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "corfu-echo" '("corfu-echo-"))
+
+
+
+(defvar corfu-history-mode nil "\
+Non-nil if Corfu-History mode is enabled.
+See the `corfu-history-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `corfu-history-mode'.")
+(custom-autoload 'corfu-history-mode "corfu-history" nil)
+(autoload 'corfu-history-mode "corfu-history" "\
+Update Corfu history and sort completions by history.
+
+This is a global minor mode.  If called interactively, toggle the
+`Corfu-History mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='corfu-history-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "corfu-history" '("corfu-history"))
+
+
+
+(defvar corfu-indexed-mode nil "\
+Non-nil if Corfu-Indexed mode is enabled.
+See the `corfu-indexed-mode' command
+for a description of this minor mode.")
+(custom-autoload 'corfu-indexed-mode "corfu-indexed" nil)
+(autoload 'corfu-indexed-mode "corfu-indexed" "\
+Prefix candidates with indices.
+
+This is a global minor mode.  If called interactively, toggle the
+`Corfu-Indexed mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='corfu-indexed-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "corfu-indexed" '("corfu-indexed-"))
+
+
+
+(autoload 'corfu-info-documentation "corfu-info" "\
+Show documentation of current candidate.
+If called with a prefix ARG, the buffer is persistent.
+
+(fn &optional ARG)" t)
+(autoload 'corfu-info-location "corfu-info" "\
+Show location of current candidate.
+If called with a prefix ARG, the buffer is persistent.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "corfu-info" '("corfu-info--"))
+
+
+
+(defvar corfu-popupinfo-mode nil "\
+Non-nil if Corfu-Popupinfo mode is enabled.
+See the `corfu-popupinfo-mode' command
+for a description of this minor mode.")
+(custom-autoload 'corfu-popupinfo-mode "corfu-popupinfo" nil)
+(autoload 'corfu-popupinfo-mode "corfu-popupinfo" "\
+Corfu info popup minor mode.
+
+This is a global minor mode.  If called interactively, toggle the
+`Corfu-Popupinfo mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='corfu-popupinfo-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "corfu-popupinfo" '("corfu-popupinfo-"))
+
+
+
+(autoload 'corfu-quick-jump "corfu-quick" "\
+Jump to candidate using quick keys." t)
+(autoload 'corfu-quick-insert "corfu-quick" "\
+Insert candidate using quick keys." t)
+(autoload 'corfu-quick-complete "corfu-quick" "\
+Complete candidate using quick keys." t)
+(register-definition-prefixes "corfu-quick" '("corfu-quick"))
+
+
+(provide 'corfu-autoloads)
 
 
 )
@@ -6437,7 +6453,7 @@ Transpose lines in the active region." t)
 (setq package-activated-list
       (delete-dups
        (append
-        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rg rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll dash magit-section git-commit magit lua-mode keychain-environment jarchive janet-mode clojure-mode inf-clojure iedit glsl-mode fennel-mode exec-path-from-shell embark elixir-mode dumb-jump corfu consult cider avy)
+        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rg rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll dash magit-section git-commit magit lua-mode keychain-environment jarchive janet-mode clojure-mode inf-clojure iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode dumb-jump corfu cider avy)
         package-activated-list)))
 (progn
   (require 'info)
