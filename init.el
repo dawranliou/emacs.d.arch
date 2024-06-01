@@ -183,7 +183,9 @@ backwards."
 (autoload #'embark-next-symbol "embark" nil t)
 (autoload #'embark-previous-symbol "embark" nil t)
 
-(global-set-key [remap move-beginning-of-line] 'move-beginning-of-line+)
+;;; Keybindings
+
+(keymap-global-set "<remap> <move-beginning-of-line>" 'move-beginning-of-line+)
 (keymap-global-set "M-n" 'embark-next-symbol)
 (keymap-global-set "M-p" 'embark-previous-symbol)
 (keymap-global-set "M-q" #'fill-or-unfill)
@@ -208,8 +210,8 @@ backwards."
 (keymap-global-set "C-h L" #'find-library)
 (with-eval-after-load 'isearch
   (keymap-set isearch-mode-map "C-o" 'isearch-occur))
-(global-set-key [remap kill-region] 'backward-kill-word-or-region)
-(global-set-key [remap dabbrev-expand] 'hippie-expand)
+(keymap-global-set "<remap> <kill-region>" 'backward-kill-word-or-region)
+(keymap-global-set "<remap> <dabbrev-expand>" 'hippie-expand)
 
 ;; Consult drop-in replacements
 (keymap-global-set "C-x b" #'consult-buffer) ; was #'switch-to-buffer
