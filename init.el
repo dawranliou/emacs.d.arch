@@ -77,7 +77,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-clojure inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless rg sly vertico which-key yaml-mode zig-mode))
+   '(avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-clojure inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless rg sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
    '((lua-ts-mode :url "https://git.sr.ht/~johnmuhl/lua-ts-mode" :vc-backend Git)
      (janet-ts-mode :url "https://github.com/sogaiu/janet-ts-mode.git" :vc-backend Git)
@@ -176,6 +176,8 @@ backwards."
 (keymap-global-set "M-u" 'upcase-dwim)
 (keymap-global-set "M-o" 'other-window)
 (keymap-global-set "M-i" 'delete-other-windows)
+(keymap-global-set "M-j" #'avy-goto-char-timer) ; was #'default-indent-new-line
+(keymap-global-set "C-c j" #'avy-goto-line)
 (keymap-global-set "M-z" 'zap-up-to-char)
 (keymap-global-set "M-Z" 'zap-to-char)
 (keymap-global-set "M-$" #'jinx-correct)
@@ -216,6 +218,18 @@ backwards."
 
 (with-eval-after-load 'xref
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
+;; After invoking avy-goto-char-timer, hit "." to run embark at the next
+;; candidate you select. https://github.com/ebittleman/emacs-bedrock
+(setf (alist-get ?. avy-dispatch-alist)
+      (defun avy-action-embark (pt)
+        (unwind-protect
+            (save-excursion
+              (goto-char pt)
+              (embark-act))
+          (select-window
+           (cdr (ring-ref avy-ring 0)))
+          t)))
 
 (with-eval-after-load 'fennel-mode
   (keymap-unset fennel-mode-map "M-.")
