@@ -15,6 +15,11 @@
 ;; (set-face-attribute 'variable-pitch nil
 ;;                     :family "Iosevka Etoile" :height 140 :weight 'regular)
 
+;; Supress warnings
+(setq byte-compile-warnings '(not obsolete)
+      warning-suppress-log-types '((comp) (bytecomp))
+      native-comp-async-report-warnings-errors 'silent)
+
 (when (file-exists-p (locate-user-emacs-file "package-quickstart.el"))
   (setf package-enable-at-startup nil)
   (defvar package-quickstart)
