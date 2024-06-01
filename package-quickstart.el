@@ -1636,6 +1636,50 @@ it is disabled.
 
 
 )
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/marginalia-20240523.1240/marginalia-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/marginalia-20240523.1240/marginalia-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(defvar marginalia-mode nil "\
+Non-nil if Marginalia mode is enabled.
+See the `marginalia-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `marginalia-mode'.")
+(custom-autoload 'marginalia-mode "marginalia" nil)
+(autoload 'marginalia-mode "marginalia" "\
+Annotate completion candidates with richer information.
+
+This is a global minor mode.  If called interactively, toggle the
+`Marginalia mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='marginalia-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(autoload 'marginalia-cycle "marginalia" "\
+Cycle between annotators in `marginalia-annotator-registry'." t)
+(register-definition-prefixes "marginalia" '("marginalia-"))
+
+
+(provide 'marginalia-autoloads)
+
+
+)
 (let ((load-true-file-name "/home/dawran/.emacs.d/elpa/dash-20240510.1327/dash-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/dash-20240510.1327/dash-autoloads.el"))
 
 
@@ -6680,7 +6724,7 @@ Transpose lines in the active region." t)
 (setq package-activated-list
       (delete-dups
        (append
-        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rg rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll dash magit-section git-commit magit lua-mode keychain-environment jarchive janet-mode clojure-mode inf-clojure iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode dumb-jump corfu cider cape avy)
+        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rg rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jarchive janet-mode clojure-mode inf-clojure iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode dumb-jump corfu cider cape avy)
         package-activated-list)))
 (progn
   (require 'info)
