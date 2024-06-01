@@ -20,6 +20,7 @@
  '(column-number-mode t)
  '(completion-category-overrides '((file (styles partial-completion))))
  '(completion-styles '(orderless basic))
+ '(consult-narrow-key "<")
  '(context-menu-mode t)
  '(custom-enabled-themes '(standard-light))
  '(custom-safe-themes
@@ -77,7 +78,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-clojure inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless rg sly vertico which-key yaml-mode zig-mode))
+   '(consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-clojure inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless rg sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
    '((lua-ts-mode :url "https://git.sr.ht/~johnmuhl/lua-ts-mode" :vc-backend Git)
      (janet-ts-mode :url "https://github.com/sogaiu/janet-ts-mode.git" :vc-backend Git)
@@ -193,6 +194,15 @@ backwards."
   (keymap-set isearch-mode-map "C-o" 'isearch-occur))
 (global-set-key [remap kill-region] 'backward-kill-word-or-region)
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
+
+;; Consult drop-in replacements
+(keymap-global-set "C-x b" #'consult-buffer) ; was #'switch-to-buffer
+(keymap-global-set "M-y" #'consult-yank-pop) ; was #'yank-pop
+(keymap-global-set "M-s r" #'consult-ripgrep)
+(keymap-global-set "M-s l" #'consult-line)
+(keymap-global-set "M-s L" #'consult-line-multi)
+(keymap-global-set "M-s o" #'consult-outline) ; was #'occur
+;; (keymap-set isearch-mode-map "M-E" #'consult-isearch-history)
 
 (with-eval-after-load 'project
   (require 'magit-extras))
