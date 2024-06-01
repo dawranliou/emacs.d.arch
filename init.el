@@ -137,33 +137,6 @@ backwards."
       (kill-region (region-beginning) (region-end))
     (backward-kill-word (or arg 1))))
 
-(defun completing-read-at-point (start end col &optional pred)
-  "`completing-at-point' using `completing-read' (inside minibuffer).
-Inspired by https://github.com/katspaugh/ido-at-point"
-  (if (minibufferp) (completion--in-region start end col pred)
-    (let* ((init (buffer-substring-no-properties start end))
-           (all (completion-all-completions init col pred (length init)))
-           (completion (cond
-                        ((atom all) nil)
-                        ((and (consp all) (atom (cdr all))) (car all))
-                        (t (completing-read "Completions: " col pred t init)))))
-      (if completion
-          (progn
-            (delete-region start end)
-            (insert completion)
-            t)
-        (message "No completions") nil))))
-
-(defun crm-indicator (args)
-  (cons (format "[CRM%s] %s"
-                (replace-regexp-in-string
-                 "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
-                 crm-separator)
-                (car args))
-        (cdr args)))
-(advice-add #'completing-read-multiple :filter-args #'crm-indicator)
-
-(setq completion-in-region-function #'completing-read-at-point)
 (defun remove-treesit-sexp-changes ()
   (keymap-unset (current-local-map) "<remap> <beginning-of-defun>")
   (keymap-unset (current-local-map) "<remap> <end-of-defun>")
