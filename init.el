@@ -240,15 +240,16 @@ backwards."
 
 ;; After invoking avy-goto-char-timer, hit "." to run embark at the next
 ;; candidate you select. https://github.com/ebittleman/emacs-bedrock
-(setf (alist-get ?. avy-dispatch-alist)
-      (defun avy-action-embark (pt)
-        (unwind-protect
-            (save-excursion
-              (goto-char pt)
-              (embark-act))
-          (select-window
-           (cdr (ring-ref avy-ring 0)))
-          t)))
+(with-eval-after-load 'avy
+  (setf (alist-get ?. avy-dispatch-alist)
+        (defun avy-action-embark (pt)
+          (unwind-protect
+              (save-excursion
+                (goto-char pt)
+                (embark-act))
+            (select-window
+             (cdr (ring-ref avy-ring 0)))
+            t))))
 
 (with-eval-after-load 'fennel-mode
   (keymap-unset fennel-mode-map "M-.")
