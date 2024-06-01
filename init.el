@@ -56,6 +56,7 @@
  '(lua-ts-indent-offset 2)
  '(magit-diff-refine-hunk 'all)
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
+ '(major-mode-remap-alist '((janet-mode . janet-ts-mode)))
  '(make-backup-files t)
  '(mode-line-compact 'long)
  '(mouse-wheel-flip-direction t)
@@ -70,11 +71,10 @@
  '(package-selected-packages
    '(standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-clojure inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless rg sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
-   '((lua-ts-mode :vc-backend Git :url "https://git.sr.ht/~johnmuhl/lua-ts-mode")
-     (janet-ts-mode :vc-backend Git :url "https://github.com/sogaiu/janet-ts-mode.git")
-     (ajrepl :vc-backend Git :url "https://github.com/sogaiu/ajrepl.git")
-     (a-janet-spork-client :vc-backend Git :url "https://github.com/sogaiu/a-janet-spork-client.git")
-     (inf-janet :vc-backend Git :url "https://github.com/velkyel/inf-janet.git")))
+   '((lua-ts-mode :url "https://git.sr.ht/~johnmuhl/lua-ts-mode" :vc-backend Git)
+     (janet-ts-mode :url "https://github.com/sogaiu/janet-ts-mode.git" :vc-backend Git)
+     (ajrepl :url "https://github.com/sogaiu/ajrepl.git" :vc-backend Git)
+     (a-janet-spork-client :url "https://github.com/sogaiu/a-janet-spork-client.git" :vc-backend Git)))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(toggle-truncate-lines electric-pair-mode))
  '(repeat-mode t)
@@ -229,6 +229,30 @@ Inspired by https://github.com/katspaugh/ido-at-point"
       (cider-set-repl-type 'cljs)))
 
   (add-hook 'cider-connected-hook #'cider-setup-sci-js-cljs-repl))
+
+(with-eval-after-load 'janet-mode
+  ;; (require 'inf-janet)
+  ;; (remove-hook 'janet-mode-hook #'inf-janet-minor-mode)
+  ;; (keymap-set inf-janet-minor-mode-map "C-c C-b" #'inf-janet-eval-buffer)
+
+  ;; (require 'ajrepl)
+  ;; (add-hook 'janet-mode-hook #'ajrepl-interaction-mode)
+  ;; (require 'ajsc)
+  )
+
+(with-eval-after-load 'janet-ts-mode
+  (add-hook 'janet-ts-mode-hook #'remove-treesit-sexp-changes)
+  ;; (add-hook 'janet-ts-mode-hook #'ajrepl-interaction-mode)
+  ;; (add-hook 'janet-ts-mode-hook #'ajsc-interaction-mode)
+  )
+
+(with-eval-after-load 'ajrepl
+  (defun ajrepl-send-defun ()
+    (interactive)
+    (save-excursion
+      (mark-defun)
+      (call-interactively #'ajrepl-send-region)))
+  (keymap-set ajrepl-interaction-mode-map "C-c C-c" #'ajrepl-send-defun))
 
 (with-eval-after-load 'lua-mode
   (add-hook 'lua-mode-hook #'eglot-ensure))
