@@ -221,7 +221,9 @@ backwards."
 (keymap-global-set "M-s o" #'consult-outline) ; was #'occur
 ;; (keymap-set isearch-mode-map "M-E" #'consult-isearch-history)
 
-(add-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
+(with-eval-after-load 'corfu
+  (add-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
+  (keymap-set corfu-mode-map "SPC" #'corfu-insert-separator))
 
 (add-to-list 'completion-at-point-functions #'cape-dabbrev)
 (add-to-list 'completion-at-point-functions #'cape-file)
