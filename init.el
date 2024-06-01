@@ -98,6 +98,7 @@
  '(version-control t)
  '(vertico-mode t)
  '(which-key-mode t)
+ '(x-stretch-cursor t)
  '(x-underline-at-descent-line t)
  '(xref-search-program 'ripgrep)
  '(xref-show-definitions-function 'xref-show-definitions-completing-read))
