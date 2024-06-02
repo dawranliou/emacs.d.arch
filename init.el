@@ -277,7 +277,7 @@ backwards."
   (keymap-unset fennel-mode-map "M-,"))
 
 (with-eval-after-load 'eglot
-  (fset #'jsonrpc--log-event #'ignored) ; massive perf boost---don't log every event
+  (fset #'jsonrpc--log-event #'ignore) ; massive perf boost---don't log every event
 
   (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
   (add-to-list 'eglot-server-programs '(lua-ts-mode "lua-language-server"))
