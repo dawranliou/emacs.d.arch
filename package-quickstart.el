@@ -194,7 +194,7 @@ Simple mode to edit YAML.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240415.1558/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240415.1558/with-editor-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240623.1757/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240623.1757/with-editor-autoloads.el"))
 
 
 
@@ -280,14 +280,14 @@ If COMMAND ends with \"&\" behave like the latter,
 else like the former.
 
 (fn COMMAND &optional OUTPUT-BUFFER ERROR-BUFFER ENVVAR)" t)
-(register-definition-prefixes "with-editor" '("server-" "shell-command--shell-command-with-editor-mode" "start-file-process--with-editor-process-filter" "with-editor"))
+(register-definition-prefixes "with-editor" '("server-" "shell-command" "start-file-process" "with-editor"))
 
 
 (provide 'with-editor-autoloads)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/which-key-20240501.1251/which-key-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/which-key-20240501.1251/which-key-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/which-key-20240620.2145/which-key-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/which-key-20240620.2145/which-key-autoloads.el"))
 
 
 
@@ -305,7 +305,7 @@ either customize it (see the info node `Easy Customization')
 or call the function `which-key-mode'.")
 (custom-autoload 'which-key-mode "which-key" nil)
 (autoload 'which-key-mode "which-key" "\
-Toggle which-key-mode.
+Toggle `which-key-mode'.
 
 This is a global minor mode.  If called interactively, toggle the
 `Which-Key mode' mode.  If the prefix argument is positive,
@@ -320,6 +320,8 @@ evaluate `(default-value \\='which-key-mode)'.
 
 The mode's hook is called both when the mode is enabled and when
 it is disabled.
+
+\\{which-key-mode-map}
 
 (fn &optional ARG)" t)
 (autoload 'which-key-setup-side-window-right "which-key" "\
@@ -336,12 +338,12 @@ Do not use this setup if you use the paging commands.  Instead use
 but more functional." t)
 (autoload 'which-key-add-keymap-based-replacements "which-key" "\
 Replace the description of KEY using REPLACEMENT in KEYMAP.
-KEY should take a format suitable for use in `kbd'. REPLACEMENT
+KEY should take a format suitable for use in `kbd'.  REPLACEMENT
 should be a cons cell of the form (STRING . COMMAND) for each
 REPLACEMENT, where STRING is the replacement string and COMMAND
 is a symbol corresponding to the intended command to be
-replaced. COMMAND can be nil if the binding corresponds to a key
-prefix. An example is
+replaced.  COMMAND can be nil if the binding corresponds to a key
+prefix.  An example is
 
 (which-key-add-keymap-based-replacements global-map
   \"C-x w\" \\='(\"Save as\" . write-file)).
@@ -354,8 +356,8 @@ for REPLACEMENT will eventually be removed.
 (function-put 'which-key-add-keymap-based-replacements 'lisp-indent-function 'defun)
 (autoload 'which-key-add-key-based-replacements "which-key" "\
 Replace the description of KEY-SEQUENCE with REPLACEMENT.
-KEY-SEQUENCE is a string suitable for use in `kbd'. REPLACEMENT
-may either be a string, as in
+KEY-SEQUENCE is a string suitable for use in `kbd'.
+REPLACEMENT may either be a string, as in
 
 (which-key-add-key-based-replacements \"C-x 1\" \"maximize\")
 
@@ -386,7 +388,7 @@ addition KEY-SEQUENCE REPLACEMENT pairs) to apply.
 Simulate entering the key sequence KEY-SEQ.
 KEY-SEQ should be a list of events as produced by
 `listify-key-sequence'.  If nil, KEY-SEQ defaults to
-`which-key--current-key-list'. Any prefix arguments that were
+`which-key--current-key-list'.  Any prefix arguments that were
 used are reapplied to the new key sequence.
 
 (fn &optional KEY-SEQ)")
@@ -414,15 +416,15 @@ Show top-level bindings.
 (autoload 'which-key-show-major-mode "which-key" "\
 Show top-level bindings in the map of the current major mode.
 This function will also detect evil bindings made using
-`evil-define-key' in this map. These bindings will depend on the
-current evil state. 
+`evil-define-key' in this map.  These bindings will depend on the
+current evil state.
 
 (fn &optional ALL)" t)
 (autoload 'which-key-show-full-major-mode "which-key" "\
 Show all bindings in the map of the current major mode.
 This function will also detect evil bindings made using
-`evil-define-key' in this map. These bindings will depend on the
-current evil state. " t)
+`evil-define-key' in this map.  These bindings will depend on the
+current evil state." t)
 (autoload 'which-key-dump-bindings "which-key" "\
 Dump bindings from PREFIX into buffer named BUFFER-NAME.
 PREFIX should be a string suitable for `kbd'.
@@ -433,7 +435,7 @@ Undo last keypress and force which-key update.
 
 (fn &optional _)" t)
 (autoload 'which-key-C-h-dispatch "which-key" "\
-Dispatch C-h commands by looking up key in `which-key-C-h-map'.
+Dispatch \\`C-h' commands by looking up key in `which-key-C-h-map'.
 This command is always accessible (from any prefix) if
 `which-key-use-C-h-commands' is non nil." t)
 (autoload 'which-key-show-keymap "which-key" "\
@@ -485,7 +487,7 @@ Setup wgrep preparation.")
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/vertico-20240511.2047/vertico-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/vertico-20240511.2047/vertico-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/vertico-20240625.506/vertico-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/vertico-20240625.506/vertico-autoloads.el"))
 
 
 
@@ -833,7 +835,7 @@ it is disabled.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20240525.1118/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20240525.1118/transient-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20240626.947/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20240626.947/transient-autoloads.el"))
 
 
 
@@ -892,7 +894,7 @@ See info node `(transient)Modifying Existing Transients'.
 
 (fn PREFIX LOC)")
 (function-put 'transient-remove-suffix 'lisp-indent-function 'defun)
-(register-definition-prefixes "transient" '("static-if" "transient"))
+(register-definition-prefixes "transient" '("find-function-advised-original" "static-if" "transient"))
 
 
 (provide 'transient-autoloads)
@@ -1222,164 +1224,6 @@ See `sesman-browser-mode' for more details." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/rg-20231202.1023/rg-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/rg-20231202.1023/rg-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(defvar rg-keymap-prefix "\3s" "\
-Prefix for global `rg' keymap.")
-(custom-autoload 'rg-keymap-prefix "rg" t)
-(defvar rg-command-line-flags-function 'identity "\
-Function to modify command line flags of a search.
-The argument of the function is an optional list of search specific
-command line flags and the function shall return a list of command
-line flags to use.")
-(autoload 'rg-define-toggle "rg" "\
-Define a command line flag that can be toggled from the rg result buffer.
-
-This will create a function with prefix \"rg-custom-toggle-flag-\"
-concatenated with the FLAG name, stripped of any leading dashes.  Flag
-must be a form that will be evaluated to a string at macro expansion
-time.  For instance, if FLAG is \"--invert-match\" the function name
-will be `rg-custom-toggle-flag-invert-match'.  If the flag contains a
-value that will be excluded from the function name.
-
-Optional KEY is a key binding that is added to `rg-mode-map'.  If the
-optional DEFAULT parameter is non nil the flag will be enabled by default.
-
-(fn FLAG &optional KEY DEFAULT)" nil t)
-(autoload 'rg-enable-default-bindings "rg" "\
-Enable the global `rg' default key bindings under PREFIX key.
-If prefix is not supplied `rg-keymap-prefix' is used.
-
-(fn &optional PREFIX)" t)
-(autoload 'rg-use-old-defaults "rg" "\
-Restore default settings pre version 2.0.0.")
-(autoload 'rg-define-search "rg" "\
-Define an rg search functions named NAME.
-ARGS is a search specification that defines parameters of a search.
-It optionally starts with a string that is used as the docstring for
-the defined function.  The rest of ARGS contains key value pairs
-according to the specification below.  All keys are optional with
-specified default if left out.
-
-:query      Method for retrieving the search string.  Allowed values
-            are `point' which means extract thing at point and `ask'
-            which means prompt the user for a string.  Any form that
-            evaluates to a string is allowed.
-            Default is `ask'.
-:format     Specifies if :query is interpreted literally (`literal')
-            or as a regexp (`regexp').  If it is a form, eg.
-            (not `current-prefix-arg'), and is non-nil the :query is
-            interpreted literally, otherwise as a regexp.
-            Default is `regexp'.
-:files      Form that evaluates to a file alias or custom file glob.
-            `current' means extract alias from current buffer file name,
-            `ask' will prompt the user.
-            Default is `ask'.
-:dir        Root search directory.  Allowed values are `ask' for user
-            prompt, `current' for current dir and `project' for project
-            root.  Any form that evaluates to a directory string is
-            also allowed.
-            Default is `ask'.
-:confirm    `never', `always', or `prefix' are allowed values.  Specifies
-            if the the final search command line string can be modified
-            and confirmed by the user.
-            Default is `never'.
-:flags      `ask' or a list of command line flags that will be used when
-            invoking the search.
-:menu       Bind the command into `rg-menu'.  Must be a list with three
-            items in it.  The first item is the description of the
-            group in which the new command will appear.  If the group
-            does not exist a new will be created.  The second item is
-            the key binding for this new command (ether a key vector
-            or a key description string) and the third item is the
-            description of the command that will appear in the menu.
-
-Example:
-(rg-define-search search-home-dir-in-elisp
-  \"Doc string.\"
-  :query ask
-  :format literal
-  :files \"elisp\"
-  :dir (getenv \"HOME\"))
-  :menu (\"Custom\" \"H\" \"Home dir\")
-
-(fn NAME &rest ARGS)" nil t)
-(function-put 'rg-define-search 'lisp-indent-function 'defun)
- (autoload 'rg-project "rg.el" "" t)
- (autoload 'rg-dwim-project-dir "rg.el" "" t)
- (autoload 'rg-dwim-current-dir "rg.el" "" t)
- (autoload 'rg-dwim-current-file "rg.el" "" t)
-(autoload 'rg-dwim "rg" "\
-Run ripgrep without user interaction figuring out the intention by magic(!).
-The default magic searches for thing at point in files matching
-current file under project root directory.
-
-With \\[universal-argument] prefix (CURDIR), search is done in
-current dir instead of project root.
-
-With repeated \\[universal-argument] prefix, search is done in
-the current dir and using the current variable `buffer-file-name'
-as a pattern.  Subdirectories are still searched, so different
-files with the same name pattern still will be searched.
-
-(fn &optional CURDIR)" t)
- (autoload 'rg-literal "rg.el" "" t)
- (autoload 'rg "rg.el" "" t)
-(register-definition-prefixes "rg" '("kill-rg" "rg-"))
-
-
-
-(register-definition-prefixes "rg-header" '("rg-"))
-
-
-
-(register-definition-prefixes "rg-history" '("rg-history-"))
-
-
-
-(autoload 'rg-list-searches "rg-ibuffer" "\
-List all `rg-mode' buffers in `ibuffer'." t)
-(register-definition-prefixes "rg-ibuffer" '("rg-"))
-
-
-
- (autoload 'rg-isearch-current-file "rg-isearch.el" "" t)
- (autoload 'rg-isearch-current-dir "rg-isearch.el" "" t)
- (autoload 'rg-isearch-project "rg-isearch.el" "" t)
-(register-definition-prefixes "rg-isearch" '("rg-get-isearch-string"))
-
-
-
-(autoload 'rg-enable-menu "rg-menu" "\
-Bind `rg-menu' to PREFIX key.
-If prefix is not supplied `rg-keymap-prefix' is used.
-
-(fn &optional PREFIX)" t)
-(register-definition-prefixes "rg-menu" '("rg-menu-"))
-
-
-
-(register-definition-prefixes "rg-result" '("rg-"))
-
-
-
-(autoload 'wgrep-rg-setup "wgrep-rg" "\
-Setup wgrep rg support.")
-(add-hook 'rg-mode-hook 'wgrep-rg-setup)
-(register-definition-prefixes "wgrep-rg" '("wgrep-rg-"))
-
-
-(provide 'rg-autoloads)
-
-
-)
 (let ((load-true-file-name "/home/dawran/.emacs.d/elpa/rainbow-mode-1.0.6/rainbow-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/rainbow-mode-1.0.6/rainbow-mode-autoloads.el"))
 
 
@@ -1498,7 +1342,7 @@ Create an empty queue data structure.")
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/orderless-20240401.959/orderless-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/orderless-20240401.959/orderless-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/orderless-20240606.1026/orderless-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/orderless-20240606.1026/orderless-autoloads.el"))
 
 
 
@@ -1546,7 +1390,7 @@ Match COMPONENT against the keywords in `orderless-kwd-alist'.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240505.331/modus-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240505.331/modus-themes-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240625.437/modus-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240625.437/modus-themes-autoloads.el"))
 
 
 
@@ -1594,7 +1438,7 @@ corresponding entries.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/mlscroll-20240528.2006/mlscroll-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/mlscroll-20240528.2006/mlscroll-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/mlscroll-20240606.1855/mlscroll-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/mlscroll-20240606.1855/mlscroll-autoloads.el"))
 
 
 
@@ -1751,7 +1595,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240508.2349/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240508.2349/magit-section-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240628.1638/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240628.1638/magit-section-autoloads.el"))
 
 
 
@@ -1760,14 +1604,14 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 
-(register-definition-prefixes "magit-section" '("isearch-clean-overlays@magit-mode" "magit-"))
+(register-definition-prefixes "magit-section" '("context-menu-region" "isearch-clean-overlays" "magit-"))
 
 
 (provide 'magit-section-autoloads)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240520.1135/git-commit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240520.1135/git-commit-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240623.1335/git-commit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240623.1335/git-commit-autoloads.el"))
 
 
 
@@ -1790,7 +1634,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20240522.204/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20240522.204/magit-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20240628.1641/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20240628.1641/magit-autoloads.el"))
 
 
 
@@ -1978,16 +1822,23 @@ See `auto-revert-mode' for more information on Auto-Revert mode.
 (autoload 'magit-emacs-Q-command "magit-base" "\
 Show a shell command that runs an uncustomized Emacs with only Magit loaded.
 See info node `(magit)Debugging Tools' for more information." t)
-(autoload 'Info-follow-nearest-node--magit-gitman "magit-base" "\
-
-
-(fn FN &optional FORK)")
-(advice-add 'Info-follow-nearest-node :around #'Info-follow-nearest-node--magit-gitman)
-(advice-add 'org-man-export :around #'org-man-export--magit-gitman)
-(autoload 'org-man-export--magit-gitman "magit-base" "\
-
-
-(fn FN LINK DESCRIPTION FORMAT)")
+(define-advice Info-follow-nearest-node (:around (fn &optional fork) gitman) (let ((node (Info-get-token (point) "\\*note[ 
+	]+" "\\*note[ 
+	]+\\([^:]*\\):\\(:\\|[ 
+	]*(\\)?"))) (if (and node (string-match "^(gitman)\\(.+\\)" node)) (pcase magit-view-git-manual-method ('info (funcall fn fork)) ('man (require 'man) (man (match-string 1 node))) ('woman (require 'woman) (woman (match-string 1 node))) (_ (user-error "Invalid value for `magit-view-git-manual-method'"))) (funcall fn fork))))
+(define-advice org-man-export (:around (fn link description format) gitman) (if (and (eq format 'texinfo) (string-prefix-p "git" link)) (string-replace "%s" link "
+@ifinfo
+@ref{%s,,,gitman,}.
+@end ifinfo
+@ifhtml
+@html
+the <a href=\"http://git-scm.com/docs/%s\">%s(1)</a> manpage.
+@end html
+@end ifhtml
+@iftex
+the %s(1) manpage.
+@end iftex
+") (funcall fn link description format)))
 (register-definition-prefixes "magit-base" '("magit-"))
 
 
@@ -2840,7 +2691,7 @@ the same location in the respective file in the working tree." t)
 Checkout FILE from REV.
 
 (fn REV FILE)" t)
-(register-definition-prefixes "magit-files" '("magit-"))
+(register-definition-prefixes "magit-files" '("lsp" "magit-"))
 
 
 
@@ -4031,7 +3882,7 @@ information retrieved from files created by the keychain script." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jinx-20240515.1016/jinx-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jinx-20240515.1016/jinx-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jinx-20240628.903/jinx-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jinx-20240628.903/jinx-autoloads.el"))
 
 
 
@@ -4053,7 +3904,11 @@ buffers.  See also the variable `jinx-languages'.
 
 (fn LANGS &optional GLOBAL)" t)
 (autoload 'jinx-correct-all "jinx" "\
-Correct all misspelled words in the buffer." t)
+Correct all misspelled words in the buffer.
+With prefix argument ONLY-CHECK, only check the buffer and highlight all
+misspellings, but do not open the correction UI.
+
+(fn &optional ONLY-CHECK)" t)
 (autoload 'jinx-correct-nearest "jinx" "\
 Correct nearest misspelled word." t)
 (autoload 'jinx-correct-word "jinx" "\
@@ -4072,6 +3927,9 @@ This command dispatches to the following commands:
     correct all misspelled words.
   - `jinx-correct-word': If prefix ARG is 16, corresponding to
     \\[universal-argument] pressed twice, correct word before point.
+  - If prefix ARG is 64, corresponding to \\[universal-argument] pressed
+    three times, check the whole buffer, but do not open the correction
+    UI.
 
 (fn &optional ARG)" t)
 (autoload 'jinx-mode "jinx" "\
@@ -4191,193 +4049,6 @@ Major mode for the Janet language
 
 
 (provide 'janet-mode-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20240526.1825/clojure-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20240526.1825/clojure-mode-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(autoload 'clojure-mode "clojure-mode" "\
-Major mode for editing Clojure code.
-
-\\{clojure-mode-map}
-
-(fn)" t)
-(autoload 'clojure-unwind "clojure-mode" "\
-Unwind thread at point or above point by N levels.
-With universal argument \\[universal-argument], fully unwind thread.
-
-(fn &optional N)" t)
-(autoload 'clojure-unwind-all "clojure-mode" "\
-Fully unwind thread at point or above point." t)
-(autoload 'clojure-thread "clojure-mode" "\
-Thread by one more level an existing threading macro." t)
-(autoload 'clojure-thread-first-all "clojure-mode" "\
-Fully thread the form at point using ->.
-
-When BUT-LAST is non-nil, the last expression is not threaded.
-Default value is `clojure-thread-all-but-last'.
-
-(fn BUT-LAST)" t)
-(autoload 'clojure-thread-last-all "clojure-mode" "\
-Fully thread the form at point using ->>.
-
-When BUT-LAST is non-nil, the last expression is not threaded.
-Default value is `clojure-thread-all-but-last'.
-
-(fn BUT-LAST)" t)
-(autoload 'clojure-cycle-privacy "clojure-mode" "\
-Make public the current private def, or vice-versa.
-See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-cycle-privacy" t)
-(autoload 'clojure-convert-collection-to-list "clojure-mode" "\
-Convert collection at (point) to list." t)
-(autoload 'clojure-convert-collection-to-quoted-list "clojure-mode" "\
-Convert collection at (point) to quoted list." t)
-(autoload 'clojure-convert-collection-to-map "clojure-mode" "\
-Convert collection at (point) to map." t)
-(autoload 'clojure-convert-collection-to-vector "clojure-mode" "\
-Convert collection at (point) to vector." t)
-(autoload 'clojure-convert-collection-to-set "clojure-mode" "\
-Convert collection at (point) to set." t)
-(autoload 'clojure-cycle-if "clojure-mode" "\
-Change a surrounding if to if-not, or vice-versa.
-
-See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-cycle-if" t)
-(autoload 'clojure-cycle-when "clojure-mode" "\
-Change a surrounding when to when-not, or vice-versa." t)
-(autoload 'clojure-let-backward-slurp-sexp "clojure-mode" "\
-Slurp the s-expression before the let form into the let form.
-With a numeric prefix argument slurp the previous N s-expressions
-into the let form.
-
-(fn &optional N)" t)
-(autoload 'clojure-let-forward-slurp-sexp "clojure-mode" "\
-Slurp the next s-expression after the let form into the let form.
-With a numeric prefix argument slurp the next N s-expressions
-into the let form.
-
-(fn &optional N)" t)
-(autoload 'clojure-introduce-let "clojure-mode" "\
-Create a let form, binding the form at point.
-With a numeric prefix argument the let is introduced N lists up.
-
-(fn &optional N)" t)
-(autoload 'clojure-move-to-let "clojure-mode" "\
-Move the form at point to a binding in the nearest let." t)
-(autoload 'clojure-rename-ns-alias "clojure-mode" "\
-Rename a namespace alias.
-If a region is active, only pick up and rename aliases within the region." t)
-(autoload 'clojure-add-arity "clojure-mode" "\
-Add an arity to a function." t)
-(autoload 'clojurescript-mode "clojure-mode" "\
-Major mode for editing ClojureScript code.
-
-\\{clojurescript-mode-map}
-
-(fn)" t)
-(autoload 'clojurec-mode "clojure-mode" "\
-Major mode for editing ClojureC code.
-
-\\{clojurec-mode-map}
-
-(fn)" t)
-(add-to-list 'auto-mode-alist '("\\.\\(clj\\|cljd\\|dtm\\|edn\\|lpy\\)\\'" . clojure-mode))
-(add-to-list 'auto-mode-alist '("\\.cljc\\'" . clojurec-mode))
-(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojurescript-mode))
-(add-to-list 'auto-mode-alist '("\\(?:build\\|profile\\)\\.boot\\'" . clojure-mode))
-(add-to-list 'interpreter-mode-alist '("bb" . clojure-mode))
-(add-to-list 'interpreter-mode-alist '("nbb" . clojurescript-mode))
-(register-definition-prefixes "clojure-mode" '(";;" "add-custom-clojure-indents" "clojure" "define-clojure-indent" "put-clojure-indent"))
-
-
-(provide 'clojure-mode-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/inf-clojure-20230909.445/inf-clojure-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/inf-clojure-20230909.445/inf-clojure-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(defvar inf-clojure-mode-line '(:eval (format " inf-clojure[%s]" (inf-clojure--modeline-info))) "\
-Mode line lighter for cider mode.
-
-The value of this variable is a mode line template as in
-`mode-line-format'.  See Info Node `(elisp)Mode Line Format' for details
-about mode line templates.
-
-Customize this variable to change how inf-clojure-minor-mode
-displays its status in the mode line.  The default value displays
-the current REPL.  Set this variable to nil to disable the
-mode line entirely.")
-(custom-autoload 'inf-clojure-mode-line "inf-clojure" t)
-(autoload 'inf-clojure-minor-mode "inf-clojure" "\
-Minor mode for interacting with the inferior Clojure process buffer.
-
-The following commands are available:
-
-\\{inf-clojure-minor-mode-map}
-
-This is a minor mode.  If called interactively, toggle the
-`Inf-Clojure minor mode' mode.  If the prefix argument is
-positive, enable the mode, and if it is zero or negative, disable
-the mode.
-
-If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
-the mode if ARG is nil, omitted, or is a positive number.
-Disable the mode if ARG is a negative number.
-
-To check whether the minor mode is enabled in the current buffer,
-evaluate `inf-clojure-minor-mode'.
-
-The mode's hook is called both when the mode is enabled and when
-it is disabled.
-
-(fn &optional ARG)" t)
-(autoload 'inf-clojure "inf-clojure" "\
-Run an inferior Clojure process, input and output via buffer `*inf-clojure*'.
-If there is a process already running in `*inf-clojure*', just
-switch to that buffer.
-
-CMD is a string which serves as the startup command or a cons of
-host and port.
-
- Prompts user for repl startup command and repl type if not
-inferrable from startup command.  Uses `inf-clojure-custom-repl-type'
-and `inf-clojure-custom-startup' if those are set.
-Use a prefix to prevent using these when they
-are set.
-
-Prints a message that it has connected to the host and port
-unless SUPPRESS-MESSAGE is truthy.
-
- Runs the hooks from `inf-clojure-mode-hook' (after the
-`comint-mode-hook' is run).  (Type \\[describe-mode] in the
-process buffer for a list of commands.)
-
-(fn CMD &optional SUPPRESS-MESSAGE)" t)
-(autoload 'inf-clojure-socket-repl "inf-clojure" "\
-Start a socket REPL server and connects to it via `inf-clojure-connect'.
-CMD is the command line instruction used to start the socket
-REPL.  It should be a string with \"%d\" in it to take a random
-port.  Set `inf-clojure-custom-startup' or choose from the
-defaults provided in `inf-clojure-socket-repl-startup-forms'.
-
-(fn CMD)" t)
-(register-definition-prefixes "inf-clojure" '("inf-clojure-"))
-
-
-(provide 'inf-clojure-autoloads)
 
 
 )
@@ -4731,7 +4402,7 @@ values used in the user's shell." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-20240419.452/embark-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-20240419.452/embark-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-20240607.2213/embark-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-20240607.2213/embark-autoloads.el"))
 
 
 
@@ -5563,7 +5234,7 @@ that number, or create it if it doesn't already exist.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240514.702/dumb-jump-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240625.224/dumb-jump-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/dumb-jump-20240625.224/dumb-jump-autoloads.el"))
 
 
 
@@ -5615,6 +5286,8 @@ evaluate `(default-value \\='dumb-jump-mode)'.
 
 The mode's hook is called both when the mode is enabled and when
 it is disabled.
+
+\\{dumb-jump-mode-map}
 
 (fn &optional ARG)" t)
 (autoload 'dumb-jump-xref-activate "dumb-jump" "\
@@ -5822,7 +5495,113 @@ Complete candidate using quick keys." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20240530.1501/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20240530.1501/cider-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20240526.1825/clojure-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/clojure-mode-20240526.1825/clojure-mode-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(autoload 'clojure-mode "clojure-mode" "\
+Major mode for editing Clojure code.
+
+\\{clojure-mode-map}
+
+(fn)" t)
+(autoload 'clojure-unwind "clojure-mode" "\
+Unwind thread at point or above point by N levels.
+With universal argument \\[universal-argument], fully unwind thread.
+
+(fn &optional N)" t)
+(autoload 'clojure-unwind-all "clojure-mode" "\
+Fully unwind thread at point or above point." t)
+(autoload 'clojure-thread "clojure-mode" "\
+Thread by one more level an existing threading macro." t)
+(autoload 'clojure-thread-first-all "clojure-mode" "\
+Fully thread the form at point using ->.
+
+When BUT-LAST is non-nil, the last expression is not threaded.
+Default value is `clojure-thread-all-but-last'.
+
+(fn BUT-LAST)" t)
+(autoload 'clojure-thread-last-all "clojure-mode" "\
+Fully thread the form at point using ->>.
+
+When BUT-LAST is non-nil, the last expression is not threaded.
+Default value is `clojure-thread-all-but-last'.
+
+(fn BUT-LAST)" t)
+(autoload 'clojure-cycle-privacy "clojure-mode" "\
+Make public the current private def, or vice-versa.
+See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-cycle-privacy" t)
+(autoload 'clojure-convert-collection-to-list "clojure-mode" "\
+Convert collection at (point) to list." t)
+(autoload 'clojure-convert-collection-to-quoted-list "clojure-mode" "\
+Convert collection at (point) to quoted list." t)
+(autoload 'clojure-convert-collection-to-map "clojure-mode" "\
+Convert collection at (point) to map." t)
+(autoload 'clojure-convert-collection-to-vector "clojure-mode" "\
+Convert collection at (point) to vector." t)
+(autoload 'clojure-convert-collection-to-set "clojure-mode" "\
+Convert collection at (point) to set." t)
+(autoload 'clojure-cycle-if "clojure-mode" "\
+Change a surrounding if to if-not, or vice-versa.
+
+See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-cycle-if" t)
+(autoload 'clojure-cycle-when "clojure-mode" "\
+Change a surrounding when to when-not, or vice-versa." t)
+(autoload 'clojure-let-backward-slurp-sexp "clojure-mode" "\
+Slurp the s-expression before the let form into the let form.
+With a numeric prefix argument slurp the previous N s-expressions
+into the let form.
+
+(fn &optional N)" t)
+(autoload 'clojure-let-forward-slurp-sexp "clojure-mode" "\
+Slurp the next s-expression after the let form into the let form.
+With a numeric prefix argument slurp the next N s-expressions
+into the let form.
+
+(fn &optional N)" t)
+(autoload 'clojure-introduce-let "clojure-mode" "\
+Create a let form, binding the form at point.
+With a numeric prefix argument the let is introduced N lists up.
+
+(fn &optional N)" t)
+(autoload 'clojure-move-to-let "clojure-mode" "\
+Move the form at point to a binding in the nearest let." t)
+(autoload 'clojure-rename-ns-alias "clojure-mode" "\
+Rename a namespace alias.
+If a region is active, only pick up and rename aliases within the region." t)
+(autoload 'clojure-add-arity "clojure-mode" "\
+Add an arity to a function." t)
+(autoload 'clojurescript-mode "clojure-mode" "\
+Major mode for editing ClojureScript code.
+
+\\{clojurescript-mode-map}
+
+(fn)" t)
+(autoload 'clojurec-mode "clojure-mode" "\
+Major mode for editing ClojureC code.
+
+\\{clojurec-mode-map}
+
+(fn)" t)
+(add-to-list 'auto-mode-alist '("\\.\\(clj\\|cljd\\|dtm\\|edn\\|lpy\\)\\'" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljc\\'" . clojurec-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojurescript-mode))
+(add-to-list 'auto-mode-alist '("\\(?:build\\|profile\\)\\.boot\\'" . clojure-mode))
+(add-to-list 'interpreter-mode-alist '("bb" . clojure-mode))
+(add-to-list 'interpreter-mode-alist '("nbb" . clojurescript-mode))
+(register-definition-prefixes "clojure-mode" '(";;" "add-custom-clojure-indents" "clojure" "define-clojure-indent" "put-clojure-indent"))
+
+
+(provide 'clojure-mode-autoloads)
+
+
+)
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20240611.523/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20240611.523/cider-autoloads.el"))
 
 
 
@@ -6482,7 +6261,7 @@ Displays the function dependencies for  NS and SYMBOL using completing read.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cape-20240517.2216/cape-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cape-20240517.2216/cape-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cape-20240626.2257/cape-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cape-20240626.2257/cape-autoloads.el"))
 
 
 
@@ -6544,11 +6323,10 @@ If INTERACTIVE is nil the function acts like a Capf.
 (fn &optional INTERACTIVE)" t)
 (autoload 'cape-company-to-capf "cape" "\
 Convert Company BACKEND function to Capf.
-VALID is a function taking the old and new input string.  It
-should return nil if the cached candidates became invalid.  The
-default value for VALID is `string-prefix-p' such that the
-candidates are only fetched again if the input prefix
-changed.  The function `cape-company-to-capf' is experimental.
+VALID is a function taking the old and new input string.  It should
+return nil if the cached candidates became invalid.  The default value
+for VALID is `string-prefix-p' such that the candidates are only fetched
+again if the input prefix changed.
 
 (fn BACKEND &optional VALID)")
 (autoload 'cape-interactive "cape" "\
@@ -6572,9 +6350,6 @@ multiple super Capfs in the `completion-at-point-functions':
                                :with \\='tempel-complete)
               (cape-capf-super \\='cape-dabbrev
                                :with \\='tempel-complete)))
-
-The functions `cape-wrap-super' and `cape-capf-super' are
-experimental.
 
 (fn &rest CAPFS)")
 (autoload 'cape-wrap-debug "cape" "\
@@ -6949,14 +6724,14 @@ Transpose lines in the active region." t)
 (setq package-activated-list
       (delete-dups
        (append
-        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rg rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jinx jarchive janet-mode clojure-mode inf-clojure iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode eat dumb-jump corfu cider cape avy)
+        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jinx jarchive janet-mode iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode eat dumb-jump corfu clojure-mode cider cape avy)
         package-activated-list)))
 (progn
   (require 'info)
   (info-initialize)
   (setq Info-directory-list
         (append
-         '("/home/dawran/.emacs.d/elpa/eat-0.9.4" "/home/dawran/.emacs.d/elpa/embark-20240419.452" "/home/dawran/.emacs.d/elpa/magit-20240522.204" "/home/dawran/.emacs.d/elpa/magit-section-20240508.2349" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240505.331" "/home/dawran/.emacs.d/elpa/orderless-20240401.959" "/home/dawran/.emacs.d/elpa/rg-20231202.1023" "/home/dawran/.emacs.d/elpa/sly-20240501.1118" "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1" "/home/dawran/.emacs.d/elpa/transient-20240525.1118" "/home/dawran/.emacs.d/elpa/with-editor-20240415.1558" "/home/dawran/.emacs.d/elpa/compat-29.1.4.5")
+         '("/home/dawran/.emacs.d/elpa/eat-0.9.4" "/home/dawran/.emacs.d/elpa/embark-20240607.2213" "/home/dawran/.emacs.d/elpa/magit-20240628.1641" "/home/dawran/.emacs.d/elpa/magit-section-20240628.1638" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240625.437" "/home/dawran/.emacs.d/elpa/orderless-20240606.1026" "/home/dawran/.emacs.d/elpa/sly-20240501.1118" "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1" "/home/dawran/.emacs.d/elpa/transient-20240626.947" "/home/dawran/.emacs.d/elpa/with-editor-20240623.1757" "/home/dawran/.emacs.d/elpa/compat-29.1.4.5")
          Info-directory-list)))
 
 ;; Local Variables:
