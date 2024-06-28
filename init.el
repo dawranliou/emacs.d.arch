@@ -288,6 +288,7 @@ backwards."
 
 (with-eval-after-load 'eglot
   (eglot-booster-mode)
+  (jarchive-mode)
   (fset #'jsonrpc--log-event #'ignore) ; massive perf boost---don't log every event
 
   (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
