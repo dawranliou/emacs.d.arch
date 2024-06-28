@@ -901,6 +901,22 @@ See info node `(transient)Modifying Existing Transients'.
 
 
 )
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/tb-keycast/tb-keycast-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/tb-keycast/tb-keycast-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(register-definition-prefixes "tb-keycast" '("tb-keycast-"))
+
+
+(provide 'tb-keycast-autoloads)
+
+
+)
 (let ((load-true-file-name "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1/standard-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1/standard-themes-autoloads.el"))
 
 
@@ -5100,6 +5116,52 @@ Major mode for editing Elixir code.
 
 
 )
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/eglot-booster/eglot-booster-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/eglot-booster/eglot-booster-autoloads.el"))
+
+
+
+(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
+
+
+
+
+(defvar eglot-booster-mode nil "\
+Non-nil if Eglot-Booster mode is enabled.
+See the `eglot-booster-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `eglot-booster-mode'.")
+(custom-autoload 'eglot-booster-mode "eglot-booster" nil)
+(autoload 'eglot-booster-mode "eglot-booster" "\
+Minor mode which boosts plain eglot server programs with emacs-lsp-booster.
+
+The emacs-lsp-booster program must be compiled and available on
+variable `exec-path'.  Only local stdin/out-based lsp servers can
+be boosted.
+
+This is a global minor mode.  If called interactively, toggle the
+`Eglot-Booster mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='eglot-booster-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t)
+(register-definition-prefixes "eglot-booster" '("eglot-booster-"))
+
+
+(provide 'eglot-booster-autoloads)
+
+
+)
 (let ((load-true-file-name "/home/dawran/.emacs.d/elpa/eat-0.9.4/eat-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/eat-0.9.4/eat-autoloads.el"))
 
 
@@ -6724,7 +6786,7 @@ Transpose lines in the active region." t)
 (setq package-activated-list
       (delete-dups
        (append
-        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient standard-themes spinner sly sesman s rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jinx jarchive janet-mode iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode eat dumb-jump corfu clojure-mode cider cape avy)
+        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient tb-keycast standard-themes spinner sly sesman s rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jinx jarchive janet-mode iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode eglot-booster eat dumb-jump corfu clojure-mode cider cape avy)
         package-activated-list)))
 (progn
   (require 'info)

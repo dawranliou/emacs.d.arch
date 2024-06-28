@@ -89,9 +89,11 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
+   '(eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
-   '((lua-ts-mode :url "https://git.sr.ht/~johnmuhl/lua-ts-mode" :vc-backend Git)
+   '((eglot-booster :vc-backend Git :url "https://github.com/jdtsmith/eglot-booster")
+     (tb-keycast :vc-backend Git :url "https://github.com/ir33k/tb-keycast.git")
+     (lua-ts-mode :url "https://git.sr.ht/~johnmuhl/lua-ts-mode" :vc-backend Git)
      (janet-ts-mode :url "https://github.com/sogaiu/janet-ts-mode.git" :vc-backend Git)
      (ajrepl :url "https://github.com/sogaiu/ajrepl.git" :vc-backend Git)
      (a-janet-spork-client :url "https://github.com/sogaiu/a-janet-spork-client.git" :vc-backend Git)))
@@ -285,6 +287,7 @@ backwards."
   (keymap-unset fennel-mode-map "M-,"))
 
 (with-eval-after-load 'eglot
+  (eglot-booster-mode)
   (fset #'jsonrpc--log-event #'ignore) ; massive perf boost---don't log every event
 
   (add-to-list 'eglot-server-programs '(lua-mode "lua-language-server"))
