@@ -109,6 +109,11 @@
  '(show-trailing-whitespace t)
  '(switch-to-buffer-in-dedicated-window 'pop)
  '(switch-to-buffer-obey-display-actions t)
+ '(tab-bar-auto-width nil)
+ '(tab-bar-close-button-show nil)
+ '(tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
+ '(tab-bar-new-tab-choice "*scratch*")
+ '(tab-bar-tab-hints t)
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(version-control t)
@@ -212,6 +217,8 @@ backwards."
   (keymap-set isearch-mode-map "C-o" 'isearch-occur))
 (keymap-global-set "<remap> <kill-region>" 'backward-kill-word-or-region)
 (keymap-global-set "<remap> <dabbrev-expand>" 'hippie-expand)
+(keymap-global-set "s-{" #'tab-previous)
+(keymap-global-set "s-}" #'tab-next)
 
 ;; Consult drop-in replacements
 (keymap-global-set "C-x b" #'consult-buffer) ; was #'switch-to-buffer
