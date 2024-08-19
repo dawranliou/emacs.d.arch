@@ -174,7 +174,7 @@ Simple mode to edit YAML.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/compat-29.1.4.5/compat-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/compat-29.1.4.5/compat-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/compat-30.0.0.0/compat-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/compat-30.0.0.0/compat-autoloads.el"))
 
 
 
@@ -188,13 +188,14 @@ Simple mode to edit YAML.
 
 
 (register-definition-prefixes "compat-macs" '("compat-"))
+
 
 
 (provide 'compat-autoloads)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240623.1757/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240623.1757/with-editor-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240817.1959/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240817.1959/with-editor-autoloads.el"))
 
 
 
@@ -468,26 +469,7 @@ KEYMAP is selected interactively by mode in
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/wgrep-20230203.1214/wgrep-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/wgrep-20230203.1214/wgrep-autoloads.el"))
-
-
-
-(add-to-list 'load-path (or (and load-file-name (directory-file-name (file-name-directory load-file-name))) (car load-path)))
-
-
-
-
-(autoload 'wgrep-setup "wgrep" "\
-Setup wgrep preparation.")
-(add-hook 'grep-setup-hook 'wgrep-setup)
-(register-definition-prefixes "wgrep" '("wgrep-"))
-
-
-(provide 'wgrep-autoloads)
-
-
-)
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/vertico-20240625.506/vertico-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/vertico-20240625.506/vertico-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/vertico-20240726.2131/vertico-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/vertico-20240726.2131/vertico-autoloads.el"))
 
 
 
@@ -835,7 +817,7 @@ it is disabled.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20240626.947/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20240626.947/transient-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20240817.1959/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20240817.1959/transient-autoloads.el"))
 
 
 
@@ -894,7 +876,7 @@ See info node `(transient)Modifying Existing Transients'.
 
 (fn PREFIX LOC)")
 (function-put 'transient-remove-suffix 'lisp-indent-function 'defun)
-(register-definition-prefixes "transient" '("find-function-advised-original" "static-if" "transient"))
+(register-definition-prefixes "transient" '("find-function-advised-original" "transient"))
 
 
 (provide 'transient-autoloads)
@@ -917,7 +899,7 @@ See info node `(transient)Modifying Existing Transients'.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1/standard-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1/standard-themes-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/standard-themes-2.1.0/standard-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/standard-themes-2.1.0/standard-themes-autoloads.el"))
 
 
 
@@ -1018,7 +1000,7 @@ this time, in which case it won't display at all.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/sly-20240501.1118/sly-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/sly-20240501.1118/sly-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/sly-20240809.2119/sly-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/sly-20240809.2119/sly-autoloads.el"))
 
 
 
@@ -1358,7 +1340,7 @@ Create an empty queue data structure.")
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/orderless-20240606.1026/orderless-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/orderless-20240606.1026/orderless-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/orderless-20240717.758/orderless-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/orderless-20240717.758/orderless-autoloads.el"))
 
 
 
@@ -1406,7 +1388,7 @@ Match COMPONENT against the keywords in `orderless-kwd-alist'.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240625.437/modus-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240625.437/modus-themes-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240811.502/modus-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240811.502/modus-themes-autoloads.el"))
 
 
 
@@ -1496,7 +1478,7 @@ it is disabled.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/marginalia-20240523.1240/marginalia-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/marginalia-20240523.1240/marginalia-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/marginalia-20240813.701/marginalia-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/marginalia-20240813.701/marginalia-autoloads.el"))
 
 
 
@@ -1611,7 +1593,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240628.1638/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240628.1638/magit-section-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240818.1914/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240818.1914/magit-section-autoloads.el"))
 
 
 
@@ -1620,6 +1602,45 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 
+(autoload 'magit-add-section-hook "magit-section" "\
+Add to the value of section hook HOOK the function FUNCTION.
+
+Add FUNCTION at the beginning of the hook list unless optional
+APPEND is non-nil, in which case FUNCTION is added at the end.
+If FUNCTION already is a member, then move it to the new location.
+
+If optional AT is non-nil and a member of the hook list, then
+add FUNCTION next to that instead.  Add before or after AT, or
+replace AT with FUNCTION depending on APPEND.  If APPEND is the
+symbol `replace', then replace AT with FUNCTION.  For any other
+non-nil value place FUNCTION right after AT.  If nil, then place
+FUNCTION right before AT.  If FUNCTION already is a member of the
+list but AT is not, then leave FUNCTION where ever it already is.
+
+If optional LOCAL is non-nil, then modify the hook's buffer-local
+value rather than its global value.  This makes the hook local by
+copying the default value.  That copy is then modified.
+
+HOOK should be a symbol.  If HOOK is void, it is first set to nil.
+HOOK's value must not be a single hook function.  FUNCTION should
+be a function that takes no arguments and inserts one or multiple
+sections at point, moving point forward.  FUNCTION may choose not
+to insert its section(s), when doing so would not make sense.  It
+should not be abused for other side-effects.  To remove FUNCTION
+again use `remove-hook'.
+
+(fn HOOK FUNCTION &optional AT APPEND LOCAL)")
+(autoload 'magit--handle-bookmark "magit-section" "\
+Open a bookmark created by `magit--make-bookmark'.
+
+Call the generic function `magit-bookmark-get-buffer-create' to get
+the appropriate buffer without displaying it.
+
+Then call the `magit-*-setup-buffer' function of the the major-mode
+with the variables' values as arguments, which were recorded by
+`magit--make-bookmark'.
+
+(fn BOOKMARK)")
 (register-definition-prefixes "magit-section" '("context-menu-region" "isearch-clean-overlays" "magit-"))
 
 
@@ -1627,7 +1648,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240623.1335/git-commit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240623.1335/git-commit-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240808.1852/git-commit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/git-commit-20240808.1852/git-commit-autoloads.el"))
 
 
 
@@ -1650,7 +1671,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20240628.1641/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20240628.1641/magit-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20240818.1914/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20240818.1914/magit-autoloads.el"))
 
 
 
@@ -2640,6 +2661,9 @@ Switch to a Magit buffer belonging to the current Git repository.
 Abort current operation.
 Depending on the context, this will abort a merge, a rebase, a
 patch application, a cherry-pick, a revert, or a bisect." t)
+(autoload 'magit-back-to-indentation "magit-extras" "\
+Move point to the first non-whitespace character on this line.
+In Magit diffs, also skip over - and + at the beginning of the line." t)
 (register-definition-prefixes "magit-extras" '("magit-"))
 
 
@@ -2975,7 +2999,7 @@ is asked to pull.  START has to be reachable from that commit.
 
 
 
-(register-definition-prefixes "magit-process" '("magit-" "tramp-sh-handle-"))
+(register-definition-prefixes "magit-process" '("magit-"))
 
 
 
@@ -3836,7 +3860,7 @@ Checkout BRANCH in a new worktree at PATH.
 (autoload 'magit-worktree-branch "magit-worktree" "\
 Create a new BRANCH and check it out in a new worktree at PATH.
 
-(fn PATH BRANCH START-POINT &optional FORCE)" t)
+(fn PATH BRANCH START-POINT)" t)
 (autoload 'magit-worktree-move "magit-worktree" "\
 Move WORKTREE to PATH.
 
@@ -3898,7 +3922,7 @@ information retrieved from files created by the keychain script." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jinx-20240628.903/jinx-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jinx-20240628.903/jinx-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jinx-20240724.917/jinx-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jinx-20240724.917/jinx-autoloads.el"))
 
 
 
@@ -3964,6 +3988,8 @@ evaluate `jinx-mode'.
 
 The mode's hook is called both when the mode is enabled and when
 it is disabled.
+
+\\{jinx-mode-map}
 
 (fn &optional ARG)" t)
 (put 'global-jinx-mode 'globalized-minor-mode t)
@@ -4194,7 +4220,7 @@ Major mode for editing GLSL shader files.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20240502.1555/fennel-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20240502.1555/fennel-mode-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20240721.1732/fennel-mode-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/fennel-mode-20240721.1732/fennel-mode-autoloads.el"))
 
 
 
@@ -4418,7 +4444,7 @@ values used in the user's shell." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-20240607.2213/embark-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-20240607.2213/embark-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-20240724.1801/embark-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-20240724.1801/embark-autoloads.el"))
 
 
 
@@ -4615,7 +4641,7 @@ the first target at point." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/consult-20240523.754/consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/consult-20240523.754/consult-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/consult-20240818.1112/consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/consult-20240818.1112/consult-autoloads.el"))
 
 
 
@@ -4811,36 +4837,35 @@ Variant of `consult-buffer', switching to a buffer in another tab." t)
 (autoload 'consult-grep "consult" "\
 Search with `grep' for files in DIR where the content matches a regexp.
 
-The initial input is given by the INITIAL argument.  DIR can be
-nil, a directory string or a list of file/directory paths.  If
-`consult-grep' is called interactively with a prefix argument,
-the user can specify the directories or files to search in.
-Multiple directories must be separated by comma in the
-minibuffer, since they are read via `completing-read-multiple'.
-By default the project directory is used if
-`consult-project-function' is defined and returns non-nil.
-Otherwise the `default-directory' is searched.
+The initial input is given by the INITIAL argument.  DIR can be nil, a
+directory string or a list of file/directory paths.  If `consult-grep'
+is called interactively with a prefix argument, the user can specify the
+directories or files to search in.  Multiple directories or files must
+be separated by comma in the minibuffer, since they are read via
+`completing-read-multiple'.  By default the project directory is used if
+`consult-project-function' is defined and returns non-nil.  Otherwise
+the `default-directory' is searched.  If the command is invoked with a
+double prefix argument (twice `C-u') the user is asked for a project, if
+not yet inside a project, or the current project is searched.
 
-The input string is split, the first part of the string (grep
-input) is passed to the asynchronous grep process and the second
-part of the string is passed to the completion-style filtering.
+The input string is split, the first part of the string (grep input) is
+passed to the asynchronous grep process and the second part of the
+string is passed to the completion-style filtering.
 
-The input string is split at a punctuation character, which is
-given as the first character of the input string.  The format is
-similar to Perl-style regular expressions, e.g., /regexp/.
-Furthermore command line options can be passed to grep, specified
-behind --.  The overall prompt input has the form
-`#async-input -- grep-opts#filter-string'.
+The input string is split at a punctuation character, which is given as
+the first character of the input string.  The format is similar to
+Perl-style regular expressions, e.g., /regexp/.  Furthermore command
+line options can be passed to grep, specified behind --.  The overall
+prompt input has the form `#async-input -- grep-opts#filter-string'.
 
 Note that the grep input string is transformed from Emacs regular
-expressions to Posix regular expressions.  Always enter Emacs
-regular expressions at the prompt.  `consult-grep' behaves like
-builtin Emacs search commands, e.g., Isearch, which take Emacs
-regular expressions.  Furthermore the asynchronous input split
-into words, each word must match separately and in any order.
-See `consult--regexp-compiler' for the inner workings.  In order
-to disable transformations of the grep input, adjust
-`consult--regexp-compiler' accordingly.
+expressions to Posix regular expressions.  Always enter Emacs regular
+expressions at the prompt.  `consult-grep' behaves like builtin Emacs
+search commands, e.g., Isearch, which take Emacs regular expressions.
+Furthermore the asynchronous input split into words, each word must
+match separately and in any order.  See `consult--regexp-compiler' for
+the inner workings.  In order to disable transformations of the grep
+input, adjust `consult--regexp-compiler' accordingly.
 
 Here we give a few example inputs:
 
@@ -5040,7 +5065,7 @@ FETCHER and ALIST arguments.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-consult-20240419.452/embark-consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-consult-20240419.452/embark-consult-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/embark-consult-20240717.2103/embark-consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/embark-consult-20240717.2103/embark-consult-autoloads.el"))
 
 
 
@@ -5365,7 +5390,7 @@ option is found.")
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/corfu-20240523.752/corfu-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/corfu-20240523.752/corfu-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/corfu-20240726.359/corfu-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/corfu-20240726.359/corfu-autoloads.el"))
 
 
 
@@ -5391,6 +5416,8 @@ evaluate `corfu-mode'.
 The mode's hook is called both when the mode is enabled and when
 it is disabled.
 
+\\{corfu-mode-map}
+
 (fn &optional ARG)" t)
 (put 'global-corfu-mode 'globalized-minor-mode t)
 (defvar global-corfu-mode nil "\
@@ -5415,7 +5442,7 @@ Corfu mode is enabled in all buffers where `corfu--on' would do it.
 See `corfu-mode' for more information on Corfu mode.
 
 (fn &optional ARG)" t)
-(register-definition-prefixes "corfu" '("corfu-" "global-corfu-modes"))
+(register-definition-prefixes "corfu" '("corfu-" "global-corfu-m"))
 
 
 
@@ -5663,7 +5690,7 @@ Major mode for editing ClojureC code.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20240611.523/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20240611.523/cider-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20240815.918/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20240815.918/cider-autoloads.el"))
 
 
 
@@ -6323,7 +6350,7 @@ Displays the function dependencies for  NS and SYMBOL using completing read.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cape-20240626.2257/cape-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cape-20240626.2257/cape-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cape-20240818.1414/cape-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cape-20240818.1414/cape-autoloads.el"))
 
 
 
@@ -6458,10 +6485,10 @@ This function can be used as an advice around an existing Capf.
 (fn CAPF)")
 (autoload 'cape-wrap-case-fold "cape" "\
 Call CAPF and return a case-insensitive completion table.
-If DONT-FOLD is non-nil return a case sensitive table instead.
-This function can be used as an advice around an existing Capf.
+If NOFOLD is non-nil return a case sensitive table instead.  This
+function can be used as an advice around an existing Capf.
 
-(fn CAPF &optional DONT-FOLD)")
+(fn CAPF &optional NOFOLD)")
 (autoload 'cape-wrap-noninterruptible "cape" "\
 Call CAPF and return a non-interruptible completion table.
 This function can be used as an advice around an existing Capf.
@@ -6521,6 +6548,7 @@ This function can be used as an advice around an existing Capf.
  (autoload 'cape-capf-purify "cape")
  (autoload 'cape-capf-silent "cape")
  (autoload 'cape-capf-super "cape")
+ (autoload 'cape-prefix-map "cape" nil t 'keymap)
 (register-definition-prefixes "cape" '("cape-"))
 
 
@@ -6786,14 +6814,14 @@ Transpose lines in the active region." t)
 (setq package-activated-list
       (delete-dups
        (append
-        '(reformatter zig-mode yaml-mode compat with-editor which-key wgrep vertico transient tb-keycast standard-themes spinner sly sesman s rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jinx jarchive janet-mode iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode eglot-booster eat dumb-jump corfu clojure-mode cider cape avy)
+        '(reformatter zig-mode yaml-mode compat with-editor which-key vertico transient tb-keycast standard-themes spinner sly sesman s rainbow-mode queue popup parseclj parseedn orderless modus-themes mlscroll marginalia dash magit-section git-commit magit lua-mode keychain-environment jinx jarchive janet-mode iedit glsl-mode fennel-mode exec-path-from-shell embark consult embark-consult elixir-mode eglot-booster eat dumb-jump corfu clojure-mode cider cape avy)
         package-activated-list)))
 (progn
   (require 'info)
   (info-initialize)
   (setq Info-directory-list
         (append
-         '("/home/dawran/.emacs.d/elpa/eat-0.9.4" "/home/dawran/.emacs.d/elpa/embark-20240607.2213" "/home/dawran/.emacs.d/elpa/magit-20240628.1641" "/home/dawran/.emacs.d/elpa/magit-section-20240628.1638" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240625.437" "/home/dawran/.emacs.d/elpa/orderless-20240606.1026" "/home/dawran/.emacs.d/elpa/sly-20240501.1118" "/home/dawran/.emacs.d/elpa/standard-themes-2.0.1" "/home/dawran/.emacs.d/elpa/transient-20240626.947" "/home/dawran/.emacs.d/elpa/with-editor-20240623.1757" "/home/dawran/.emacs.d/elpa/compat-29.1.4.5")
+         '("/home/dawran/.emacs.d/elpa/eat-0.9.4" "/home/dawran/.emacs.d/elpa/embark-20240724.1801" "/home/dawran/.emacs.d/elpa/magit-20240818.1914" "/home/dawran/.emacs.d/elpa/magit-section-20240818.1914" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240811.502" "/home/dawran/.emacs.d/elpa/orderless-20240717.758" "/home/dawran/.emacs.d/elpa/sly-20240809.2119" "/home/dawran/.emacs.d/elpa/standard-themes-2.1.0" "/home/dawran/.emacs.d/elpa/transient-20240817.1959" "/home/dawran/.emacs.d/elpa/with-editor-20240817.1959" "/home/dawran/.emacs.d/elpa/compat-30.0.0.0")
          Info-directory-list)))
 
 ;; Local Variables:
