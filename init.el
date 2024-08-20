@@ -99,6 +99,7 @@
      (a-janet-spork-client :url "https://github.com/sogaiu/a-janet-spork-client.git" :vc-backend Git)))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(toggle-truncate-lines electric-pair-mode))
+ '(register-preview-delay 0.5)
  '(repeat-mode t)
  '(ring-bell-function 'flash-mode-line)
  '(save-place-mode t)
@@ -222,14 +223,79 @@ backwards."
 (keymap-global-set "s-{" #'tab-previous)
 (keymap-global-set "s-}" #'tab-next)
 
-;; Consult drop-in replacements
-(keymap-global-set "C-x b" #'consult-buffer) ; was #'switch-to-buffer
+;; Consult
+;; C-c bindings in `mode-specific-map'
+(keymap-global-set "C-c M-x" #'consult-mode-command)
+(keymap-global-set "<remap> <Info-search>" #'consult-info)
+(keymap-global-set "C-M-#" #'consult-register)
+(keymap-global-set "C-c M-x" #'consult-mode-command)
+(keymap-global-set "C-c h" #'consult-history)
+(keymap-global-set "C-c i" #'consult-info)
+(keymap-global-set "C-c k" #'consult-kmacro)
+(keymap-global-set "C-c m" #'consult-man)
+
+;; C-x bindings in `ctl-x-map'
+(keymap-global-set "C-x 4 b" #'consult-buffer-other-window) ; orig. switch-to-buffer-other-window
+(keymap-global-set "C-x 5 b" #'consult-buffer-other-frame) ; orig. switch-to-buffer-other-frame
+(keymap-global-set "C-x M-:" #'consult-complex-command) ; orig. repeat-complex-command
+(keymap-global-set "C-x b" #'consult-buffer)            ; orig. switch-to-buffer
+(keymap-global-set "C-x p b" #'consult-project-buffer) ; orig. project-switch-to-buffer
+(keymap-global-set "C-x r b" #'consult-bookmark)       ; orig. bookmark-jump
+(keymap-global-set "C-x t b" #'consult-buffer-other-tab) ; orig. switch-to-buffer-other-tab
+
+;; Custom M-# bindings for fast register access
+(keymap-global-set "C-M-#" #'consult-register)
+(keymap-global-set "M-#" #'consult-register-load)
+(keymap-global-set "M-'" #'consult-register-store) ; orig. abbrev-prefix-mark (unrelated)
+(setq register-preview-function #'consult-register-format)
+(advice-add #'register-preview :override #'consult-register-window)
+
+;; Other custom bindings
 (keymap-global-set "M-y" #'consult-yank-pop) ; was #'yank-pop
-(keymap-global-set "M-s r" #'consult-ripgrep)
-(keymap-global-set "M-s l" #'consult-line)
+
+;; M-g bindings in `goto-map'
+(keymap-global-set "M-g I" #'consult-imenu-multi)
+(keymap-global-set "M-g M-g" #'consult-goto-line) ; orig. goto-line
+(keymap-global-set "M-g e" #'consult-compile-error)
+(keymap-global-set "M-g f" #'consult-flymake)   ; Alternative: consult-flycheck
+(keymap-global-set "M-g g" #'consult-goto-line) ; orig. goto-line
+(keymap-global-set "M-g i" #'consult-imenu)
+(keymap-global-set "M-g k" #'consult-global-mark)
+(keymap-global-set "M-g m" #'consult-mark)
+(keymap-global-set "M-g o" #'consult-outline) ; Alternative: consult-org-heading
+
+;; M-s bindings in `search-map'
+(keymap-global-set "M-s G" #'consult-git-grep)
 (keymap-global-set "M-s L" #'consult-line-multi)
+(keymap-global-set "M-s c" #'consult-locate)
+(keymap-global-set "M-s d" #'consult-find) ; Alternative: consult-fd
+(keymap-global-set "M-s g" #'consult-grep)
+(keymap-global-set "M-s k" #'consult-keep-lines)
+(keymap-global-set "M-s l" #'consult-line)
 (keymap-global-set "M-s o" #'consult-outline) ; was #'occur
-;; (keymap-set isearch-mode-map "M-E" #'consult-isearch-history)
+(keymap-global-set "M-s r" #'consult-ripgrep)
+(keymap-global-set "M-s u" #'consult-focus-lines)
+
+;; Isearch integration
+(keymap-global-set "M-s e" #'consult-isearch-history)
+(keymap-set isearch-mode-map "M-e" #'consult-isearch-history) ; orig. isearch-edit-string
+(keymap-set isearch-mode-map "M-s e" #'consult-isearch-history) ; orig. isearch-edit-string
+(keymap-set isearch-mode-map "M-s l" #'consult-line) ; needed by consult-line to detect isearch
+(keymap-set isearch-mode-map "M-s L" #'consult-line-multi) ; needed by consult-line to detect isearch
+
+;; Minibuffer history
+(keymap-set minibuffer-local-map "M-s" #'consult-history) ; orig. next-matching-history-element
+(keymap-set minibuffer-local-map "M-r" #'consult-history) ; orig. previous-matching-history-element
+
+(with-eval-after-load 'consult
+  (consult-customize
+   consult-theme :preview-key '(:debounce 0.2 any)
+   consult-ripgrep consult-git-grep consult-grep
+   consult-bookmark consult-recent-file consult-xref
+   consult--source-bookmark consult--source-file-register
+   consult--source-recent-file consult--source-project-recent-file
+   ;; :preview-key "M-."
+   :preview-key '(:debounce 0.4 any)))
 
 (with-eval-after-load 'corfu
   (add-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
