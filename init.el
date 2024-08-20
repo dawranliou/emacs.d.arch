@@ -188,6 +188,20 @@ backwards."
            fill-column)))
     (call-interactively #'fill-paragraph)))
 
+(defun eshell-toggle (exit)
+  "Bring up a full-screen eshell or restore previous config.
+With a prefix argument, exit eshell before restoring previous config."
+  (interactive "P")
+  (if (string= "eshell-mode" major-mode)
+      (progn
+        (when exit
+          (insert "exit")
+          (eshell-send-input))
+        (jump-to-register :eshell-fullscreen))
+    (window-configuration-to-register :eshell-fullscreen)
+    (eshell)
+    (delete-other-windows)))
+
 (add-hook 'clojure-mode-hook 'eglot-ensure)
 (add-hook 'zig-mode-hook 'eglot-ensure)
 
@@ -196,6 +210,7 @@ backwards."
 
 ;;; Keybindings
 
+(keymap-global-set "<f5>" #'eshell-toggle)
 (keymap-global-set "<remap> <move-beginning-of-line>" 'move-beginning-of-line+)
 (keymap-global-set "M-n" 'embark-next-symbol)
 (keymap-global-set "M-p" 'embark-previous-symbol)
