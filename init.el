@@ -30,6 +30,7 @@
  '(completions-max-height 20)
  '(consult-narrow-key "<")
  '(context-menu-mode t)
+ '(copy-region-blink-delay 0)
  '(custom-enabled-themes '(standard-light))
  '(custom-safe-themes
    '("8122fb61548fe36171d9cf24cdb9b5f24d053b626d4cda739c3815e080623209" default))
@@ -144,6 +145,8 @@
 https://macowners.club/posts/custom-functions-4-ui/"
   (invert-face 'mode-line)
   (run-with-timer 0.1 nil #'invert-face 'mode-line))
+
+(advice-add #'kill-ring-save :before #'pulse-momentary-highlight-region)
 
 (defun move-beginning-of-line+ (arg)
   "Move point to beginning of current line or the first non whitespace char."
