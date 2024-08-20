@@ -33,7 +33,7 @@
  '(copy-region-blink-delay 0)
  '(custom-enabled-themes '(standard-light))
  '(custom-safe-themes
-   '("8122fb61548fe36171d9cf24cdb9b5f24d053b626d4cda739c3815e080623209" default))
+   '("cfb0bb44259cf576124b900613628f4b589df1c3860185d24fffde6666bc88cf" default))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)
@@ -82,7 +82,7 @@
  '(modus-themes-mixed-fonts t)
  '(mouse-wheel-flip-direction nil)
  '(mouse-wheel-tilt-scroll t)
- '(native-comp-async-report-warnings-errors nil)
+ '(native-comp-async-report-warnings-errors nil t)
  '(org-special-ctrl-a/e 'reversed)
  '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
  '(package-archives
