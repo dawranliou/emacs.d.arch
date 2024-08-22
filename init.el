@@ -202,6 +202,12 @@ With a prefix argument, exit eshell before restoring previous config."
     (eshell)
     (delete-other-windows)))
 
+(defun find-current-file-as-root ()
+  "Reopen current file as root"
+  (interactive)
+  (set-visited-file-name (concat "/sudoedit::" (buffer-file-name)))
+  (setq buffer-read-only nil))
+
 (add-hook 'clojure-mode-hook 'eglot-ensure)
 (add-hook 'zig-mode-hook 'eglot-ensure)
 
