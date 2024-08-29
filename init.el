@@ -82,7 +82,7 @@
  '(modus-themes-mixed-fonts t)
  '(mouse-wheel-flip-direction nil)
  '(mouse-wheel-tilt-scroll t)
- '(native-comp-async-report-warnings-errors nil t)
+ '(native-comp-async-report-warnings-errors nil)
  '(org-special-ctrl-a/e 'reversed)
  '(package-archive-priorities '(("melpa" . 10) ("gnu" . 30) ("nongnu" . 20)))
  '(package-archives
