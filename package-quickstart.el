@@ -195,7 +195,7 @@ Simple mode to edit YAML.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240817.1959/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240817.1959/with-editor-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240822.2051/with-editor-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/with-editor-20240822.2051/with-editor-autoloads.el"))
 
 
 
@@ -817,7 +817,7 @@ it is disabled.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20240817.1959/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20240817.1959/transient-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/transient-20240821.158/transient-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/transient-20240821.158/transient-autoloads.el"))
 
 
 
@@ -1388,7 +1388,7 @@ Match COMPONENT against the keywords in `orderless-kwd-alist'.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240811.502/modus-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240811.502/modus-themes-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240826.647/modus-themes-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/modus-themes-20240826.647/modus-themes-autoloads.el"))
 
 
 
@@ -1593,7 +1593,7 @@ This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240818.1914/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240818.1914/magit-section-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240822.1737/magit-section-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-section-20240822.1737/magit-section-autoloads.el"))
 
 
 
@@ -1671,7 +1671,7 @@ with the variables' values as arguments, which were recorded by
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20240818.1914/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20240818.1914/magit-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/magit-20240822.1737/magit-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/magit-20240822.1737/magit-autoloads.el"))
 
 
 
@@ -3691,13 +3691,10 @@ prompt for the name of the new tag using the highest existing
 tag as initial input and leaving it to the user to increment the
 desired part of the version string.
 
-If `--annotate' is enabled, then prompt for the message of the
-new tag.  Base the proposed tag message on the message of the
-highest tag, provided that that contains the corresponding
-version string and substituting the new version string for that.
-Otherwise propose something like \"Foo-Bar 1.2.3\", given, for
-example, a TAG \"v1.2.3\" and a repository located at something
-like \"/path/to/foo-bar\".
+When creating an annotated tag, prepare a message based on the message
+of the highest existing tag, provided that contains the corresponding
+version string, and substituting the new version string for that.  If
+that is not the case, propose a message using a reasonable format.
 
 (fn TAG MSG &optional ARGS)" t)
 (register-definition-prefixes "magit-tag" '("magit-"))
@@ -3922,7 +3919,7 @@ information retrieved from files created by the keychain script." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jinx-20240724.917/jinx-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jinx-20240724.917/jinx-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/jinx-20240824.808/jinx-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/jinx-20240824.808/jinx-autoloads.el"))
 
 
 
@@ -4641,7 +4638,7 @@ the first target at point." t)
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/consult-20240818.1112/consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/consult-20240818.1112/consult-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/consult-20240824.800/consult-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/consult-20240824.800/consult-autoloads.el"))
 
 
 
@@ -5690,7 +5687,7 @@ Major mode for editing ClojureC code.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20240815.918/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20240815.918/cider-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cider-20240828.1343/cider-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cider-20240828.1343/cider-autoloads.el"))
 
 
 
@@ -6350,7 +6347,7 @@ Displays the function dependencies for  NS and SYMBOL using completing read.
 
 
 )
-(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cape-20240818.1414/cape-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cape-20240818.1414/cape-autoloads.el"))
+(let ((load-true-file-name "/home/dawran/.emacs.d/elpa/cape-20240826.1650/cape-autoloads.el")(load-file-name "/home/dawran/.emacs.d/elpa/cape-20240826.1650/cape-autoloads.el"))
 
 
 
@@ -6821,7 +6818,7 @@ Transpose lines in the active region." t)
   (info-initialize)
   (setq Info-directory-list
         (append
-         '("/home/dawran/.emacs.d/elpa/eat-0.9.4" "/home/dawran/.emacs.d/elpa/embark-20240724.1801" "/home/dawran/.emacs.d/elpa/magit-20240818.1914" "/home/dawran/.emacs.d/elpa/magit-section-20240818.1914" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240811.502" "/home/dawran/.emacs.d/elpa/orderless-20240717.758" "/home/dawran/.emacs.d/elpa/sly-20240809.2119" "/home/dawran/.emacs.d/elpa/standard-themes-2.1.0" "/home/dawran/.emacs.d/elpa/transient-20240817.1959" "/home/dawran/.emacs.d/elpa/with-editor-20240817.1959" "/home/dawran/.emacs.d/elpa/compat-30.0.0.0")
+         '("/home/dawran/.emacs.d/elpa/eat-0.9.4" "/home/dawran/.emacs.d/elpa/embark-20240724.1801" "/home/dawran/.emacs.d/elpa/magit-20240822.1737" "/home/dawran/.emacs.d/elpa/magit-section-20240822.1737" "/home/dawran/.emacs.d/elpa/dash-20240510.1327" "/home/dawran/.emacs.d/elpa/modus-themes-20240826.647" "/home/dawran/.emacs.d/elpa/orderless-20240717.758" "/home/dawran/.emacs.d/elpa/sly-20240809.2119" "/home/dawran/.emacs.d/elpa/standard-themes-2.1.0" "/home/dawran/.emacs.d/elpa/transient-20240821.158" "/home/dawran/.emacs.d/elpa/with-editor-20240822.2051" "/home/dawran/.emacs.d/elpa/compat-30.0.0.0")
          Info-directory-list)))
 
 ;; Local Variables:

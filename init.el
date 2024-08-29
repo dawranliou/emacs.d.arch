@@ -84,7 +84,7 @@
  '(mouse-wheel-tilt-scroll t)
  '(native-comp-async-report-warnings-errors nil t)
  '(org-special-ctrl-a/e 'reversed)
- '(package-archive-priorities '(("melpa" . 30) ("gnu" . 20) ("nongnu" . 10)))
+ '(package-archive-priorities '(("melpa" . 10) ("gnu" . 30) ("nongnu" . 20)))
  '(package-archives
    '(("melpa" . "https://melpa.org/packages/")
      ("gnu" . "https://elpa.gnu.org/packages/")
