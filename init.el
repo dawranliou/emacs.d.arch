@@ -75,6 +75,7 @@
  '(lua-ts-indent-offset 2)
  '(magit-diff-refine-hunk 'all)
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
+ '(magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
  '(major-mode-remap-alist '((janet-mode . janet-ts-mode)))
  '(make-backup-files t)
  '(marginalia-mode t)
