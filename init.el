@@ -42,11 +42,6 @@
  '(dired-recursive-copies 'always)
  '(dired-recursive-deletes 'always)
  '(dired-use-ls-dired t)
- '(display-buffer-alist
-   '(("\\*Occur\\*"
-      (display-buffer-reuse-mode-window display-buffer-below-selected)
-      (window-height . fit-window-to-buffer)
-      (dedicated . t))))
  '(ediff-split-window-function 'split-window-sensibly)
  '(eglot-connect-timeout 300)
  '(eglot-events-buffer-size 0)
