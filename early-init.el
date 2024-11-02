@@ -4,26 +4,25 @@
   (defvar package-quickstart)
   (setf package-quickstart t))
 
-;; GC
-(setq gc-cons-threshold most-positive-fixnum
-      gc-cons-percentage 0.7)
+;;; GC
+(setq gc-cons-threshold most-positive-fixnum)
 
 (add-hook 'emacs-startup-hook
           (lambda ()
             (message "*** Emacs loaded in %.2f seconds with %d garbage collections."
                      (float-time (time-subtract after-init-time before-init-time))
                      gcs-done)
-            (setq gc-cons-threshold (* 256 1024 1024)
-                  gc-cons-percentage 0.3)))
+            (setq gc-cons-threshold (* 16 1024 1024))))
 
-(add-hook 'focus-out-hook #'garbage-collect)
 
-;; Supress warnings
+;;; Supress warnings
 (setq byte-compile-warnings '(not obsolete)
       warning-suppress-log-types '((comp) (bytecomp))
       native-comp-async-report-warnings-errors 'silent)
 
-;; UI
+;;; UI
+(setq inhibit-splash-screen t)
+
 (setq-default default-frame-alist '((font . "Iosevka-12")
                                     (height . 30)))
 (setq frame-inhibit-implied-resize t)
