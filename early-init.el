@@ -8,6 +8,13 @@
                      gcs-done)
             (setq gc-cons-threshold (* 16 1024 1024))))
 
+;;; Misc
+
+(set-language-environment "UTF-8")
+
+;; Set-language-environment sets default-input-method, which is unwanted.
+(setq default-input-method nil)
+
 ;;; Performance
 
 ;; Prefer loading newer compiled files
