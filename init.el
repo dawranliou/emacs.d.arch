@@ -232,7 +232,7 @@ With a prefix argument, exit eshell before restoring previous config."
 (keymap-global-set "M-i" 'delete-other-windows)
 (keymap-global-set "M-j" #'avy-goto-char-timer) ; was #'default-indent-new-line
 (keymap-global-set "C-c j" #'avy-goto-line)
-(keymap-global-set "C-c c" #'compile)
+(keymap-global-set "C-c z" #'compile)
 (keymap-global-set "M-z" 'zap-up-to-char)
 (keymap-global-set "M-Z" 'zap-to-char)
 (keymap-global-set "M-$" #'jinx-correct)
