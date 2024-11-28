@@ -4,7 +4,12 @@
 ;;
 
 ;;; Code:
-(package-activate-all)
+
+;;; package.el
+;; Initialize and refresh package contents again if needed
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
