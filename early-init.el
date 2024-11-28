@@ -1,3 +1,5 @@
+;;; early-init.el  -*- no-byte-compile: t; lexical-binding: t; -*-
+
 ;;; GC
 (setq gc-cons-threshold most-positive-fixnum)
 

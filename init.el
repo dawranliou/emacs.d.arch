@@ -1,4 +1,4 @@
-;;; init.el --- Daw-Ran's emacs configurations -*- lexical-binding: t; -*-
+;;; init.el --- Daw-Ran's emacs configurations -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;
