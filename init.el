@@ -98,8 +98,8 @@
    '(eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
    '((eglot-booster :vc-backend Git :url "https://github.com/jdtsmith/eglot-booster")
+     (janet-ts-mode :vc-backend Git :url "https://github.com/sogaiu/janet-ts-mode.git")
      (tb-keycast :vc-backend Git :url "https://github.com/ir33k/tb-keycast.git")
-     (janet-ts-mode :url "https://github.com/sogaiu/janet-ts-mode.git" :vc-backend Git)
      (ajrepl :url "https://github.com/sogaiu/ajrepl.git" :vc-backend Git)
      (a-janet-spork-client :url "https://github.com/sogaiu/a-janet-spork-client.git" :vc-backend Git)))
  '(pixel-scroll-precision-mode t)
@@ -418,16 +418,6 @@ With a prefix argument, exit eshell before restoring previous config."
       (cider-set-repl-type 'cljs)))
 
   (add-hook 'cider-connected-hook #'cider-setup-sci-js-cljs-repl))
-
-(with-eval-after-load 'janet-mode
-  ;; (require 'inf-janet)
-  ;; (remove-hook 'janet-mode-hook #'inf-janet-minor-mode)
-  ;; (keymap-set inf-janet-minor-mode-map "C-c C-b" #'inf-janet-eval-buffer)
-
-  ;; (require 'ajrepl)
-  ;; (add-hook 'janet-mode-hook #'ajrepl-interaction-mode)
-  ;; (require 'ajsc)
-  )
 
 (with-eval-after-load 'janet-ts-mode
   (add-hook 'janet-ts-mode-hook #'remove-treesit-sexp-changes)
