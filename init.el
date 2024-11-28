@@ -99,7 +99,6 @@
  '(package-vc-selected-packages
    '((eglot-booster :vc-backend Git :url "https://github.com/jdtsmith/eglot-booster")
      (tb-keycast :vc-backend Git :url "https://github.com/ir33k/tb-keycast.git")
-     (lua-ts-mode :url "https://git.sr.ht/~johnmuhl/lua-ts-mode" :vc-backend Git)
      (janet-ts-mode :url "https://github.com/sogaiu/janet-ts-mode.git" :vc-backend Git)
      (ajrepl :url "https://github.com/sogaiu/ajrepl.git" :vc-backend Git)
      (a-janet-spork-client :url "https://github.com/sogaiu/a-janet-spork-client.git" :vc-backend Git)))
@@ -443,12 +442,6 @@ With a prefix argument, exit eshell before restoring previous config."
       (mark-defun)
       (call-interactively #'ajrepl-send-region)))
   (keymap-set ajrepl-interaction-mode-map "C-c C-c" #'ajrepl-send-defun))
-
-(with-eval-after-load 'lua-mode
-  (add-hook 'lua-mode-hook #'eglot-ensure))
-
-(with-eval-after-load 'lua-ts-mode
-  (add-hook 'lua-ts-mode-hook #'eglot-ensure))
 
 (add-hook 'focus-out-hook #'garbage-collect)
 
