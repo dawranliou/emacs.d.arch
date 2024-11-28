@@ -500,8 +500,6 @@ With a prefix argument, exit eshell before restoring previous config."
       (call-interactively #'ajrepl-send-region)))
   (keymap-set ajrepl-interaction-mode-map "C-c C-c" #'ajrepl-send-defun))
 
-(add-hook 'focus-out-hook #'garbage-collect)
-
 (provide 'init)
 
 ;;; init.el ends here
