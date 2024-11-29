@@ -407,6 +407,10 @@ With a prefix argument, exit eshell before restoring previous config."
   (add-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
   (keymap-set corfu-mode-map "SPC" #'corfu-insert-separator)
 
+  (with-eval-after-load 'savehist
+    (corfu-history-mode 1)
+    (add-to-list 'savehist-additional-variables 'corfu-history))
+
   (defun corfu-enable-in-minibuffer ()
     "Enable Corfu in the minibuffer."
     (when (local-variable-p 'completion-at-point-functions)
