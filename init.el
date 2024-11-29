@@ -114,7 +114,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(odin-mode csv-mode eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
+   '(dired-subtree odin-mode csv-mode eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
    '((odin-mode :vc-backend Git :url "https://git.sr.ht/~mgmarlow/odin-mode")
      (ajrepl :vc-backend Git :url "https://github.com/sogaiu/ajrepl.git")
@@ -383,6 +383,15 @@ With a prefix argument, exit eshell before restoring previous config."
 ;; Minibuffer history
 (keymap-set minibuffer-local-map "M-s" #'consult-history) ; orig. next-matching-history-element
 (keymap-set minibuffer-local-map "M-r" #'consult-history) ; orig. previous-matching-history-element
+
+
+(with-eval-after-load 'dired
+  (add-hook 'dired-mode-hook #'hl-line-mode)
+  (require 'dired-subtree))
+
+(with-eval-after-load 'dired-subtree
+  (keymap-set dired-mode-map "<tab>" #'dired-subtree-toggle)
+  (keymap-set dired-mode-map "<backtab>" #'dired-subtree-remove))
 
 (with-eval-after-load 'consult
   (consult-customize
