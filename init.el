@@ -45,9 +45,9 @@
  '(context-menu-mode t)
  '(copy-region-blink-delay 0)
  '(create-lockfiles nil)
- '(custom-enabled-themes '(standard-light))
+ '(custom-enabled-themes '(modus-operandi-tinted))
  '(custom-safe-themes
-   '("cfb0bb44259cf576124b900613628f4b589df1c3860185d24fffde6666bc88cf" default))
+   '("712dda0818312c175a60d94ba676b404fc815f8c7e6c080c9b4061596c60a1db" default))
  '(delete-by-moving-to-trash t)
  '(delete-old-versions t)
  '(dired-auto-revert-buffer t)
