@@ -117,12 +117,13 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit inf-janet janet-mode janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
+   '(odin-mode csv-mode eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
-   '((eglot-booster :vc-backend Git :url "https://github.com/jdtsmith/eglot-booster")
+   '((odin-mode :vc-backend Git :url "https://git.sr.ht/~mgmarlow/odin-mode")
+     (ajrepl :vc-backend Git :url "https://github.com/sogaiu/ajrepl.git")
      (janet-ts-mode :vc-backend Git :url "https://github.com/sogaiu/janet-ts-mode.git")
+     (eglot-booster :vc-backend Git :url "https://github.com/jdtsmith/eglot-booster")
      (tb-keycast :vc-backend Git :url "https://github.com/ir33k/tb-keycast.git")
-     (ajrepl :url "https://github.com/sogaiu/ajrepl.git" :vc-backend Git)
      (a-janet-spork-client :url "https://github.com/sogaiu/a-janet-spork-client.git" :vc-backend Git)))
  '(pixel-scroll-precision-mode t)
  '(prog-mode-hook '(toggle-truncate-lines electric-pair-mode))

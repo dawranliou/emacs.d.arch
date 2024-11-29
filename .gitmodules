@@ -4,3 +4,12 @@
 [submodule "elpa/tb-keycast"]
 	path = elpa/tb-keycast
 	url = https://github.com/ir33k/tb-keycast
+[submodule "elpa/odin-mode"]
+	path = elpa/odin-mode
+	url = https://git.sr.ht/~mgmarlow/odin-mode
+[submodule "elpa/ajrepl"]
+	path = elpa/ajrepl
+	url = https://github.com/sogaiu/ajrepl.git
+[submodule "elpa/janet-ts-mode"]
+	path = elpa/janet-ts-mode
+	url = https://github.com/sogaiu/janet-ts-mode.git
