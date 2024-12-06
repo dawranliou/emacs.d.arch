@@ -92,7 +92,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
  '(package-selected-packages
-   '(nerd-icons nerd-icons-completion nerd-icons-corfu nerd-icons-dired dired-subtree odin-mode csv-mode eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
+   '(multiple-cursors nerd-icons nerd-icons-completion nerd-icons-corfu nerd-icons-dired dired-subtree odin-mode csv-mode eglot-booster tb-keycast jinx eat marginalia cape embark-consult consult avy standard-themes lua-ts-mode corfu rainbow-mode a-janet-spork-client ajrepl cider clojure-mode dumb-jump eglot elixir-mode embark exec-path-from-shell fennel-mode glsl-mode iedit janet-ts-mode jarchive keychain-environment lua-mode magit mlscroll modus-themes orderless sly vertico which-key yaml-mode zig-mode))
  '(package-vc-selected-packages
    '((odin-mode :vc-backend Git :url "https://git.sr.ht/~mgmarlow/odin-mode")
      (ajrepl :vc-backend Git :url "https://github.com/sogaiu/ajrepl.git")

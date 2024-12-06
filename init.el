@@ -343,6 +343,14 @@ With a prefix argument, exit eshell before restoring previous config."
                       (embark-bindings-in-keymap rectangle-mark-mode-map))))
              do (define-key rectangle-mark-mode-map key def))))
 
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)
+         ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+
 (use-package xref
   :defer t
   :config
