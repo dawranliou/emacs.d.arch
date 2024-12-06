@@ -16,13 +16,8 @@
   (package-refresh-contents))
 
 ;;; After init hooks
-(add-hook 'after-init-hook #'global-corfu-mode)
-(add-hook 'after-init-hook #'global-jinx-mode)
-(add-hook 'after-init-hook #'marginalia-mode)
 (add-hook 'after-init-hook #'save-place-mode)
 (add-hook 'after-init-hook #'savehist-mode)
-(add-hook 'after-init-hook #'vertico-mode)
-(add-hook 'after-init-hook #'which-key-mode)
 (add-hook 'after-init-hook #'window-divider-mode)
 
 (put 'narrow-to-region 'disabled nil)
@@ -238,11 +233,42 @@ With a prefix argument, exit eshell before restoring previous config."
               ("<tab>" . dired-subtree-toggle)
               ("<backtab>" . dired-subtree-remove)))
 
+(use-package nerd-icons
+  :ensure t)
+
+(use-package nerd-icons-completion
+  :ensure t
+  :after marginalia
+  :hook (marginalia-mode . nerd-icons-completion-marginalia-setup))
+
+(use-package nerd-icons-corfu
+  :ensure t
+  :after corfu
+  :config
+  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
+
 (use-package nerd-icons-dired
   :ensure t
   :defer t
   :after dired
   :hook ((dired-mode . nerd-icons-dired-mode)))
+
+(use-package vertico
+  :ensure t
+  :defer t
+  :hook (after-init . vertico-mode))
+
+(use-package marginalia
+  :ensure t
+  :defer t
+  :hook (after-init . marginalia-mode))
+
+(use-package orderless
+  :ensure t
+  :defer t
+  :config
+  (setq completion-category-overrides '((file (styles partial-completion))))
+  (setq completion-styles '(orderless basic)))
 
 (use-package consult
   :ensure t
@@ -257,20 +283,14 @@ With a prefix argument, exit eshell before restoring previous config."
    ;; :preview-key "M-."
    :preview-key '(:debounce 0.4 any)))
 
-(use-package marginalia
-  :ensure t
-  :defer t
-  :hook (marginalia-mode . nerd-icons-completion-marginalia-setup))
-
 (use-package corfu
   :ensure t
   :defer t
-  :hook (corfu-mode . corfu-popupinfo-mode)
+  :hook ((after-init . global-corfu-mode)
+         (corfu-mode . corfu-popupinfo-mode))
   :bind (:map corfu-mode-map
               ("SPC" . corfu-insert-separator))
   :config
-  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter)
-
   (with-eval-after-load 'savehist
     (corfu-history-mode 1)
     (add-to-list 'savehist-additional-variables 'corfu-history))
@@ -290,6 +310,10 @@ With a prefix argument, exit eshell before restoring previous config."
   :config
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
+
+(use-package which-key
+  :ensure t
+  :hook (after-init . which-key-mode))
 
 (use-package project
   :defer t
@@ -344,6 +368,11 @@ With a prefix argument, exit eshell before restoring previous config."
             (select-window
              (cdr (ring-ref avy-ring 0)))
             t))))
+
+(use-package jinx
+  :ensure t
+  :defer t
+  :hook (after-init . global-jinx-mode))
 
 (use-package fennel-mode
   :ensure t
