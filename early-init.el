@@ -138,9 +138,12 @@
 ;;; UI
 (setq inhibit-splash-screen t)
 
+(setq tool-bar-mode nil)
 (setq-default default-frame-alist '((font . "Iosevka-12")
-                                    (height . 30)))
+                                    (height . 30)
+                                    (tool-bar-lines . 0)))
 (setq frame-inhibit-implied-resize t)
+(setq frame-resize-pixelwise t)
 ;; (set-face-attribute 'default nil
 ;;                     :family "Iosevka" :height 120 :weight 'regular)
 ;; (set-face-attribute 'fixed-pitch nil

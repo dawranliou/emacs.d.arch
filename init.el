@@ -7,18 +7,16 @@
 
 ;; Opt out customization interface
 (setq custom-file (locate-user-emacs-file "custom.el"))
-(load custom-file :no-error-if-file-is-missing)
+;; (load custom-file :no-error-if-file-is-missing)
 
 ;;; package.el
 ;; Initialize and refresh package contents again if needed
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
-;;; After init hooks
-(add-hook 'after-init-hook #'save-place-mode)
-(add-hook 'after-init-hook #'savehist-mode)
-(add-hook 'after-init-hook #'window-divider-mode)
+;;; Enable some features
 
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
@@ -63,7 +61,7 @@ The DWIM behaviour of this command is as follows:
   ;; Move by lines, if ARG is not 1 (the default).
   (if (/= arg 1)
       (let ((line-move-visual nil))
-        (line-move (1- arg) t)))
+	(line-move (1- arg) t)))
   (if (bolp)
       (back-to-indentation)
     (move-beginning-of-line 1)))
@@ -90,10 +88,10 @@ backwards."
   "Like `fill-paragraph', but unfill if used twice."
   (interactive)
   (let ((fill-column
-         (if (eq last-command 'fill-or-unfill)
-             (progn (setq this-command nil)
-                    (point-max))
-           fill-column)))
+	 (if (eq last-command 'fill-or-unfill)
+	     (progn (setq this-command nil)
+		    (point-max))
+	   fill-column)))
     (call-interactively #'fill-paragraph)))
 
 (defun eshell-toggle (exit)
@@ -102,10 +100,10 @@ With a prefix argument, exit eshell before restoring previous config."
   (interactive "P")
   (if (string= "eshell-mode" major-mode)
       (progn
-        (when exit
-          (insert "exit")
-          (eshell-send-input))
-        (jump-to-register :eshell-fullscreen))
+	(when exit
+	  (insert "exit")
+	  (eshell-send-input))
+	(jump-to-register :eshell-fullscreen))
     (window-configuration-to-register :eshell-fullscreen)
     (eshell)
     (delete-other-windows)))
@@ -115,9 +113,6 @@ With a prefix argument, exit eshell before restoring previous config."
   (interactive)
   (set-visited-file-name (concat "/sudoedit::" (buffer-file-name)))
   (setq buffer-read-only nil))
-
-(add-hook 'clojure-mode-hook 'eglot-ensure)
-(add-hook 'zig-mode-hook 'eglot-ensure)
 
 (autoload #'embark-next-symbol "embark" nil t)
 (autoload #'embark-previous-symbol "embark" nil t)
@@ -149,92 +144,145 @@ With a prefix argument, exit eshell before restoring previous config."
 (keymap-global-set "C-c g" 'grep-find)
 (keymap-global-unset "C-z")
 (keymap-global-set "C-h L" #'find-library)
-(with-eval-after-load 'isearch
-  (keymap-set isearch-mode-map "C-o" 'isearch-occur))
 (keymap-global-set "<remap> <kill-region>" 'backward-kill-word-or-region)
 (keymap-global-set "<remap> <dabbrev-expand>" 'hippie-expand)
 (keymap-global-set "s-{" #'tab-previous)
 (keymap-global-set "s-}" #'tab-next)
 
-;; Consult
-;; C-c bindings in `mode-specific-map'
-(keymap-global-set "C-c M-x" #'consult-mode-command)
-(keymap-global-set "<remap> <Info-search>" #'consult-info)
-(keymap-global-set "C-M-#" #'consult-register)
-(keymap-global-set "C-c M-x" #'consult-mode-command)
-(keymap-global-set "C-c h" #'consult-history)
-(keymap-global-set "C-c i" #'consult-info)
-(keymap-global-set "C-c k" #'consult-kmacro)
-(keymap-global-set "C-c m" #'consult-man)
+(use-package repeat
+  :hook (after-init . repeat-mode))
 
-;; C-x bindings in `ctl-x-map'
-(keymap-global-set "C-x 4 b" #'consult-buffer-other-window) ; orig. switch-to-buffer-other-window
-(keymap-global-set "C-x 5 b" #'consult-buffer-other-frame) ; orig. switch-to-buffer-other-frame
-(keymap-global-set "C-x M-:" #'consult-complex-command) ; orig. repeat-complex-command
-(keymap-global-set "C-x b" #'consult-buffer)            ; orig. switch-to-buffer
-(keymap-global-set "C-x p b" #'consult-project-buffer) ; orig. project-switch-to-buffer
-(keymap-global-set "C-x r b" #'consult-bookmark)       ; orig. bookmark-jump
-(keymap-global-set "C-x t b" #'consult-buffer-other-tab) ; orig. switch-to-buffer-other-tab
+;;; Scrolling
 
-;; Custom M-# bindings for fast register access
-(keymap-global-set "C-M-#" #'consult-register)
-(keymap-global-set "M-#" #'consult-register-load)
-(keymap-global-set "M-'" #'consult-register-store) ; orig. abbrev-prefix-mark (unrelated)
-(setq register-preview-function #'consult-register-format)
-(advice-add #'register-preview :override #'consult-register-window)
+(setq pixel-scroll-precision-mode t)
+(setq scroll-conservatively 10000)
+(setq scroll-error-top-bottom t)
+(setq scroll-preserve-screen-position t)
+(setq scroll-step 1)
+(setq fast-but-imprecise-scrolling t)
+(setq hscroll-margin 2)
+(setq hscroll-step 1)
 
-;; Other custom bindings
-(keymap-global-set "M-y" #'consult-yank-pop) ; was #'yank-pop
+;;; Mouse
 
-;; M-g bindings in `goto-map'
-(keymap-global-set "M-g I" #'consult-imenu-multi)
-(keymap-global-set "M-g M-g" #'consult-goto-line) ; orig. goto-line
-(keymap-global-set "M-g e" #'consult-compile-error)
-(keymap-global-set "M-g f" #'consult-flymake)   ; Alternative: consult-flycheck
-(keymap-global-set "M-g g" #'consult-goto-line) ; orig. goto-line
-(keymap-global-set "M-g i" #'consult-imenu)
-(keymap-global-set "M-g k" #'consult-global-mark)
-(keymap-global-set "M-g m" #'consult-mark)
-(keymap-global-set "M-g o" #'consult-outline) ; Alternative: consult-org-heading
+(setq mouse-wheel-scroll-amount '(1 ((shift) . hscroll)))
+(setq mouse-wheel-tilt-scroll t)
+(setq mouse-wheel-flip-direction nil)
+(setq mouse-yank-at-point t)
 
-;; M-s bindings in `search-map'
-(keymap-global-set "M-s G" #'consult-git-grep)
-(keymap-global-set "M-s L" #'consult-line-multi)
-(keymap-global-set "M-s c" #'consult-locate)
-(keymap-global-set "M-s d" #'consult-find) ; Alternative: consult-fd
-(keymap-global-set "M-s g" #'consult-grep)
-(keymap-global-set "M-s k" #'consult-keep-lines)
-(keymap-global-set "M-s l" #'consult-line)
-(keymap-global-set "M-s o" #'consult-outline) ; was #'occur
-(keymap-global-set "M-s r" #'consult-ripgrep)
-(keymap-global-set "M-s u" #'consult-focus-lines)
+;;; Window
 
-;; Isearch integration
-(keymap-global-set "M-s e" #'consult-isearch-history)
-(keymap-set isearch-mode-map "M-e" #'consult-isearch-history) ; orig. isearch-edit-string
-(keymap-set isearch-mode-map "M-s e" #'consult-isearch-history) ; orig. isearch-edit-string
-(keymap-set isearch-mode-map "M-s l" #'consult-line) ; needed by consult-line to detect isearch
-(keymap-set isearch-mode-map "M-s L" #'consult-line-multi) ; needed by consult-line to detect isearch
+(setq windmove-default-keybindings '([ignore] control))
 
-;; Minibuffer history
-(keymap-set minibuffer-local-map "M-s" #'consult-history) ; orig. next-matching-history-element
-(keymap-set minibuffer-local-map "M-r" #'consult-history) ; orig. previous-matching-history-element
+;;; Buffer
+
+(setq switch-to-buffer-in-dedicated-window 'pop)
+(setq switch-to-buffer-obey-display-actions t)
+(setq uniquify-buffer-name-style 'forward)
+
+;;; Minibuffer
+
+(setq enable-recursive-minibuffers t)
+(setq minibuffer-prompt-properties '(read-only t cursor-intangible t face minibuffer-prompt))
+
+;;; Mode line
+
+(setq mode-line-compact 'long)
+
+;;; Files
+
+(setq vc-follow-symlinks t)
+
+;;; Auto-save & backup
+
+(setq auto-save-list-file-prefix "~/.emacs.d/autosave/")
+(setq backup-by-copying t)
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
+(setq create-lockfiles nil)
+(setq delete-old-versions t)
+(setq kept-new-versions 5)
+(setq kept-old-versions 5)
+(setq kill-buffer-delete-auto-save-files t)
+(setq make-backup-files nil)
+(setq version-control t)
+
+;;; Auto-revert
+
+(setq auto-revert-avoid-polling t)
+(setq auto-revert-check-vc-info t)
+(setq auto-revert-stop-on-user-input nil)
+(setq global-auto-revert-non-file-buffers t)
+(setq revert-without-query '("."))
+
+;;; Parenthesis
+
+(setq show-paren-context-when-offscreen 'overlay)
+(setq show-paren-delay 0.1)
+(setq show-paren-when-point-in-periphery t)
+(setq show-paren-when-point-inside-paren t)
+
+;;; Grepping
+
+(setq grep-find-command '("rg -n -H --no-heading --glob='' -e ''" . 37))
+
+;;; Test Editing
+
+(setq kill-do-not-save-duplicates t)
+(setq wgrep-auto-save-buffer t)
+(setq indent-tabs-mode nil)
+
+;;; Misc
+
+(setq column-number-mode t)
+(setq comment-multi-line t)
+(setq context-menu-mode t)
+(setq copy-region-blink-delay 0)
+(setq eldoc-documentation-strategy 'eldoc-documentation-compose-eagerly)
+(setq history-length 300)
+(setq idle-update-delay 1.0)
+(setq native-comp-async-report-warnings-errors nil)
+(setq x-stretch-cursor t)
+(setq x-underline-at-descent-line nil)
+(setq ring-bell-function #'flash-mode-line)
+(setq show-trailing-whitespace t)
+
+(setq-default word-wrap t)
+(setq-default fill-column 80)
+(setq-default truncate-lines t)
+
+;;; Tramp
+
+(setq tramp-auto-save-directory "~/.emacs.d/tramp-autosave/")
+
+;;; File Manager
+
+(setq confirm-nonexistent-file-or-buffer nil)
+(setq delete-by-moving-to-trash t)
+(setq find-file-suppress-same-file-warnings t)
+(setq find-file-visit-truename t)
 
 (use-package dired
   :defer t
+  :custom ((dired-auto-revert-buffer t)
+	   (dired-dwim-target t)
+	   (dired-listing-switches "-aFGhlv --group-directories-first")
+	   (dired-recursive-copies 'always)
+	   (dired-recursive-deletes 'always)
+	   (dired-use-ls-dired t))
   :hook ((dired-mode . dired-hide-details-mode)
-         (dired-mode . hl-line-mode)))
+	 (dired-mode . hl-line-mode)))
 
 (use-package dired-subtree
   :ensure t
   :defer t
   :after dired
   :bind (:map dired-mode-map
-              ("<tab>" . dired-subtree-toggle)
-              ("<backtab>" . dired-subtree-remove)))
+	      ("<tab>" . dired-subtree-toggle)
+	      ("<backtab>" . dired-subtree-remove)))
 
 (use-package nerd-icons
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package nerd-icons-completion
   :ensure t
@@ -273,6 +321,63 @@ With a prefix argument, exit eshell before restoring previous config."
 (use-package consult
   :ensure t
   :defer t
+  :custom ((consult-narrow-key "<"))
+  ;; Replace bindings. Lazily loaded by `use-package'.
+  :bind (;; C-c bindings in `mode-specific-map'
+	 ("C-c M-x" . consult-mode-command)
+	 ("C-c h" . consult-history)
+	 ("C-c k" . consult-kmacro)
+	 ("C-c m" . consult-man)
+	 ("C-c i" . consult-info)
+	 ([remap Info-search] . consult-info)
+	 ;; C-x bindings in `ctl-x-map'
+	 ("C-x M-:" . consult-complex-command)     ;; orig. repeat-complex-command
+	 ("C-x b" . consult-buffer)                ;; orig. switch-to-buffer
+	 ("C-x 4 b" . consult-buffer-other-window) ;; orig. switch-to-buffer-other-window
+	 ("C-x 5 b" . consult-buffer-other-frame)  ;; orig. switch-to-buffer-other-frame
+	 ("C-x t b" . consult-buffer-other-tab)    ;; orig. switch-to-buffer-other-tab
+	 ("C-x r b" . consult-bookmark)            ;; orig. bookmark-jump
+	 ("C-x p b" . consult-project-buffer)      ;; orig. project-switch-to-buffer
+	 ;; Custom M-# bindings for fast register access
+	 ("M-#" . consult-register-load)
+	 ("M-'" . consult-register-store)          ;; orig. abbrev-prefix-mark (unrelated)
+	 ("C-M-#" . consult-register)
+	 ;; Other custom bindings
+	 ("M-y" . consult-yank-pop)                ;; orig. yank-pop
+	 ;; M-g bindings in `goto-map'
+	 ("M-g e" . consult-compile-error)
+	 ("M-g f" . consult-flymake)               ;; Alternative: consult-flycheck
+	 ("M-g g" . consult-goto-line)             ;; orig. goto-line
+	 ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
+	 ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
+	 ("M-g m" . consult-mark)
+	 ("M-g k" . consult-global-mark)
+	 ("M-g i" . consult-imenu)
+	 ("M-g I" . consult-imenu-multi)
+	 ;; M-s bindings in `search-map'
+	 ("M-s d" . consult-find)                  ;; Alternative: consult-fd
+	 ("M-s c" . consult-locate)
+	 ("M-s g" . consult-grep)
+	 ("M-s G" . consult-git-grep)
+	 ("M-s r" . consult-ripgrep)
+	 ("M-s l" . consult-line)
+	 ("M-s L" . consult-line-multi)
+	 ("M-s k" . consult-keep-lines)
+	 ("M-s u" . consult-focus-lines)
+	 ;; Isearch integration
+	 ("M-s e" . consult-isearch-history)
+	 :map isearch-mode-map
+	 ("M-e" . consult-isearch-history)         ;; orig. isearch-edit-string
+	 ("M-s e" . consult-isearch-history)       ;; orig. isearch-edit-string
+	 ("M-s l" . consult-line)                  ;; needed by consult-line to detect isearch
+	 ("M-s L" . consult-line-multi)            ;; needed by consult-line to detect isearch
+	 ;; Minibuffer history
+	 :map minibuffer-local-map
+	 ("M-s" . consult-history)                 ;; orig. next-matching-history-element
+	 ("M-r" . consult-history))                ;; orig. previous-matching-history-element
+  :init
+  (setq register-preview-delay 0.5)
+  (advice-add #'register-preview :override #'consult-register-window)
   :config
   (consult-customize
    consult-theme :preview-key '(:debounce 0.2 any)
@@ -287,9 +392,9 @@ With a prefix argument, exit eshell before restoring previous config."
   :ensure t
   :defer t
   :hook ((after-init . global-corfu-mode)
-         (corfu-mode . corfu-popupinfo-mode))
+	 (corfu-mode . corfu-popupinfo-mode))
   :bind (:map corfu-mode-map
-              ("SPC" . corfu-insert-separator))
+	      ("SPC" . corfu-insert-separator))
   :config
   (with-eval-after-load 'savehist
     (corfu-history-mode 1)
@@ -300,7 +405,7 @@ With a prefix argument, exit eshell before restoring previous config."
     (when (local-variable-p 'completion-at-point-functions)
       ;; (setq-local corfu-auto nil) ;; Enable/disable auto completion
       (setq-local corfu-echo-delay nil ;; Disable automatic echo and popup
-                  corfu-popupinfo-delay nil)
+		  corfu-popupinfo-delay nil)
       (corfu-mode 1)))
   (add-hook 'minibuffer-setup-hook #'corfu-enable-in-minibuffer))
 
@@ -310,6 +415,26 @@ With a prefix argument, exit eshell before restoring previous config."
   :config
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
+
+(use-package saveplace
+  :hook (after-init . save-place-mode)
+  :custom ((save-place-file "~/.emacs.d/saveplace")
+	   (save-place-limit 600)))
+
+(use-package savehist
+  :hook (after-init . savehist-mode)
+  :custom ((savehist-save-minibuffer-history t)))
+
+(use-package recentf
+  :hook (after-init . recentf-mode)
+  :custom ((recentf-max-saved-items 300)))
+
+(add-hook 'after-init-hook #'electric-pair-mode)
+
+(add-hook 'after-init-hook #'window-divider-mode)
+(setq window-divider-default-bottom-width 1)
+(setq window-divider-default-places t)
+(setq window-divider-default-right-width 1)
 
 (use-package which-key
   :ensure t
@@ -321,9 +446,23 @@ With a prefix argument, exit eshell before restoring previous config."
   (require 'magit-extras))
 
 (use-package compile
-  :hook (compilation-filter . ansi-color-compilation-filter))
+  :hook (compilation-filter . ansi-color-compilation-filter)
+  :custom ((comint-buffer-maximum-size 2048)
+	   (comint-prompt-read-only t)
+	   (compilation-always-kill t)
+	   (compilation-ask-about-save nil)
+	   (compilation-scroll-output 'first-error)))
 
-(keychain-refresh-environment)
+(use-package magit
+  :ensure t
+  :defer t
+  :custom ((magit-diff-refine-hunk 'all)
+	   (magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
+	   (magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))))
+
+(use-package keychain-environment
+  :ensure t
+  :hook (after-init . keychain-refresh-environment))
 
 (use-package rect
   :defer t
@@ -331,35 +470,52 @@ With a prefix argument, exit eshell before restoring previous config."
   ;; https://gist.github.com/jdtsmith/bfa2d692c4fbbffe06b558e4bcf9abec
   (with-eval-after-load 'rect
     (cl-loop for (key def) in
-             '(("k" kill-rectangle)       ("t" string-rectangle)
-               ("o" open-rectangle)       ("w" copy-rectangle-as-kill)
-               ("y" yank-rectangle)       ("c" clear-rectangle)
-               ("d" delete-rectangle)     ("N" rectangle-number-lines)
-               (" " delete-whitespace-rectangle)
-               ("=" calc-grab-sum-across) ("+" calc-grab-sum-down)
-               ("#" calc-grab-rectangle)  ("n" set-mark-command)
-               ("q" (lambda () (interactive) (deactivate-mark)))
-               ("?" (lambda () (interactive)
-                      (embark-bindings-in-keymap rectangle-mark-mode-map))))
-             do (define-key rectangle-mark-mode-map key def))))
+	     '(("k" kill-rectangle)       ("t" string-rectangle)
+	       ("o" open-rectangle)       ("w" copy-rectangle-as-kill)
+	       ("y" yank-rectangle)       ("c" clear-rectangle)
+	       ("d" delete-rectangle)     ("N" rectangle-number-lines)
+	       (" " delete-whitespace-rectangle)
+	       ("=" calc-grab-sum-across) ("+" calc-grab-sum-down)
+	       ("#" calc-grab-rectangle)  ("n" set-mark-command)
+	       ("q" (lambda () (interactive) (deactivate-mark)))
+	       ("?" (lambda () (interactive)
+		      (embark-bindings-in-keymap rectangle-mark-mode-map))))
+	     do (define-key rectangle-mark-mode-map key def))))
 
 (use-package multiple-cursors
   :ensure t
+  :defer t
   :bind (("C-S-c C-S-c" . mc/edit-lines)
-         ("C->" . mc/mark-next-like-this)
-         ("C-<" . mc/mark-previous-like-this)
-         ("C-c C-<" . mc/mark-all-like-this)
-         ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+	 ("C->" . mc/mark-next-like-this)
+	 ("C-<" . mc/mark-previous-like-this)
+	 ("C-c C-<" . mc/mark-all-like-this)
+	 ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
 (use-package xref
   :defer t
+  :custom ((xref-search-program 'ripgrep)
+	   (xref-show-definitions-function 'xref-show-definitions-completing-read))
   :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
+(use-package isearch
+  :defer t
+  :custom ((isearch-allow-motion t)
+	   (isearch-allow-scroll 'unlimited)
+	   (isearch-lazy-count t)
+	   (isearch-wrap-pause 'no)
+	   (search-whitespace-regexp ".*?"))
+  :bind (:map isearch-mode-map
+	      ("C-o" . isearch-occur)))
 
 (use-package eshell
   :defer t
   :hook ((eshell-first-time-mode . eat-eshell-visual-command-mode)
-         (eshell-first-time-mode . eat-eshell-mode)))
+	 (eshell-first-time-mode . eat-eshell-mode)))
+
+(use-package ediff
+  :defer t
+  :custom (ediff-split-window-function 'split-window-sensibly))
 
 (use-package avy
   :ensure t
@@ -368,14 +524,14 @@ With a prefix argument, exit eshell before restoring previous config."
   ;; After invoking avy-goto-char-timer, hit "." to run embark at the next
   ;; candidate you select. https://github.com/ebittleman/emacs-bedrock
   (setf (alist-get ?. avy-dispatch-alist)
-        (defun avy-action-embark (pt)
-          (unwind-protect
-              (save-excursion
-                (goto-char pt)
-                (embark-act))
-            (select-window
-             (cdr (ring-ref avy-ring 0)))
-            t))))
+	(defun avy-action-embark (pt)
+	  (unwind-protect
+	      (save-excursion
+		(goto-char pt)
+		(embark-act))
+	    (select-window
+	     (cdr (ring-ref avy-ring 0)))
+	    t))))
 
 (use-package jinx
   :ensure t
@@ -386,11 +542,16 @@ With a prefix argument, exit eshell before restoring previous config."
   :ensure t
   :defer t
   :bind (:map fennel-mode-map
-              ("M-.")
-              ("M-,")))
+	      ("M-.")
+	      ("M-,")))
 
 (use-package eglot
   :defer t
+  :hook ((clojure-mode . eglot-ensure)
+	 (zig-mode. eglot-ensure))
+  :custom ((eglot-connect-timeout 300)
+	   (eglot-events-buffer-size 0)
+	   (eglot-extend-to-xref t))
   :config
   (eglot-booster-mode)
   (jarchive-mode)
@@ -402,11 +563,11 @@ With a prefix argument, exit eshell before restoring previous config."
   (defun eglot-disable-in-cider ()
     (when (eglot-managed-p)
       (if (bound-and-true-p cider-mode)
-          (progn
-            (remove-hook 'completion-at-point-functions 'eglot-completion-at-point)
-            (remove-hook 'xref-backend-functions 'eglot-xref-backend))
-        (add-hook 'completion-at-point-functions 'eglot-completion-at-point nil t)
-        (add-hook 'xref-backend-functions 'eglot-xref-backend))))
+	  (progn
+	    (remove-hook 'completion-at-point-functions 'eglot-completion-at-point)
+	    (remove-hook 'xref-backend-functions 'eglot-xref-backend))
+	(add-hook 'completion-at-point-functions 'eglot-completion-at-point nil t)
+	(add-hook 'xref-backend-functions 'eglot-xref-backend))))
   (add-hook 'cider-mode-hook #'eglot-disable-in-cider)
   (add-hook 'eglot-managed-mode-hook #'eglot-disable-in-cider)
   )
@@ -414,6 +575,8 @@ With a prefix argument, exit eshell before restoring previous config."
 (use-package cider
   :ensure t
   :defer t
+  :custom ((cider-repl-display-help-banner nil)
+	   (cider-repl-pop-to-buffer-on-connect 'display-only))
   :config
   (cider-register-cljs-repl-type 'sci-js)
 
@@ -423,6 +586,11 @@ With a prefix argument, exit eshell before restoring previous config."
       (cider-set-repl-type 'cljs)))
 
   (add-hook 'cider-connected-hook #'cider-setup-sci-js-cljs-repl))
+
+(use-package sly
+  :ensure t
+  :defer t
+  :custom (inferior-lisp-program "/usr/bin/sbcl"))
 
 (use-package janet-ts-mode
   :ensure t
