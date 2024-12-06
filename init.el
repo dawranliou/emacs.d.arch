@@ -225,17 +225,29 @@ With a prefix argument, exit eshell before restoring previous config."
 (keymap-set minibuffer-local-map "M-s" #'consult-history) ; orig. next-matching-history-element
 (keymap-set minibuffer-local-map "M-r" #'consult-history) ; orig. previous-matching-history-element
 
-(with-eval-after-load 'dired
-  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-  (add-hook 'dired-mode-hook #'hl-line-mode)
-  (require 'dired-subtree)
-  (add-hook 'dired-mode-hook #'nerd-icons-dired-mode))
+(use-package dired
+  :defer t
+  :hook ((dired-mode . dired-hide-details-mode)
+         (dired-mode . hl-line-mode)))
 
-(with-eval-after-load 'dired-subtree
-  (keymap-set dired-mode-map "<tab>" #'dired-subtree-toggle)
-  (keymap-set dired-mode-map "<backtab>" #'dired-subtree-remove))
+(use-package dired-subtree
+  :ensure t
+  :defer t
+  :after dired
+  :bind (:map dired-mode-map
+              ("<tab>" . dired-subtree-toggle)
+              ("<backtab>" . dired-subtree-remove)))
 
-(with-eval-after-load 'consult
+(use-package nerd-icons-dired
+  :ensure t
+  :defer t
+  :after dired
+  :hook ((dired-mode . nerd-icons-dired-mode)))
+
+(use-package consult
+  :ensure t
+  :defer t
+  :config
   (consult-customize
    consult-theme :preview-key '(:debounce 0.2 any)
    consult-ripgrep consult-git-grep consult-grep
@@ -245,12 +257,18 @@ With a prefix argument, exit eshell before restoring previous config."
    ;; :preview-key "M-."
    :preview-key '(:debounce 0.4 any)))
 
-(with-eval-after-load 'marginalia
-  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+(use-package marginalia
+  :ensure t
+  :defer t
+  :hook (marginalia-mode . nerd-icons-completion-marginalia-setup))
 
-(with-eval-after-load 'corfu
-  (add-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
-  (keymap-set corfu-mode-map "SPC" #'corfu-insert-separator)
+(use-package corfu
+  :ensure t
+  :defer t
+  :hook (corfu-mode . corfu-popupinfo-mode)
+  :bind (:map corfu-mode-map
+              ("SPC" . corfu-insert-separator))
+  :config
   (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter)
 
   (with-eval-after-load 'savehist
@@ -266,43 +284,57 @@ With a prefix argument, exit eshell before restoring previous config."
       (corfu-mode 1)))
   (add-hook 'minibuffer-setup-hook #'corfu-enable-in-minibuffer))
 
-(add-to-list 'completion-at-point-functions #'cape-dabbrev)
-(add-to-list 'completion-at-point-functions #'cape-file)
+(use-package cape
+  :ensure t
+  :defer t
+  :config
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file))
 
-(with-eval-after-load 'project
+(use-package project
+  :defer t
+  :config
   (require 'magit-extras))
 
-(add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
+(use-package compile
+  :hook (compilation-filter . ansi-color-compilation-filter))
 
 (keychain-refresh-environment)
 
-;; https://gist.github.com/jdtsmith/bfa2d692c4fbbffe06b558e4bcf9abec
-(with-eval-after-load 'rect
-  (cl-loop for (key def) in
-           '(("k" kill-rectangle)       ("t" string-rectangle)
-             ("o" open-rectangle)       ("w" copy-rectangle-as-kill)
-             ("y" yank-rectangle)       ("c" clear-rectangle)
-             ("d" delete-rectangle)     ("N" rectangle-number-lines)
-             (" " delete-whitespace-rectangle)
-             ("=" calc-grab-sum-across) ("+" calc-grab-sum-down)
-             ("#" calc-grab-rectangle)  ("n" set-mark-command)
-             ("q" (lambda () (interactive) (deactivate-mark)))
-             ("?" (lambda () (interactive)
-                    (embark-bindings-in-keymap rectangle-mark-mode-map))))
-           do (define-key rectangle-mark-mode-map key def)))
+(use-package rect
+  :defer t
+  :config
+  ;; https://gist.github.com/jdtsmith/bfa2d692c4fbbffe06b558e4bcf9abec
+  (with-eval-after-load 'rect
+    (cl-loop for (key def) in
+             '(("k" kill-rectangle)       ("t" string-rectangle)
+               ("o" open-rectangle)       ("w" copy-rectangle-as-kill)
+               ("y" yank-rectangle)       ("c" clear-rectangle)
+               ("d" delete-rectangle)     ("N" rectangle-number-lines)
+               (" " delete-whitespace-rectangle)
+               ("=" calc-grab-sum-across) ("+" calc-grab-sum-down)
+               ("#" calc-grab-rectangle)  ("n" set-mark-command)
+               ("q" (lambda () (interactive) (deactivate-mark)))
+               ("?" (lambda () (interactive)
+                      (embark-bindings-in-keymap rectangle-mark-mode-map))))
+             do (define-key rectangle-mark-mode-map key def))))
 
-(with-eval-after-load 'xref
+(use-package xref
+  :defer t
+  :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
-(with-eval-after-load 'eshell
-  (add-hook 'eshell-first-time-mode-hook
-            #'eat-eshell-visual-command-mode)
-  (add-hook 'eshell-first-time-mode-hook
-            #'eat-eshell-mode))
+(use-package eshell
+  :defer t
+  :hook ((eshell-first-time-mode . eat-eshell-visual-command-mode)
+         (eshell-first-time-mode . eat-eshell-mode)))
 
-;; After invoking avy-goto-char-timer, hit "." to run embark at the next
-;; candidate you select. https://github.com/ebittleman/emacs-bedrock
-(with-eval-after-load 'avy
+(use-package avy
+  :ensure t
+  :defer t
+  :config
+  ;; After invoking avy-goto-char-timer, hit "." to run embark at the next
+  ;; candidate you select. https://github.com/ebittleman/emacs-bedrock
   (setf (alist-get ?. avy-dispatch-alist)
         (defun avy-action-embark (pt)
           (unwind-protect
@@ -313,11 +345,16 @@ With a prefix argument, exit eshell before restoring previous config."
              (cdr (ring-ref avy-ring 0)))
             t))))
 
-(with-eval-after-load 'fennel-mode
-  (keymap-unset fennel-mode-map "M-.")
-  (keymap-unset fennel-mode-map "M-,"))
+(use-package fennel-mode
+  :ensure t
+  :defer t
+  :bind (:map fennel-mode-map
+              ("M-.")
+              ("M-,")))
 
-(with-eval-after-load 'eglot
+(use-package eglot
+  :defer t
+  :config
   (eglot-booster-mode)
   (jarchive-mode)
   (fset #'jsonrpc--log-event #'ignore) ; massive perf boost---don't log every event
@@ -337,7 +374,10 @@ With a prefix argument, exit eshell before restoring previous config."
   (add-hook 'eglot-managed-mode-hook #'eglot-disable-in-cider)
   )
 
-(with-eval-after-load 'cider
+(use-package cider
+  :ensure t
+  :defer t
+  :config
   (cider-register-cljs-repl-type 'sci-js)
 
   (defun cider-setup-sci-js-cljs-repl ()
@@ -347,13 +387,18 @@ With a prefix argument, exit eshell before restoring previous config."
 
   (add-hook 'cider-connected-hook #'cider-setup-sci-js-cljs-repl))
 
-(with-eval-after-load 'janet-ts-mode
-  (add-hook 'janet-ts-mode-hook #'remove-treesit-sexp-changes)
+(use-package janet-ts-mode
+  :ensure t
+  :defer t
+  :hook (janet-ts-mode . remove-treesit-sexp-changes)
   ;; (add-hook 'janet-ts-mode-hook #'ajrepl-interaction-mode)
   ;; (add-hook 'janet-ts-mode-hook #'ajsc-interaction-mode)
   )
 
-(with-eval-after-load 'ajrepl
+(use-package ajrepl
+  :ensure t
+  :defer t
+  :config
   (defun ajrepl-send-defun ()
     (interactive)
     (save-excursion

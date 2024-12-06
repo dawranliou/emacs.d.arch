@@ -151,7 +151,6 @@
 ;;; package.el
 (setq package-enable-at-startup nil)
 (setq package-quickstart nil)
-(setq use-package-always-ensure t)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("gnu" . "https://elpa.gnu.org/packages/")
