@@ -313,7 +313,6 @@ With a prefix argument, exit eshell before restoring previous config."
 
 (use-package orderless
   :ensure t
-  :defer t
   :config
   (setq completion-category-overrides '((file (styles partial-completion))))
   (setq completion-styles '(orderless basic)))
