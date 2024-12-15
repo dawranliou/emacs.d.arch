@@ -189,6 +189,14 @@ With a prefix argument, exit eshell before restoring previous config."
 
 (setq mode-line-compact 'long)
 
+;;; Theme
+
+(use-package ef-themes
+  :ensure t
+  ;; :defer t
+  :config
+  (add-hook 'after-init-hook (lambda () (load-theme 'ef-cyprus :no-confirm))))
+
 ;;; Files
 
 (setq vc-follow-symlinks t)
