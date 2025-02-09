@@ -640,6 +640,9 @@ With a prefix argument, exit eshell before restoring previous config."
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
 
+(use-package bash-completion
+  :ensure t)
+
 (provide 'init)
 
 ;;; init.el ends here
