@@ -135,6 +135,7 @@ With a prefix argument, exit eshell before restoring previous config."
 (keymap-global-set "M-z" 'zap-up-to-char)
 (keymap-global-set "M-Z" 'zap-to-char)
 (keymap-global-set "M-$" #'jinx-correct)
+(keymap-global-set "C-x C-b" #'ibuffer)
 (keymap-global-set "C-x k" 'kill-this-buffer)
 (keymap-global-set "C-M-r" 'raise-sexp)
 (keymap-global-set "C-S-t" #'scratch-buffer)
