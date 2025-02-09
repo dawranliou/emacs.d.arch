@@ -136,20 +136,18 @@
       native-comp-async-report-warnings-errors 'silent)
 
 ;;; UI
-(setq inhibit-splash-screen t)
-
 (setq tool-bar-mode nil)
-(setq-default default-frame-alist '((font . "Iosevka-12")
+(setq-default default-frame-alist '(;(font . "Iosevka-12")
                                     (height . 30)
                                     (tool-bar-lines . 0)))
 (setq frame-inhibit-implied-resize t)
 (setq frame-resize-pixelwise t)
-;; (set-face-attribute 'default nil
-;;                     :family "Iosevka" :height 120 :weight 'regular)
-;; (set-face-attribute 'fixed-pitch nil
-;;                     :family "Iosevka" :height 120 :weight 'regular)
-;; (set-face-attribute 'variable-pitch nil
-;;                     :family "Iosevka Etoile" :height 120 :weight 'regular)
+(set-face-attribute 'default nil
+                    :family "Iosevka" :height 140 :weight 'regular)
+(set-face-attribute 'fixed-pitch nil
+                    :family "Iosevka" :height 1.0 :weight 'regular)
+(set-face-attribute 'variable-pitch nil
+                    :family "Sans Serif" :height 1.0 :weight 'regular)
 
 ;;; package.el
 (setq package-enable-at-startup nil)
