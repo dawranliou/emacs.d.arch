@@ -655,6 +655,9 @@ With a prefix argument, exit eshell before restoring previous config."
 (use-package bash-completion
   :ensure t)
 
+(use-package keycast
+  :ensure t)
+
 (provide 'init)
 
 ;;; init.el ends here
