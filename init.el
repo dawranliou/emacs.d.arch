@@ -253,6 +253,7 @@ With a prefix argument, exit eshell before restoring previous config."
 (setq kill-do-not-save-duplicates t)
 (setq wgrep-auto-save-buffer t)
 (setq indent-tabs-mode nil)
+(add-hook 'before-save-hook #'whitespace-cleanup)
 
 ;;; Misc
 
