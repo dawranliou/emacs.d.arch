@@ -249,6 +249,7 @@ With a prefix argument, exit eshell before restoring previous config."
 
 ;;; Test Editing
 
+(setq sentence-end-double-space nil)
 (setq kill-do-not-save-duplicates t)
 (setq wgrep-auto-save-buffer t)
 (setq indent-tabs-mode nil)
