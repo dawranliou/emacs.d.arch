@@ -482,6 +482,9 @@ With a prefix argument, exit eshell before restoring previous config."
 	   (magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
 	   (magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))))
 
+(use-package diff-hl
+  :ensure t)
+
 (use-package keychain-environment
   :ensure t
   :hook (after-init . keychain-refresh-environment))
