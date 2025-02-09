@@ -117,6 +117,11 @@ With a prefix argument, exit eshell before restoring previous config."
 (autoload #'embark-next-symbol "embark" nil t)
 (autoload #'embark-previous-symbol "embark" nil t)
 
+(defmacro find-my (FILENAME)
+  `(defun ,(intern (concat "find-my-" FILENAME)) ()
+     (interactive)
+     (find-file ,FILENAME)))
+
 ;;; Keybindings
 
 (keymap-global-set "<f5>" #'eshell-toggle)
@@ -143,6 +148,9 @@ With a prefix argument, exit eshell before restoring previous config."
 (keymap-global-set "C-;" 'iedit-mode)
 (keymap-global-set "C-g" #'keyboard-quit-dwim)
 (keymap-global-set "C-c g" 'grep-find)
+(keymap-global-set "C-c i" (find-my "~/.emacs.d/"))
+(keymap-global-set "C-c o" (find-my "~/org/"))
+(keymap-global-set "C-c p" (find-my "~/projects/"))
 (keymap-global-unset "C-z")
 (keymap-global-set "C-h L" #'find-library)
 (keymap-global-set "<remap> <kill-region>" 'backward-kill-word-or-region)
