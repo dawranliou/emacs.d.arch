@@ -624,6 +624,22 @@ With a prefix argument, exit eshell before restoring previous config."
       (call-interactively #'ajrepl-send-region)))
   (keymap-set ajrepl-interaction-mode-map "C-c C-c" #'ajrepl-send-defun))
 
+(use-package org
+  :config
+  (setq org-M-RET-may-split-line '((default . nil)))
+  (setq org-insert-heading-respect-content t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-use-speed-commands t)
+
+  ;; (setq org-directory "~/org")
+  (setq org-agenda-files (list org-directory))
+
+  ;; Learn about the ! and more by reading the relevant section of the
+  ;; Org manual.  Evaluate: (info "(org) Tracking TODO state changes")
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
+
 (provide 'init)
 
 ;;; init.el ends here
