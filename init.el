@@ -460,7 +460,6 @@ With a prefix argument, exit eshell before restoring previous config."
 (setq window-divider-default-right-width 1)
 
 (use-package which-key
-  :ensure t
   :hook (after-init . which-key-mode))
 
 (use-package project
