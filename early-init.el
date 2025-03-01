@@ -139,7 +139,8 @@
 (setq tool-bar-mode nil)
 (setq-default default-frame-alist '(;(font . "Iosevka-12")
                                     (height . 30)
-                                    (tool-bar-lines . 0)))
+                                    (tool-bar-lines . 0)
+                                    (alpha-background . 90)))
 (setq frame-inhibit-implied-resize t)
 (setq frame-resize-pixelwise t)
 (set-face-attribute 'default nil

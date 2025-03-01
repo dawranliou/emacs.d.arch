@@ -204,10 +204,10 @@ With a prefix argument, exit eshell before restoring previous config."
   :ensure t
   ;; :defer t
   :custom
-  ((ef-themes-to-toggle '(ef-cyprus ef-night))
+  ((ef-themes-to-toggle '(ef-duo-light ef-duo-dark))
    (ef-themes-variable-pitch-ui t))
   :bind
-  ("C-c t f" . 'ef-themes-toggle)
+  ("C-c t t" . 'ef-themes-toggle)
   :config
   (add-hook 'after-init-hook (lambda () (load-theme 'ef-night :no-confirm))))
 
