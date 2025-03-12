@@ -330,6 +330,15 @@ With a prefix argument, exit eshell before restoring previous config."
   :defer t
   :hook (after-init . vertico-mode))
 
+(use-package vertico-directory
+  :after vertico
+  :ensure nil
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
 (use-package marginalia
   :ensure t
   :defer t
