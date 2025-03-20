@@ -122,13 +122,25 @@ With a prefix argument, exit eshell before restoring previous config."
      (interactive)
      (find-file ,FILENAME)))
 
+;; Courtesy of https://www.jamescherti.com/emacs-symbol-highlighting-built-in-functions/
+(defun simple-toggle-highlight-symbol-at-point ()
+  "Toggle highlighting for the symbol at point."
+  (interactive)
+  (require 'hi-lock)  ; Built-in Emacs package
+  (when-let* ((regexp (find-tag-default-as-symbol-regexp)))
+    (if (member regexp (hi-lock--regexps-at-point))
+        ;; Unhighlight symbol at point
+        (hi-lock-unface-buffer regexp)
+      ;; Highlight symbol at point
+      (hi-lock-face-symbol-at-point))))
+
 ;;; Keybindings
 
 (keymap-global-set "<f5>" #'eshell-toggle)
 (keymap-global-set "<remap> <move-beginning-of-line>" 'move-beginning-of-line+)
 (keymap-global-set "M-n" 'embark-next-symbol)
 (keymap-global-set "M-p" 'embark-previous-symbol)
-(keymap-global-set "M-q" #'fill-or-unfill)
+(keymap-global-set "M-Q" #'fill-or-unfill)
 (keymap-global-set "M-l" 'downcase-dwim)
 (keymap-global-set "M-c" 'capitalize-dwim)
 (keymap-global-set "M-u" 'upcase-dwim)
@@ -149,6 +161,7 @@ With a prefix argument, exit eshell before restoring previous config."
 (keymap-global-set "C-g" #'keyboard-quit-dwim)
 (keymap-global-set "C-c g" 'grep-find)
 (keymap-global-set "C-c i" (find-my "~/.emacs.d/"))
+(keymap-global-set "C-c h" #'simple-toggle-highlight-symbol-at-point)
 (keymap-global-set "C-c o" (find-my "~/org/"))
 (keymap-global-set "C-c p" (find-my "~/projects/"))
 (keymap-global-unset "C-z")
